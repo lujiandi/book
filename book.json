@@ -1,6 +1,6 @@
 {
   "root": "./docs",
-  "plugins": ["splitter", "search", "simple-page-toc"],
+  "plugins": ["splitter", "search", "simple-page-toc", "toggle-chapters"],
   "author": "lujiandi",
   "description": "Gitbook 教程",
   "title": "book",

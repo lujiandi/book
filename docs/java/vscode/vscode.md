@@ -1,6 +1,6 @@
 # vscode
 
-### vscode 引入 jq 代码提示
+#### vscode 引入 jq 代码提示
 
 在项目目录创建 jsconfig.json,添加:
 
