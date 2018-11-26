@@ -15,11 +15,13 @@
     "gitbook-plugin-toggle-chapters": "0.0.3"
   },
   "devDependencies": {
-    "gh-pages": "^2.0.1"
+    "gh-pages": "^2.0.1",
+    "rimraf": "^2.6.2"
   },
   "scripts": {
     "book-init": "cd docs && gitbook init",
     "dev": "gitbook serve",
+    "clean": "rimraf _book",
     "build": "gitbook build",
     "pdf": "gitbook pdf ./ ./book.pdf",
     "gh-pages": "gitbook build && gh-pages -d _book"
