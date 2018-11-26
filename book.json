@@ -1,0 +1,18 @@
+{
+  "root": "./docs",
+  "plugins": ["splitter", "search", "simple-page-toc"],
+  "author": "lujiandi",
+  "description": "Gitbook 教程",
+  "title": "book",
+  "direction": "ltr",
+  "gitbook": "3.2.3",
+  "language": "zh-hans",
+  "links": {
+    "sidebar": {
+      "GitHub": "https://github.com/lujiandi/book"
+    }
+  },
+  "pdf": {
+    "paperSize": "a4"
+  }
+}
