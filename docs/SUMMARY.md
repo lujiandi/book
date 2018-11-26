@@ -22,3 +22,4 @@
   - [nodejs](java/nodejs/nodejs.md)
   - [maven](java/maven/maven.md)
   - [mysql](java/mysql/mysql.md)
+  - [nginx](java/nginx/nginx.md)
