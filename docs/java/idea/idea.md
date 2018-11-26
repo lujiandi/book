@@ -1,5 +1,14 @@
 # Idea
 
+### win 下修改 idea 缓存和配置的默认路径
+
+1. 在安装目录创建.IntelliJIdea 目录
+2. 进入安装目录的 bin 文件夹修改 idea.properties
+   ```
+   idea.config.path=D:/IDE/IntelliJ IDEA 2017.1.3/.IntelliJIdea/config
+   idea.system.path=D:/IDE/IntelliJ IDEA 2017.1.3/.IntelliJIdea/system
+   ```
+
 启动选项 `-Dfile.encoding=UTF-8` tomcat 启动打印不会乱码
 
 ### 窗口切换
