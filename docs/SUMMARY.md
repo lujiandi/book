@@ -4,7 +4,7 @@
 
 * [简介](README.md)
 
-> ## **GitBook**
+## **GitBook**
 
 * [安装](gitbook/installation.md)
 * [命令](gitbook/commands.md)
