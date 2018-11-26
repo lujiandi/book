@@ -1,4 +1,4 @@
-# 使用 Gitbook 打造电子书
+## 使用 Gitbook 打造电子书
 
 ### 使用 NPM 安装依赖和运行 gitbook 命令
 
