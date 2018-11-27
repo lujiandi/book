@@ -1,5 +1,5 @@
 {
-  "name": "gitbook-md",
+  "name": "book",
   "version": "1.0.0",
   "description": "使用Gitbook打造Markdown电子书 ",
   "main": "index.js",
@@ -8,7 +8,9 @@
   },
   "dependencies": {
     "gitbook-plugin-custom-favicon-new": "^1.0.0",
+    "gitbook-plugin-edit-link": "^2.0.2",
     "gitbook-plugin-favicon": "0.0.2",
+    "gitbook-plugin-search-plus": "^1.0.4-alpha-3",
     "gitbook-plugin-simple-page-toc": "^0.1.2",
     "gitbook-plugin-splitter": "0.0.8",
     "gitbook-plugin-summary": "^1.0.0",

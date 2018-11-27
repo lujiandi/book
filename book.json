@@ -1,6 +1,6 @@
 {
   "root": "./docs",
-  "plugins": ["splitter", "search", "simple-page-toc", "toggle-chapters"],
+  "plugins": ["splitter", "-lunr", "-search", "toggle-chapters", "search-plus"],
   "author": "lujiandi",
   "description": "Gitbook 教程",
   "title": "book",
@@ -10,6 +10,16 @@
   "links": {
     "sidebar": {
       "GitHub": "https://github.com/lujiandi/book"
+    }
+  },
+  "pluginsConfig": {
+    "sharing": {
+      "weibo": true,
+      "facebook": false,
+      "twitter": false,
+      "google": false,
+      "instapaper": false,
+      "vk": false
     }
   },
   "pdf": {
