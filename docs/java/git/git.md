@@ -20,7 +20,8 @@ git config --global core.autocrlf false
 
 - 创建 SSH Key： ssh-keygen -t rsa -C 你的邮箱
 - 将生成的 id_rsa.pub 里面的内容复制到 github 的 add ssh 中
-- 验证: ssh -T git@github.com
+- 验证 github: ssh -T git@github.com
+- 验证 gitee: ssh -T git@gitee.com
 
 #### gist.github.com 被墙无法访问解决办法
 
