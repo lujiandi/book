@@ -58,7 +58,7 @@ https://Github用户名.gitbooks.io/Github 仓库/content/
 
 ### 托管到 Github Pages
 
-也许你以前也了解 Github 的一个功能： [GitHub Pages](https://pages.github.com/) 。它允许用户在 GitHub 仓库托管你的个人、组织或项目的静态页面（自动识别 html、css、javascript）。
+也许你以前也了解 Github 的一个功能： [GitHub Pages](https://pages.github.com/) 。它允许用户在 GitHub 仓库托管你的个人、组织或项目的静态页面（自动识别 html、css、javascript）。Gitee 也有同样功能 Gitee Pages,下面操作基本一样；访问 用户名.gitee.io/项目名。
 
 **建立 用户名.github.io 仓库**
 
