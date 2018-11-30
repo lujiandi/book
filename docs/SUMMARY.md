@@ -24,3 +24,4 @@
   - [mysql](java/mysql/mysql.md)
   - [nginx](java/nginx/nginx.md)
   - [lombok](java/lombok/lombok.md)
+  - [常用单词](java/en/english.md)
