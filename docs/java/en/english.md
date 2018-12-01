@@ -12,7 +12,9 @@ and
 ```
 begin
 boolean
-
+border
+bottom
+background
 ```
 
 ### C
@@ -50,6 +52,8 @@ end
 ```
 format
 favicon
+font
+focus
 ```
 
 ### G
@@ -69,6 +73,7 @@ height
 ```
 ignore
 insert
+indent
 ```
 
 ### J
@@ -118,6 +123,7 @@ param
 project
 properties
 production
+padding
 ```
 
 ### Q
@@ -145,6 +151,7 @@ remove
  start
  set
  src
+ size
 ```
 
 ### T
