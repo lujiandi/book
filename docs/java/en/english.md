@@ -18,6 +18,7 @@ boolean
 ### C
 
 ```
+ config
  content
  context
  count
@@ -29,6 +30,7 @@ boolean
 
 ```
  developer
+ development
  default
  data
  database
@@ -115,6 +117,7 @@ on
 param
 project
 properties
+production
 ```
 
 ### Q
@@ -129,6 +132,8 @@ query
 result
 run
 rollback
+remote
+remove
 ```
 
 ### S
