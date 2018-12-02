@@ -1,4 +1,4 @@
-# Idea
+## Idea
 
 ### win 下修改 idea 缓存和配置的默认路径
 
@@ -9,7 +9,12 @@
    idea.system.path=D:/IDE/IntelliJ IDEA 2017.1.3/.IntelliJIdea/system
    ```
 
-启动选项 `-Dfile.encoding=UTF-8` tomcat 启动打印不会乱码
+> 启动选项 `-Dfile.encoding=UTF-8` tomcat 启动打印不会乱码
+
+### IntelliJ IDEA SpringBoot 热部署
+
+1. 设置 Complier>build project automatically
+2. 设置 Registry>compiler.automake.allow.when.app.running
 
 ### 窗口切换
 
