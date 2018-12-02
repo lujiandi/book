@@ -29,3 +29,8 @@
 - [前端](frontend/README.md)
 
   - [html](frontend/html/html.md)
+  - [javascript 事件绑定](frontend/javascript/events.md)
+  - [javascript window](frontend/javascript/window.md)
+  - [javascript 正则表达式](frontend/javascript/regex.md)
+  - [promise](frontend/javascript/promise.md)
+  - [TypeScript](frontend/typescript/typescript.md)
