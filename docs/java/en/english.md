@@ -26,6 +26,8 @@ background
  count
  commit
  components
+ compile
+ clean
 ```
 
 ### D
@@ -38,6 +40,7 @@ background
  database
  date
  double
+ datetime
 ```
 
 ### E
@@ -74,6 +77,7 @@ height
 ignore
 insert
 indent
+import
 ```
 
 ### J
@@ -98,7 +102,7 @@ join
 ### M
 
 ```
-
+margin
 ```
 
 ### N
@@ -124,6 +128,9 @@ project
 properties
 production
 padding
+package
+port
+plugin
 ```
 
 ### Q
@@ -152,6 +159,8 @@ remove
  set
  src
  size
+ skip
+ settings
 ```
 
 ### T
@@ -161,6 +170,7 @@ remove
  then
  table
  timestamp
+ test
 ```
 
 ### U
