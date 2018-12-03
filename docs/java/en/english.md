@@ -4,7 +4,7 @@
 
 ```
 and
-
+answer
 ```
 
 ### B
@@ -62,7 +62,7 @@ focus
 ### G
 
 ```
-
+global
 ```
 
 ### H
@@ -131,12 +131,15 @@ padding
 package
 port
 plugin
+push
+pull
 ```
 
 ### Q
 
 ```
 query
+question
 ```
 
 ### R
