@@ -27,10 +27,10 @@ var app = new Vue({
 
    #文本
 
-   数据绑定最常见的形式就是使用“Mustache”语法 `{{}}` 的文本插值
+   \{\{\}\}
 
    ```
-    <span>Message: {{ msg }}</span>
+    <span>Message:{{msg}}</span>
    ```
 
    #原始 HTML

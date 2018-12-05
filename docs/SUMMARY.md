@@ -2,7 +2,7 @@
 
 - [简介](README.md)
 
-- [GitBook](gb/README.md)
+- [GitBook](gbook/README.md)
 
   - [安装](gbook/installation.md)
   - [命令](gbook/commands.md)
