@@ -4,13 +4,13 @@
 
 - [GitBook](gb/README.md)
 
-  - [安装](gb/installation.md)
-  - [命令](gb/commands.md)
-  - [结构](gb/structure.md)
-  - [配置](gb/settings.md)
-  - [发布](gb/deploy.md)
-  - [生成电子书](gb/generating-ebooks-and-pdfs.md)
-  - [资源](gb/resources.md)
+  - [安装](gbook/installation.md)
+  - [命令](gbook/commands.md)
+  - [结构](gbook/structure.md)
+  - [配置](gbook/settings.md)
+  - [发布](gbook/deploy.md)
+  - [生成电子书](gbook/generating-ebooks-and-pdfs.md)
+  - [资源](gbook/resources.md)
 
 - [Java](java/README.md)
 
