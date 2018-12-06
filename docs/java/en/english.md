@@ -4,6 +4,7 @@
 
 ```
 and
+add
 answer
 ```
 
@@ -28,6 +29,7 @@ background
  components
  compile
  clean
+ checkout
 ```
 
 ### D
@@ -42,6 +44,7 @@ background
  double
  datetime
  deny
+ discard
 ```
 
 ### E
@@ -79,6 +82,7 @@ ignore
 insert
 indent
 import
+init
 ```
 
 ### J
@@ -152,6 +156,7 @@ run
 rollback
 remote
 remove
+repository
 ```
 
 ### S
@@ -167,6 +172,8 @@ remove
  skip
  settings
  state
+ status
+ stage
 ```
 
 ### T

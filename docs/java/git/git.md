@@ -132,7 +132,7 @@ git config --global core.autocrlf false
 
     git checkout fileName
 
-17. 本地回到某次提交的版本
+17. 本地回到某次提交的版本(影响所有文件)
 
     git reset --hard 04f76726c53d58992dfb2d55417b0eb9452c75b2
 
@@ -147,6 +147,14 @@ git config --global core.autocrlf false
 20. 下载一个项目和它的整个代码历史
 
     git clone [url]
+
+21. 远程关联
+
+    git remote -v ：查看远程关联
+
+    git remote add xxx 远程地址 ：关联远程,xxx 为远程仓库名，git push -u xxxx 本地分支
+
+    git remote remove xxx :取消关联
 
 #### gitflow
 
