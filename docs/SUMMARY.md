@@ -12,7 +12,7 @@
   - [生成电子书](gbook/generating-ebooks-and-pdfs.md)
   - [资源](gbook/resources.md)
 
-- [Java](java/README.md)
+- [Java 软件安装配置](java/README.md)
 
   - [Git](java/git/git.md)
   - [Idea](java/idea/idea.md)
@@ -26,7 +26,9 @@
   - [lombok](java/lombok/lombok.md)
   - [常用单词](java/en/english.md)
 
-- [前端](frontend/README.md)
+- [Spring](spring/README.md)
+
+* [前端](frontend/README.md)
 
   - [html](frontend/html/html.md)
   - [javascript 事件绑定](frontend/javascript/events.md)
