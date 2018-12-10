@@ -23,6 +23,7 @@ background
 ```
  config
  content
+ contentType
  context
  count
  commit
@@ -45,6 +46,7 @@ background
  datetime
  deny
  discard
+ deploy
 ```
 
 ### E
@@ -61,6 +63,7 @@ format
 favicon
 font
 focus
+flush
 ```
 
 ### G
@@ -83,6 +86,7 @@ insert
 indent
 import
 init
+install
 ```
 
 ### J
@@ -157,6 +161,7 @@ rollback
 remote
 remove
 repository
+reload
 ```
 
 ### S
@@ -197,6 +202,7 @@ repository
 ```
 version
 vaule
+validate
 ```
 
 ### W
