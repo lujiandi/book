@@ -33,6 +33,7 @@
 * [前端](frontend/README.md)
 
   - [html](frontend/html/html.md)
+  - [javascript 基础知识](frontend/javascript/base.md)
   - [javascript 事件绑定](frontend/javascript/events.md)
   - [javascript window](frontend/javascript/window.md)
   - [javascript 正则表达式](frontend/javascript/regex.md)
