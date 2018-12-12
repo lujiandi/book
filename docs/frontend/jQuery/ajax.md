@@ -89,6 +89,32 @@
   }
   ```
 
+- Jquery 实现 ajax:
+
+  > contentType (default: 'application/x-www-form-urlencoded; charset=UTF-8')
+
+  ![ajax](images/ajax.jpg)
+
+#### 跨域
+
+跨域的原因就是：因为 js 的同源策略的机制
+
+![跨域](images/cross.jpg)
+
+跨域处理方式：
+
+1. 代理
+
+2. JSONP
+
+   - 只能处理 GET 请求
+   - `<script src="url(该地址的响应是js)"></script>`,返回的 js 代码调用定义好的函数
+   - `$.ajax({dataType:"JSONP"})`
+
+3. XHR2
+
+   - 跨域 服务端设置
+
 #### jQuery Validation Plugin
 
 jQuery Validation Plugin 是表单验证插件。
@@ -107,7 +133,7 @@ validate 定义了基本的校验规则和一些有用的配置项。
 
 ```
 
-\$(form).validate({options})
+$(form).validate({options})
 
 ```
 
