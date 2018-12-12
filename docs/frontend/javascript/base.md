@@ -1,4 +1,4 @@
-### JavaScript 基础知识
+# JavaScript 基础知识
 
 写前端必须要掌握一定基础的 JavaScript 语言知识，本文档将介绍绝大部分常用的 JavaScript 语言基础知识，同样概念添加 Java 语言对比，帮你快速学习理解
 
@@ -324,3 +324,140 @@ let aa = {
 ```
 
 相当于把某个对象拆开分别赋值，遇到同样的 key 后面内容会覆盖前面的。详情请看：http://es6.ruanyifeng.com/#docs/object#对象的扩展运算符
+
+#### JavaScript 正则表达式 RegExp
+
+- javascript 通过内置对象 RegExp 支持正则表达式。
+- 实例化方法
+  - 构造函数
+    - ```
+       var reg = new RegExp('\\bis\\b','g');
+      ```
+  - 字面量
+    - ```
+       <!-- /g 表示全局匹配 -->
+       <!-- /i 忽略大小写 -->
+       <!-- /m 表示多行搜索 -->
+       <!--  \b 表示单词间隔 -->
+       <!-- \d 表示数字 -->
+       <!-- .表示 [^\r\n] 除了回车和换行的所有字符 -->
+       var reg = /\bis\b/g;
+      ```
+- []构造一个类
+  - ```
+      <!-- - 表示范围 -->
+      /[a-zA-Z]/
+      <!-- 所有字母替换成X -->
+      "a1b2c3d4f5g6".replace(/[a-g]/g,"X");
+      <!-- ^ 取反 -->
+      "a1b2c3d4f5g6".replace(/[^a-g]/g,"X")；
+    ```
+- 边界字符
+  - ^ 开始 \$ 结束
+    - ```
+       "@1a@2a@3a".replace(/^@./g,"X");
+       "@1a@2a@3a@".replace(/.@$/g,"X");
+      ```
+- 量词 {n} 匹配 n 个相同的字符
+  - ```
+       <!-- {1,} 至少出现一次 -->
+      /\d{3}/.test(123);
+      <!-- 贪婪模式 匹配6次 -->
+      "12345678".replace(/\d{3,6}/,"X");
+      <!-- 非贪婪模式 匹配3次 -->
+      "12345678".replace(/\d{3,6}?/,"X");
+    ```
+- () 分组
+  ```
+    "@1a@2a@3a@".replace(/(@\d.){2}/g,"X");
+    <!--  反向引用 -->
+    "2015-02-14".replace(/^(\d{4})-(\d{2})-(\d{2})$/g,"$2/$3/$1");
+    '15977391234'.replace(/(\d{3})(\d{4})(\d{4})/,'$1****$3');
+  ```
+
+#### Promise 语法
+
+![promise](images/Promise.jpg)
+
+## async function
+
+- async function 声明将定义一个返回 AsyncFunction 对象的异步函数。
+- 当调用一个 async 函数时，会返回一个 Promise 对象。当这个 async 函数返回一个值时，Promise 的 resolve 方法会负责传递这个值；当 async 函数抛出异常时，Promise 的 reject 方法也会传递这个异常值。
+- async 函数中可能会有 await 表达式，这会使 async 函数暂停执行，等待表达式中的 Promise 解析完成后继续执行 async 函数。
+- 注意 await 关键字仅仅在 async function 中有效。如果在 async function 函数体外使用 await ，你只会得到一个语法错误（SyntaxError）。
+- async/await 的用途是简化使用 promises 异步调用的操作，并对一组 Promises 执行某些操作。正如 Promises 类似于结构化回调，async/await 类似于组合生成器和 promises。
+
+### await
+
+- 如果一个 Promise 被传递给一个 await 操作符，await 将等待 Promise 正常处理完成,其回调的 resolve 函数参数作为 await 表达式的值
+
+```
+ function resolveAfter2Seconds(x) {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve(x);
+    }, 2000);
+  });
+}
+
+async function f1() {
+  var x = await resolveAfter2Seconds(10);
+  console.log(x); // 10
+}
+f1();
+```
+
+- 如果该值不是一个 Promise，await 会把该值转换为已正常处理的 Promise，然后等待其处理结果。
+
+```
+async function f2() {
+  var y = await 20;
+  console.log(y); // 20
+}
+f2();
+```
+
+- 如果 Promise 处理异常，则异常值被抛出。
+
+```
+async function f3() {
+  try {
+    var z = await Promise.reject(30);
+  } catch (e) {
+    console.log(e); // 30
+  }
+}
+f3();
+```
+
+### async function 示例
+
+```
+function resolveAfter2Seconds(x) {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve(x);
+    }, 2000);
+  });
+}
+
+async function add1(x) {
+  var a = await resolveAfter2Seconds(20);
+  var b = await resolveAfter2Seconds(30);
+  return x + a + b;
+}
+
+add1(10).then(v => {
+  console.log(v); // prints 60 after 4 seconds.
+});
+
+async function add2(x) {
+  var a = resolveAfter2Seconds(20);
+  var b = resolveAfter2Seconds(30);
+  return x + await a + await b;
+}
+
+add2(10).then(v => {
+  console.log(v);  // prints 60 after 2 seconds.
+});
+```
