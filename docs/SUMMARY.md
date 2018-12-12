@@ -33,9 +33,9 @@
 * [前端](frontend/README.md)
 
   - [html](frontend/html/html.md)
-  - [javascript 入门篇](frontend/javascript/events.md)
+  - [javascript 入门篇](frontend/javascript/Introduction.md)
   - [javascript 基础知识](frontend/javascript/base.md)
-  - [jQuery](frontend/jQuery/jq.md)
+  - [ajax ](frontend/jQuery/ajax.md)
   - [TypeScript](frontend/typescript/typescript.md)
   - [Reat](frontend/react/react.md)
   - [Vue](frontend/vue/vue.md)

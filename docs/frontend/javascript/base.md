@@ -238,6 +238,9 @@ let obj = {
 };
 console.log(JSON.stringify(obj)); // -> '{"a":"aa","b":"bb"}'
 let objStr = '{"a":"aa","b":"bb"}';
+
+将 JSON转成 Object
+
 console.log(JSON.parse(objStr)); // -> {a:"aa", b:"bb"}
 ```
 
