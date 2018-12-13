@@ -63,6 +63,9 @@ console.log(a.b); // -> undefined
 }, () => {
   return '这是一个函数'
 }]
+
+
+//
 ```
 
 `Array`简易循环举例：
@@ -76,9 +79,27 @@ for(let i=0; i<list.length; i++) {
   console.log(list[i]);
 }
 
-list.forEach((val, i) => {
-  console.log(val, i);
+let arr = new Array(10).fill(0);
+let arr2 = arr.map((v, i) => i); //map  数组映射返回arr2,arr不变
+console.log(`arr2.toString(): ${arr2.toString()}`);
+console.log(`arr2.join('_'): ${arr2.join('_')}`); //join  数组转成String ,arr2不变
+arr2.forEach((v, i) => {
+  //数字变量，返回void
+  console.log(`index: ${i}  value: ${v}`);
 });
+let arr3 = arr2.filter(v => {
+  //filter 数组过滤，返回arr3,arr2不变
+  if (v % 2 === 0) {
+    return v;
+  }
+});
+console.log(`arr3: ${arr3.toString()}`);
+console.log(`arr3.indexOf(4): ${arr3.indexOf(4)}`);
+let result = arr3.every(v => v < 10); // every 判断数字每个成员是否满足传入的条件 ， 返回boolean
+console.log(`arr3.every(v => v < 10): ${result}`);
+
+
+
 ```
 
 `object对象类型`
@@ -100,6 +121,15 @@ console.log(obj.home.province);
 let key = 'age';
 console.log(obj[key], obj['age']);
 delete obj.name;
+
+//  通过in遍历对象属性
+for (const key in obj) {
+  if (obj.hasOwnProperty(key)) {// 只要自身属性
+    const element = obj[key];
+    console.log(element);
+  }
+}
+
 
 // 通过构造器创建对象
 function foo(){
