@@ -4,7 +4,7 @@
 
 #### JavaScript 语法基础
 
-变量定义
+变量定义:
 
 - `let` 定义普通变量（推荐），详情：http://es6.ruanyifeng.com/#docs/let#let命令。
 
@@ -131,13 +131,14 @@ list.forEach((val, i) => {
 
 相比 Java 的 add 操作，JavaScript array 的出栈入栈删除的方法名略有不同，常见的 push 入栈、pop 出栈，具体的参照 http://javascript.ruanyifeng.com/stdlib/array.html 。
 
-`object`
+`object对象类型`
 
 对象类型，无序，需要指定 key 等信息关联值，类似 Java 的 HashMap，比如：
 
 JavaScript：
 
 ```
+// 字面量创建对象
 let obj = {
   name: 'string 字符串',
   home: {
@@ -151,6 +152,31 @@ console.log(obj.home.province);
 let key = 'age';
 console.log(obj[key], obj['age']);
 delete obj.name;
+
+// 通过构造器创建对象
+function foo(){
+
+}
+foo.prototype= {
+  say:function(){
+    console.log("hello world");
+  },
+  z:3
+}
+// obj2对象的原型会指向构造器foo的prototype属性
+let obj2 = new foo();
+obj2.x=1;
+obj2.y=2;
+obj2.x;//1
+obj2.y;//2
+obj2.z;//3
+'z' in obj2;//true
+obj2.hasOwnProperty('z');//false
+
+obj2.say();
+
+
+
 ```
 
 因此可以用来做 key value 的数据映射使用。由于弱类型存储的值可以多种多样，比 Java 使用起来要容易一些。详情：http://www.w3school.com.cn/js/js_objects.asp
