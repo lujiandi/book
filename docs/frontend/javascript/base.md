@@ -2,6 +2,12 @@
 
 #### JavaScript 语法基础
 
+严格模式：提高错误检查，增强安全性
+
+```
+'use strict';
+```
+
 变量定义:
 
 - `let` 定义普通变量（推荐）。
@@ -23,7 +29,13 @@ let x = 20;
 - `Boolean`
 - `Number`
 - `String`
-- 引用类型包括：`Object`、`Array`、`Function`。
+
+对象类型 Object：
+
+- `Date`
+- `Array`
+- `Function`
+- `....`
 
 `undefined`
 
@@ -239,7 +251,17 @@ console.log(!!undefined); // -> false
 console.log(!![].length); // -> false
 ```
 
-`流程控制、比较、运算符等`
+`类型检测：`
+
+`typeof` 适合基本类型和`function`类型检测
+
+`instanceof` 检查对象的类型是否是自定义的类型
+
+```
+function foo() {}
+var obj = new foo();
+console.log(obj instanceof foo);
+```
 
 `== 和 === 的区别:`
 
