@@ -348,7 +348,40 @@ JS 是弱类型语言，=== 表示全等判断，会把类型也进行比较：
 
 ![promise](images/Promise.jpg)
 
-示例
+Promise 示例
+
+```
+// 执行$.ajax请求
+var request=function (param) {
+        return new Promise(function (resolve, reject) {
+            $.ajax({
+                type: param.method || 'get',
+                timeout: 10000,
+                url: param.url || '',
+                data: param.data || '',
+                dataType: param.dataType || 'json',
+                success: function (response) {
+                    if ('success' === response.status) {
+                        typeof resolve === 'function' && resolve(response.data);
+                    } else {
+                        typeof reject === 'function' && reject(response.data);
+                    }
+                },
+                error: function (error) {
+                    alert(error.statusText)
+                }
+            });
+        });
+    }
+  // 调用
+
+   request({param}).then(function(data){
+       // 成功处理
+   },function(data){
+       // 失败处理
+   });
+
+```
 
 #### javascript 模块化
 
@@ -381,17 +414,17 @@ JS 是弱类型语言，=== 表示全等判断，会把类型也进行比较：
 
    `export default` 导出一个模块，利用 `import xxxx from`引入。
 
-代码：
+   代码：
 
-```
- // a.js
- function say(params) {
-   return `hello ${params}`;
- }
- export default say;
+   ```
+    // a.js
+    function say(params) {
+      return `hello ${params}`;
+    }
+    export default say;
 
- //b.js
- import say from './a';
- console.log(say('tom'));
+    //b.js
+    import say from './a';
+    console.log(say('tom'));
 
-```
+   ```
