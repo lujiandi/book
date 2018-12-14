@@ -350,6 +350,48 @@ JS 是弱类型语言，=== 表示全等判断，会把类型也进行比较：
 
 示例
 
+#### javascript 模块化
+
+1. `CommonJS`
+
+   使用 `module.exports=xxx`导出模块，使用 `var xxx=require('模块文件路径')`引入模块.
+
+   可以导出常量，函数，对象。
+
+   代码：
+
+   ```
+    // a.js
+    function say(params) {
+      return `hello ${params}`;
+    }
+    module.exports = say;
+
+    //b.js
+    const say = require('./a');
+    console.log(say('tom'));
+
+   ```
+
+2. `ES6`
+
+   使用 (`export`|`export default`)导出模块，使用 `import from '文件路径'`引入模块.
+
+   `export` 可以在单个文件导出多个模块，利用 `import {xxxx,xxxx } from`引入。
+
+   `export default` 导出一个模块，利用 `import xxxx from`引入。
+
+代码：
+
 ```
+ // a.js
+ function say(params) {
+   return `hello ${params}`;
+ }
+ export default say;
+
+ //b.js
+ import say from './a';
+ console.log(say('tom'));
 
 ```
