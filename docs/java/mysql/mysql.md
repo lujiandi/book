@@ -1,3 +1,5 @@
+# mysql
+
 #### 添加到 win 服务
 
 在安装的 bin 目录下创建.bat 文件
@@ -10,7 +12,7 @@ pause
 
 ```
 
-要 cmd 运行一些 mysql 的命令行需要把 bin 目录的路径添加到 Path 环境变量
+要 cmd 运行一些 mysql 的命令行需要把 bin 目录的路径添加到系统的 Path 环境变量
 
 #### 修改 my.ini
 
@@ -72,7 +74,7 @@ max();
 
 ```
 
-###3 添加用户示例 添加 mysql 用户 travis
+#### 添加用户示例 添加 mysql 用户 travis
 
 create user travis@localhost;
 
@@ -84,5 +86,14 @@ grant all privileges on dataBaseName.* to travis@localhost;
 
 查看 travis 用户的权限
 show grants for travis@localhost;
+
+```
+
+#### mysql 数据库字段接收表情数据
+
+```
+
+ALTER DATABASE xxxxx CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+
 
 ```
