@@ -11,9 +11,13 @@
 
 ### npm 命令
 
+npm init >生成 package.json
+
+npm run 自定义命令 >运行 package.json(scripts)
+
 npm install cnpm -g --registry=http://registry.npm.taobao.org
 
-npm install xxx@xxx -g
+npm install xxx@xxx -g >全局安装
 
 npm install xxx@xxx -save
 
