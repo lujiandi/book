@@ -1,7 +1,9 @@
-#### maven
+# maven
 
-1. M2_HOME
-2. PATH %M2_HOME%/bin
+#### 安装
+
+1. 设置系统环境变量 `M2_HOME`(maven 安装目录)
+2. `Path` 添加 `%M2_HOME%/bin`
 
 #### 常用命令
 
