@@ -36,7 +36,7 @@
    HTML5 为了解决这个问题，引入了一个全新的 API：跨文档通信 API（Cross-document messaging）。
    这个 API 为 window 对象新增了一个 window.postMessage 方法，允许跨窗口通信，不论这两个窗口是否同源。父窗口和子窗口都可以通过 message 事件，监听对方的消息。
 
-   ```javascript
+   ```
    var popup = window.open('http://bbb.com', 'title');
    popup.postMessage('Hello World!', 'http://bbb.com');
    ```
@@ -137,7 +137,7 @@ CORS 是一个 W3C 标准，全称是"跨域资源共享"（Cross-origin resourc
 
    "预检"请求用的请求方法是 OPTIONS，表示这个请求是用来询问的。头信息里面，关键字段是 Origin，表示请求来自哪个源。
 
-   ```OPTIONS /cors HTTP/1.1
+   ```
    Origin: http://api.bob.com
    Access-Control-Request-Method: PUT
    Access-Control-Request-Headers: X-Custom-Header
