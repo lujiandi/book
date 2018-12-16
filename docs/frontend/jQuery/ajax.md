@@ -117,7 +117,9 @@ AJAX 跨域的原因就是:
 
 跨域处理方式：
 
-1. 代理
+1. `代理`
+
+   让相同域名下的后端服务器去访问， 实现隐藏跨域。
 
 2. `JSONP`
 
@@ -162,59 +164,65 @@ AJAX 跨域的原因就是:
 
 3. XHR2
 
-   发生跨域时 `Request Headers` 请求头带上 `Origin` 字段
+   > 发生跨域时 `Request Headers` 请求头带上 `Origin` 字段
 
-   服务端添加一些响应头字段。
+   **被调用方服务端**添加一些响应头字段，支持跨域请求。
 
-   ```
-   import org.springframework.stereotype.Component;
-   import org.springframework.util.StringUtils;
+   `nginx`添加一些响应头字段 也能实现同样的功能。
 
-   import javax.servlet.*;
-   import javax.servlet.annotation.WebFilter;
-   import javax.servlet.http.HttpServletRequest;
-   import javax.servlet.http.HttpServletResponse;
-   import java.io.IOException;
+   `Spring`框架直接在类或者方法添加注解`@CrossOrigin`支持跨域
 
-       @Component
-       @WebFilter(urlPatterns="/\*",filterName="crosFilter")
-       public class CrosFilter implements Filter{
-       @Override
-       public void init(FilterConfig filterConfig) throws ServletException {
+   `filter` 过滤器实现:
 
-              }
+```
+import org.springframework.stereotype.Component;
+import org.springframework.util.StringUtils;
 
-       @Override
-       public void doFilter(ServletRequest request, ServletResponse response,     FilterChain chain) throws IOException, ServletException {
-           HttpServletRequest httpServletRequest   = (HttpServletRequest)request;
-           HttpServletResponse httpServletResponse = (HttpServletResponse)    response;
+import javax.servlet.*;
+import javax.servlet.annotation.WebFilter;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
-           // 发生跨域时请求头带上 Origin
-           String origin = httpServletRequest.getHeader("Origin");
-           if(!StringUtils.isEmpty(origin)) {
-               httpServletResponse.addHeader("Access-Control-Allow-Origin",     origin);
+    @Component
+    @WebFilter(urlPatterns="/\*",filterName="crosFilter")
+    public class CrosFilter implements Filter{
+    @Override
+    public void init(FilterConfig filterConfig) throws ServletException {
+
            }
 
-           //  自定请求头
-           String header =  httpServletRequest.getHeader    ("Access-Control-Request-Headers");
-           if(!StringUtils.isEmpty(header)) {
-               httpServletResponse.addHeader("Access-Control-Allow-Headers",     header);
-           }
-           httpServletResponse.addHeader("Access-Control-Allow-Methods", "*");
-           // 带跨域cookie
-           //Access-Control-Allow-Origin 要全部匹配
-           httpServletResponse.addHeader("Access-Control-Allow-Credentials",     "true");
-           chain.doFilter(httpServletRequest, httpServletResponse);
+    @Override
+    public void doFilter(ServletRequest request, ServletResponse response,     FilterChain chain) throws IOException, ServletException {
+        HttpServletRequest httpServletRequest   = (HttpServletRequest)request;
+        HttpServletResponse httpServletResponse = (HttpServletResponse)    response;
 
-         }
+        // 发生跨域时请求头带上 Origin
+        String origin = httpServletRequest.getHeader("Origin");
+        if(!StringUtils.isEmpty(origin)) {
+            httpServletResponse.addHeader("Access-Control-Allow-Origin",     origin);
+        }
 
-       @Override
-       public void destroy() {
+        //  自定请求头
+        String header =  httpServletRequest.getHeader    ("Access-Control-Request-Headers");
+        if(!StringUtils.isEmpty(header)) {
+            httpServletResponse.addHeader("Access-Control-Allow-Headers",     header);
+        }
+        httpServletResponse.addHeader("Access-Control-Allow-Methods", "*");
+        // 带跨域cookie
+        //Access-Control-Allow-Origin 要全部匹配
+        httpServletResponse.addHeader("Access-Control-Allow-Credentials",     "true");
+        chain.doFilter(httpServletRequest, httpServletResponse);
 
-         }
-     }
+      }
 
-   ```
+    @Override
+    public void destroy() {
+
+      }
+  }
+
+```
 
 #### jQuery Validation Plugin
 
