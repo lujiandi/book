@@ -1,6 +1,42 @@
-# 浏览器的同源策略
+### **http**
 
-## 概述
+> HTTP(HyperText Transfer Protocol)是一套计算机通过网络进行通信的规则。计算机专家设计出 HTTP，使 HTTP 客户（如 Web 浏览器）能够从 HTTP 服务器(Web 服务器)请求信息和服务，HTTP 目前协议的版本是 1.1.HTTP 是一种无状态的协议，无状态是指 Web 浏览器和 Web 服务器之间不需要建立持久的连接，这意味着当一个客户端向服务器端发出请求，然后 Web 服务器返回响应(response)，连接就被关闭了，在服务器端不保留连接的有关信息.HTTP 遵循请求(Request)/应答(Response)模型。Web 浏览器向 Web 服务器发送请求，Web 服务器处理请求并返回适当的应答。所有 HTTP 连接都被构造成一套请求和应答。
+
+一个完整的 HTTP 请求过程：
+
+- 建立 TCP 连接
+- Web 浏览器向 Web 服务器发送请求命令
+- Web 浏览器发送请求头信息
+- Web 服务器应答
+- Web 服务器发送应答头信息
+- Web 服务器发数据
+- Web 服务器关闭 TCP 连接
+
+一个 HTTP 请求(Request)一般由四部分组成：
+
+- HTTP 请求的方法或动作，比如是 `GET、POST、PUT、DELETE` 请求
+- 正在请求的 URL，总得知道请求的地址是什么吧
+- 请求头，包含一些客户端环境信息，身份验证信息等
+- 请求体，也就是请求正文，请求正文中可以包含客户提交的查询字符串信息，表单信息等等
+  请求头和请求体中间有空格（很重要）
+
+一般 HTTP 响应(Response)由 3 部分组成：
+
+- 一个数字或文字组成的状态码，用来显示请求是成功还是失败
+- 响应头，和请求头一样包含许多有用信息，如服务器类型、日期时间、内容类型和长度等
+- 响应体，即响应正文
+
+响应 Response 状态码:
+
+- 1xx：信息类，web 瀏覽器請求，正在进一步的处理中；
+- 2xx：成功，表示用户请求被正确接受，理解和处理 200 ok
+- 3xx:重定向，表示请求没有成功，客户必须采取进一步的动作
+- 4xx:客户端错误，表单提交的路径有错误，例如 404 not found，以为这请求中所引用的文档不存在
+- 5xx:服务器错误，表示服务器不能完成对请求的处理 ： 如 500
+
+### 浏览器的同源策略
+
+概述
 
 浏览器同源策略简单来说，即要求只有同源的网页才能够使用共享的网络资源或行为。所谓的"同源"，是指协议相同，域名相同，端口相同。
 同源策略的目的是为了保证用户信息安全，防止恶意的网站窃取数据。
@@ -10,17 +46,17 @@
 - DOM
 - Ajax 请求
 
-## Cookie
+Cookie
 
 非同源的网页不能共享 Cookie。
 但是如果页面一级域名相同，可以通过对页面设置相同的 document.domain 共享 cookie。
 也可以在设置 Cookie 时指定 Cookie 的一级域名，实现二级三级域名页面的访问。
 
-## LocalStorage
+LocalStorage
 
 非同源的网页不能共享 LocalStorage，如果需要共享 LocalStorage，可以使用 Html5 新增的 postMessage 方法进行数据传输。
 
-## iframe
+iframe
 
 非同源网页不能获取对方的 DOM。
 如果页面一级域名相同，可以通过对页面设置相同的 document.domain。
@@ -41,7 +77,7 @@
    popup.postMessage('Hello World!', 'http://bbb.com');
    ```
 
-## AJAX
+AJAX
 
 非同源网站不能调用对方 API
 
@@ -58,7 +94,7 @@
 
    CORS 是跨源资源分享（Cross-Origin Resource Sharing）的缩写。它是 W3C 标准，是跨源 AJAX 请求的根本解决方法。相比 JSONP 只能发 GET 请求，CORS 允许任何类型的请求
 
-## CORS
+CORS
 
 CORS 是一个 W3C 标准，全称是"跨域资源共享"（Cross-origin resource sharing）。
 它允许浏览器向跨源服务器，发出 XMLHttpRequest 请求，从而克服了 AJAX 只能同源使用的限制。

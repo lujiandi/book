@@ -20,42 +20,6 @@
   }
 ```
 
-**http**
-
-> HTTP(HyperText Transfer Protocol)是一套计算机通过网络进行通信的规则。计算机专家设计出 HTTP，使 HTTP 客户（如 Web 浏览器）能够从 HTTP 服务器(Web 服务器)请求信息和服务，HTTP 目前协议的版本是 1.1.HTTP 是一种无状态的协议，无状态是指 Web 浏览器和 Web 服务器之间不需要建立持久的连接，这意味着当一个客户端向服务器端发出请求，然后 Web 服务器返回响应(response)，连接就被关闭了，在服务器端不保留连接的有关信息.HTTP 遵循请求(Request)/应答(Response)模型。Web 浏览器向 Web 服务器发送请求，Web 服务器处理请求并返回适当的应答。所有 HTTP 连接都被构造成一套请求和应答。
-
-一个完整的 HTTP 请求过程：
-
-- 建立 TCP 连接
-- Web 浏览器向 Web 服务器发送请求命令
-- Web 浏览器发送请求头信息
-- Web 服务器应答
-- Web 服务器发送应答头信息
-- Web 服务器发数据
-- Web 服务器关闭 TCP 连接
-
-一个 HTTP 请求(Request)一般由四部分组成：
-
-- HTTP 请求的方法或动作，比如是 `GET、POST、PUT、DELETE` 请求
-- 正在请求的 URL，总得知道请求的地址是什么吧
-- 请求头，包含一些客户端环境信息，身份验证信息等
-- 请求体，也就是请求正文，请求正文中可以包含客户提交的查询字符串信息，表单信息等等
-  请求头和请求体中间有空格（很重要）
-
-一般 HTTP 响应(Response)由 3 部分组成：
-
-- 一个数字或文字组成的状态码，用来显示请求是成功还是失败
-- 响应头，和请求头一样包含许多有用信息，如服务器类型、日期时间、内容类型和长度等
-- 响应体，即响应正文
-
-响应 Response 状态码:
-
-- 1xx：信息类，web 瀏覽器請求，正在进一步的处理中；
-- 2xx：成功，表示用户请求被正确接受，理解和处理 200 ok
-- 3xx:重定向，表示请求没有成功，客户必须采取进一步的动作
-- 4xx:客户端错误，表单提交的路径有错误，例如 404 not found，以为这请求中所引用的文档不存在
-- 5xx:服务器错误，表示服务器不能完成对请求的处理 ： 如 500
-
 XMLHttpRequest 发送 http 请求例子：
 
 ```
@@ -99,9 +63,9 @@ Jquery 实现 ajax:
 
   发送 json 数据改为`application/json;charset=utf-8`. `data`为 json 字符串。
 
-- `xhrFields: { withCredentials: true }` 跨域请求带上 `cookie`
+- `xhrFields: { withCredentials: true }` 跨域请求带上 被调用方法的`cookie`
 
-#### 跨域
+#### AJAX 跨域
 
 ![跨域](images/cross.jpg)
 
@@ -119,11 +83,13 @@ AJAX 跨域的原因就是:
 
 1. `代理`
 
-   让相同域名下的后端服务器去访问， 实现隐藏跨域。
+   > 属于调用方的处理
+
+   让相同域名下的后端服务器去访问(或者是通过代理服务器如 nginx 转发 http 请求)， 实现隐藏跨域。
 
 2. `JSONP`
 
-   只能处理 GET 请求,后台代理需要做相应的处理。
+   只能处理 GET 请求,**被调用方服务端**后台代码需要做相应的处理。
 
    实现原理 利用`<script src="url(该地址的响应是js)"></script>`发送请求,返回的 js 代码调用定义好的函数
 
@@ -147,11 +113,11 @@ AJAX 跨域的原因就是:
 
    请求会带上一个`callback`参数，后端返回 javascript 代码=>`callback 函数({响应数据})`;
 
-   SpringMVC 处理 jsonp:
+   **SpringMVC 处理 jsonp**:
 
    ```
      import org.springframework.web.bind.annotation.ControllerAdvice;
-     import     org.springframework.web.servlet.mvc.method.annotation.AbstractJsonpResponseBodyAdvice;
+     import org.springframework.web.servlet.mvc.method.annotation.AbstractJsonpResponseBodyAdvice;
      @ControllerAdvice
      public class JsonpAdvice extends AbstractJsonpResponseBodyAdvice {
 
@@ -164,15 +130,17 @@ AJAX 跨域的原因就是:
 
 3. XHR2
 
-   > 发生跨域时 `Request Headers` 请求头带上 `Origin` 字段
+   > 属于被调用方的处理
 
-   **被调用方服务端**添加一些响应头字段，支持跨域请求。
+   **被调用方服务端**添加一些响应头字段，支持跨域请求。`nginx`添加一些响应头字段 也能实现同样的功能。
 
-   `nginx`添加一些响应头字段 也能实现同样的功能。
+   发生跨域时 `Request Headers` 请求头带上 `Origin` 字段，值为调用方法的域名。
 
-   `Spring`框架直接在类或者方法添加注解`@CrossOrigin`支持跨域
+   带 cookie 的跨域`Response Headers`响应头的`Access-Control-Allow-Origin`字段要和 `Origin`一样。
 
-   `filter` 过滤器实现:
+`filter` 过滤器实现:
+
+_`Spring`框架直接在类或者方法添加注解`@CrossOrigin`支持跨域_
 
 ```
 import org.springframework.stereotype.Component;
