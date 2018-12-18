@@ -1,5 +1,7 @@
 # SpringMVC 实现多种数据类型绑定
 
+![SpringMVC 数据绑定](images/databind.png)
+
 #### 绑定基本数据类型
 
 Java 基本数据类型 int 的默认值是 0，在使用 int 进行 url 传递参数时，参数 key 是必须写的，其值也只能是 int 类型的，否则将会报错。
