@@ -337,7 +337,30 @@ return admin.toString();
 
 url 请求地址为：
 
-http://localhost:8080/xml.do, 请求头为 `Content-Type: application/xml`.
+http://localhost:8080/xml.do,
+
+请求头为 `Content-Type: application/xml`.
+
+\$.ajax 发送 xml:
+
+```
+var xmlStr = '<?xml version="1.0" encoding="utf-8" ?>' +'<admin><name>cc</name><age>20</age></admin>';
+
+$.ajax({
+    type: "POST",
+    url: "http://localhost:8080/xml.do",
+    dataType: "json",
+    contentType: "application/xml;charset=utf-8",
+    data: xmlStr,
+    success: function (response) {
+        console.log(response);
+    },
+    error: function (error) {
+        alert(error.statusText)
+    }
+});
+
+```
 
 #### 绑定 Json 对象
 
@@ -359,3 +382,133 @@ url 请求地址为：
 http://localhost:8080/json.do
 
 http 请求头：`Content-Type: application/json`。
+
+\$.ajax 发送 json:
+
+```
+$.ajax({
+        type: "POST",
+        url: "http://localhost:8080/json.do",
+        dataType: "json",
+        contentType: "application/json;charset=utf-8",
+        data: JSON.stringify({
+            username: "Curry",
+            password: "123456"
+        }),
+        success: function (response) {
+            console.log(response);
+        },
+        error: function (error) {
+            alert(error.statusText)
+        }
+    });
+
+```
+
+#### 数据类型转换
+
+1. Spring3 之前 `org.springframework.web.bind.WebDataBinder` 使用 `java.beans.PropertyEditor` 将请求(字符串)转化为 Bean
+2. Spring3 之后,类型转换由 `org.springframework.core.convert.converter.Converter` 完成,格式化由 `org.springframework.format.Formatter` 完成。
+
+`String 字符串转 Date 日期格式示例`：
+
+> 下面的方法只在当前 Controller 有效
+
+```
+@RequestMapping(value = "/date")
+    @ResponseBody
+    public String date(Date birthday) {
+        return birthday.toString();
+    }
+
+@InitBinder("birthday")
+public void initBinder(ServletRequestDataBinder binder){
+	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+	binder.registerCustomEditor(Date.class, new CustomDateEditor(sdf, true);
+}
+
+```
+
+`String 字符串转 Date 日期格式全局配置的方法`：
+
+`方法一:`
+
+定义一个实现`org.springframework.core.convert.converter.Converter`接口的日期的转换类
+
+```
+package com.imooc.common;
+import org.springframework.core.convert.converter.Converter;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+public class MyDateConverter implements Converter<String, Date> {
+    @Override
+    public Date convert(String source) {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        try {
+            return sdf.parse(source);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+}
+
+```
+
+在 Spring xml 配置文件中注入`org.springframework.format.support.FormattingConversionServiceFactoryBean`对象
+
+```
+<mvc:annotation-driven conversion-service="myDateConverter"/>
+
+<bean id="myDateConverter" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+        <property name="converters">
+            <set>
+                <bean class="com.imooc.common.MyDateConverter"></bean>
+            </set>
+        </property>
+</bean>
+
+```
+
+`方法二：`
+
+定义实现`org.springframework.format.Formatter`接口的日期格式化类
+
+```
+package com.imooc.common;
+import org.springframework.format.Formatter;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+public class MyDateFormatter implements Formatter<Date> {
+
+    @Override
+    public Date parse(String text, Locale locale) throws ParseException {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        return sdf.parse(text);
+    }
+
+    @Override
+    public String print(Date object, Locale locale) {
+        return null;
+    }
+}
+
+```
+
+在 Spring xml 配置文件中注入`org.springframework.format.support.FormattingConversionServiceFactoryBean`对象
+
+```
+<mvc:annotation-driven conversion-service="myDateFormatter"/>
+
+<bean id="myDateFormatter" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+        <property name="formatters">
+            <set>
+                <bean class="com.imooc.common.MyDateFormatter"></bean>
+            </set>
+        </property>
+    </bean>
+
+```
