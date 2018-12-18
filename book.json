@@ -12,6 +12,9 @@
       "GitHub": "https://gitee.com/lujiandi/book"
     }
   },
+  "styles": {
+    "website": "styles/website.css"
+  },
   "pluginsConfig": {
     "sharing": {
       "weibo": true,
