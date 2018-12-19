@@ -230,3 +230,120 @@ public class IsMobileValidator implements ConstraintValidator<IsMobile,String> {
 }
 
 ```
+
+#### 实现手动校验
+
+步骤一：封装接收校验结果的类
+
+> `ValidationResult`
+
+```
+package com.imooc.validator.utils;
+
+import org.apache.commons.lang3.StringUtils;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class ValidationResult {
+
+    private boolean hasErrors = false;
+    private Map<String, String> errMsgMap = new HashMap<>();
+
+    public boolean isHasErrors() {
+        return hasErrors;
+    }
+
+    public void setHasErrors(boolean hasErrors) {
+        this.hasErrors = hasErrors;
+    }
+
+    public Map<String, String> getErrMsgMap() {
+        return errMsgMap;
+    }
+
+    public void setErrMsgMap(Map<String, String> errMsgMap) {
+        this.errMsgMap = errMsgMap;
+    }
+
+    /**
+     * 格式化错误信息
+     * @return
+     */
+    public String getErrMsg() {
+        return StringUtils.join(errMsgMap.values().toArray(), ",");
+    }
+}
+
+```
+
+步骤二：封装完成校验的工具类
+
+利用 `javax.validation.Validator` 对象完成校验。
+
+> ValidatorUtils
+
+```
+package com.imooc.validator.utils;
+
+import javax.validation.ConstraintViolation;
+
+import javax.validation.Validation;
+import javax.validation.Validator;
+import javax.validation.ValidatorFactory;
+import java.util.Set;
+
+public class ValidatorUtils {
+    private static final Validator validator;
+
+    static {
+        ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
+        validator = factory.getValidator();
+    }
+
+
+    public static ValidationResult validate(Object object) {
+        ValidationResult validationResult = new ValidationResult();
+        Set<ConstraintViolation<Object>> violations = validator.validate(object);
+        if (violations.size() > 0) {
+            validationResult.setHasErrors(true);
+            violations.forEach(constraintViolation -> {
+                String errMsg = constraintViolation.getMessage();
+                String propertyName = constraintViolation.getPropertyPath().toString();
+                validationResult.getErrMsgMap().put(propertyName, errMsg);
+            });
+
+        }
+        return validationResult;
+    }
+
+    /**
+     * 校验部分属性<br/>
+     * @param object
+     * @param propertyNames
+     * @return
+     */
+    public static ValidationResult validPropertys(Object object,
+                                                  String... propertyNames
+    ) {
+
+        ValidationResult validationResult = new ValidationResult();
+        for (String propertyName : propertyNames) {
+            Set<ConstraintViolation<Object>> violations = validator.validateProperty(object, propertyName);
+            if (violations.size() > 0) {
+                if (!validationResult.isHasErrors()) {
+                    validationResult.setHasErrors(true);
+                }
+                violations.forEach(constraintViolation -> {
+                    String errMsg = constraintViolation.getMessage();
+                    validationResult.getErrMsgMap().put(propertyName, errMsg);
+                });
+
+            }
+        }
+        return validationResult;
+    }
+
+
+}
+```
