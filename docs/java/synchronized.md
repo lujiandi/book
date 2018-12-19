@@ -17,3 +17,7 @@
 3. 不同线程访问同步(synchronized)的静态(static)方法
 
    锁定当前类，不同线程会顺序执行同步方法
+
+#### 可见性原理
+
+![可见性原理](images/visibility.jpg)
