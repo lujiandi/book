@@ -6,6 +6,15 @@ JSR-303 是 Java 为 Bean 数据合法性校验提供的标准框架，它定义
 
 Hibernate Validation 提供了这套标准的实现，在 springboot 工程里 spring-boot-starter-web 或者 Spring boot starter validation 的时候，默认会引入 hibernate-validator。
 
+```
+<dependency>
+    <groupId>org.hibernate</groupId>
+    <artifactId>hibernate-validator</artifactId>
+    <version></version>
+</dependency>
+
+```
+
 `javax.validation.Valid` 注解参数对象
 
 `org.springframework.validation.annotation.Validated` 注解参数对象(和上面的注解效果一样)
