@@ -28,6 +28,8 @@
 
 * [Java docs](java/README.md)
 
+  - [synchronized 深度解析](java/synchronized.md)
+
 * [Spring](spring/README.md)
 
   - [springmvc 数据绑定](spring/databinding.md)
