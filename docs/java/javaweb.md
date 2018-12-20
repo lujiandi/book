@@ -199,3 +199,14 @@ Cookie[] cookies=request.getCookies();
 #### Filter 过滤器链
 
 ![Filter过滤器链](images/javaweb/Filter过滤器链.jpg)
+
+#### Filter 分类
+
+- request
+- forward
+- include
+- error
+
+#### `@webfilter`注解
+
+![webfilter.jpg](images/javaweb/webfilter.jpg)
