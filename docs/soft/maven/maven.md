@@ -66,3 +66,19 @@
 #### maven webapp 项目结构
 
 ![maven webapp 项目结构](images/maven-web.png)
+
+#### maven plugins
+
+```
+// tomcat
+<plugin>
+   <groupId>org.apache.tomcat.maven</groupId>
+   <artifactId>tomcat7-maven-plugin</artifactId>
+   <version>2.2</version>
+   <configuration>
+       <path>/</path>
+       <port>8080</port>
+   </configuration>
+</plugin>
+
+```
