@@ -111,3 +111,63 @@ Jsp 表达式:
 1. 请求转发：服务器行为，`request.getDispatcher().forward(req,resp)`;是一次请求，相当于在前一个地址进行的，转发后请求对象内容会保存，地址栏 url 地址不会改变（即为前一个地址）
 
 2. 请求重定向：客户端行为，`resonse.sendRedirect()`.其实相当于两次请求，前一次的请求对象不会保存，地址栏 url 会改变（新页面）
+
+#### JSP 获取 web 上下文路径
+
+```
+<%
+    String path = request.getContextPath();
+    String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+    request.setAttribute("basePath", basePath);
+%>
+
+```
+
+#### cookie
+
+> cookie 是 web 服务器保存在客户端的一系列文本信息
+
+创建 Cookie 对象:
+
+```
+Cookie newCookie=new Cookie（String key,Object value）;
+```
+
+写入 Cookie 对象:
+
+```
+response.addCookie(newCookie);
+```
+
+读取 Cookie 对象:
+
+```
+Cookie[] cookies=request.getCookies();
+```
+
+### Servlet
+
+> Servlet 是在服务器上运行的小程序。一个 Servlet 就是一个 java 类，并且可以通过“请求-响应”编程模型来访问的这个驻留在服务器内存里的 Servlet 程序
+
+编写 servlet 步骤：
+
+- 继承 `HttpServlet`
+
+- 重写 `doGet()`或者 `doPost()` 方法
+
+- 在 `web.xml` 中注册 `Servlet`
+
+#### Servlet 执行流程和生命周期
+
+![Servlet生命周期.jpg](images/javaweb/Servlet生命周期.jpg)
+
+#### Tomcat 装载 Servlet 的三种情况
+
+1. 在 web.xml 文件中的`<Servlet></Servlet>`之间添加`<loadon-starup>1</loadon-startup>` 会在服务器启动时加载 servlet， 数字越小优先级越高
+2. 首次访问 Servlet，服务器会加载 Servlet
+
+3. servlet 类被修改的时候，也会自动装载
+
+#### servlet 与九大内置对象
+
+![servlet与九大内置对象](images/javaweb/servlet与九大内置对象.jpg)
