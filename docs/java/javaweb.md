@@ -171,3 +171,31 @@ Cookie[] cookies=request.getCookies();
 #### servlet 与九大内置对象
 
 ![servlet与九大内置对象](images/javaweb/servlet与九大内置对象.jpg)
+
+### Filter 过滤器
+
+> 过滤器是一个`服务器端`的组件，它可以`截取用户端的请求和响应信息`，并对这些信息过滤
+
+#### Filter 过滤器的生命周期
+
+> `实例化`和`初始化init()`只执行一次（服务器启动时），`doFilter()` 每次拦截请求都执行
+
+![Filter过滤器的生命周期](images/javaweb/Filter过滤器的生命周期.jpg)
+
+编写 Filter 步骤：
+
+1. 实现`javax.servlet.Filter`接口
+
+2. 重写三个方法`init()` `doFilter()` `destroy()`方法
+
+   > init()初始化：这个方法可以读取 web.xml 文件中的过滤器初始化参数。通过参数`FilterConfig`对象可以获取更多参数
+
+   > doFIlter()核心：完成实际的过滤操作。
+
+3. 在`web.xml`配置过滤器
+
+   ![Filter过滤器web.xml的配置](images/javaweb/Filter过滤器web.xml的配置.jpg)
+
+#### Filter 过滤器链
+
+![Filter过滤器链](images/javaweb/Filter过滤器链.jpg)
