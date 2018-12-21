@@ -1,4 +1,4 @@
-# java web
+# Java Web
 
 相关 maven 依赖：
 
@@ -9,6 +9,33 @@
     <version>3.0.1</version>
     <scope>provided</scope>
 </dependency>
+<dependency>
+    <groupId>taglibs</groupId>
+    <artifactId>standard</artifactId>
+    <version>1.1.2</version>
+</dependency>
+<dependency>
+    <groupId>jstl</groupId>
+    <artifactId>jstl</artifactId>
+    <version>1.2</version>
+</dependency>
+```
+
+servlet3.0 web.xml:
+
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://java.sun.com/xml/ns/javaee"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         metadata-complete="true" version="3.0">
+    <!-- 修改servlet为3.0版本 -->
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
+ </web-app>
+
 ```
 
 ### JSP
@@ -27,13 +54,62 @@ page 指令:
 
 ![page指令](images/javaweb/page指令.jpg)
 
-code:
+`page指令:`
 
 ```
 <%@ page contentType="text/html;charset=UTF-8" language="java" import="java.util.*" %>
 ```
 
-JSP 注释：
+`taglib指令:`
+
+```
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+```
+
+`include指令:`
+
+> 引入共通的 JSP 页面,最后编译成一个 Servlet
+
+示例：引入(`WEB-INF/jsp/common/header.jsp`)
+
+`header.jsp`:
+
+```
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%
+    // web上下文路径
+    String path = request.getContextPath();
+    String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+    request.setAttribute("basePath", basePath);
+%>
+
+```
+
+`在别的 JSP 页面引入`：
+
+```
+<%@ include file="/WEB-INF/jsp/common/header.jsp"%>
+```
+
+`针对所有JSP的全局引入`：
+
+> 在 web.xml 添加配置
+
+```
+<jsp-config>
+    <jsp-property-group>
+        <url-pattern>*.jsp</url-pattern>
+        <include-prelude>/WEB-INF/jsp/common/header.jsp</include-prelude>
+    </jsp-property-group>
+</jsp-config>
+
+```
+
+`JSP 注释`：
 
 1. html 注释：`<!-- HTML注释 -->` 客户端可见
 
@@ -41,17 +117,27 @@ JSP 注释：
 
 3. jsp 脚本注释（客户端不可见）： `//单行注释` `/**/多行注释`
 
-JSP 脚本：
+`JSP 脚本`：
 
 > 在 JSP 页面中执行的 java 代码。语法：`<% Java代码 %>`
 
-JSP 声明：
+`JSP 声明`：
 
 > 语法：`<%！ java代码 %>`
 
-Jsp 表达式:
+`Jsp 表达式`:
 
-> 语法：`<%=表达式%>`
+> 语法：`<%=表达式|已定义变量%>`
+
+引用`basePath`变量：
+
+```
+<head>
+    <base href="<%=basePath%>">
+    <meta charset="UTF-8">
+    <title>index.jsp</title>
+</head>
+```
 
 #### JSP 页面生命周期
 
@@ -85,6 +171,17 @@ Jsp 表达式:
 
   在服务器的内存中保存着不同用户的 session
 
+  web.xml 设置 session 超时时间
+
+  ```
+
+    <session-config>
+       <!-- 设定超时销毁时间(分钟) 然而这个时间并不精确，而且当为0的时候表示无超时销毁  -->
+        <session-timeout>1</session-timeout>
+    </session-config>
+
+  ```
+
 - `application`
 
   > `ServletContext` 类的实例；实现用户间数据的共享，可存放全局变量，开始于服务器的启动，终止于服务器的关闭，在用户的前后连接或不同用户之间的连接，可以对 application 对象的同一属性进行操作；在任何地方对 application 对象属性的操作都会影响到其他用户对此的访问；服务器的启动和关闭决定了 application 对象的声明
@@ -111,17 +208,6 @@ Jsp 表达式:
 1. 请求转发：服务器行为，`request.getDispatcher().forward(req,resp)`;是一次请求，相当于在前一个地址进行的，转发后请求对象内容会保存，地址栏 url 地址不会改变（即为前一个地址）
 
 2. 请求重定向：客户端行为，`resonse.sendRedirect()`.其实相当于两次请求，前一次的请求对象不会保存，地址栏 url 会改变（新页面）
-
-#### JSP 获取 web 上下文路径
-
-```
-<%
-    String path = request.getContextPath();
-    String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-    request.setAttribute("basePath", basePath);
-%>
-
-```
 
 #### cookie
 
@@ -210,3 +296,174 @@ Cookie[] cookies=request.getCookies();
 #### `@webfilter`注解
 
 ![webfilter.jpg](images/javaweb/webfilter.jpg)
+
+### Listener 监听器
+
+> Web 监听器由 Servlet 规范提供的,可以监听客户端的请求以及服务端的操作,即监听 `ServletContext`、`HttpSession`、`ServletRequest` 对象.监听事件分为这三个对象的创建、销毁事件以及这三个对象属性的变化事件.可以在事件发生前后做一些处理。
+
+#### 创建 Web 监听器
+
+步骤：
+
+1. 创建一个实现监听器接口的类
+
+2. 配置 web.xml 进行监听器注册(或者使用`@WebListener`注解)
+
+#### 监听器|过滤器|servlet 启动顺序
+
+> 加载顺序：监听器>过滤器>servlet
+
+#### 监听器分类
+
+1. 按监听器的对象划分：
+
+   - 监听(`实现ServletContextListener接口`)应用程序环境对象(`ServletContext`)的事件监听器
+   - 监听(`实现HttpSessionListener接口`)用户会话对象(`HttpSession`)的事件监听器
+   - 监听(`实现ServletRequestListener接口`)请求消息对象(`ServletRequest`)的事件监听器
+
+`ServletContextListener`代码：
+
+```
+<!-- web.xml web上下文参数 -->
+<context-param>
+        <param-name>param</param-name>
+        <param-value>hello world</param-value>
+</context-param>
+```
+
+```
+import lombok.extern.slf4j.Slf4j;
+
+import javax.servlet.ServletContextEvent;
+import javax.servlet.ServletContextListener;
+@Slf4j
+public class contextListener implements ServletContextListener {
+
+
+    public contextListener() {
+        log.info("contextListener()");
+    }
+
+    // ServletContext创建时调用
+    @Override
+    public void contextInitialized(ServletContextEvent sce) {
+        log.info("contextInitialized");
+        String param = sce.getServletContext().getInitParameter("param");
+        if (param != null) {
+            log.info("ServletContext 获得初始化参数 param={}", param);
+        }
+    }
+
+    // ServletContext销毁时调用
+    @Override
+    public void contextDestroyed(ServletContextEvent sce) {
+        log.info("contextDestroyed");
+    }
+}
+```
+
+`HttpSessionListener`:
+
+```
+import lombok.extern.slf4j.Slf4j;
+
+import javax.servlet.http.HttpSession;
+import javax.servlet.http.HttpSessionEvent;
+import javax.servlet.http.HttpSessionListener;
+
+
+@Slf4j
+public class SessionListener implements HttpSessionListener {
+
+
+    public SessionListener() {
+        log.info("SessionListener()");
+    }
+
+    //  session创建时调用
+    @Override
+    public void sessionCreated(HttpSessionEvent se) {
+         HttpSession session = se.getSession();
+         log.info("产生一个session id={}",session.getId());
+    }
+
+    // session 销毁时调用
+    @Override
+    public void sessionDestroyed(HttpSessionEvent se) {
+        HttpSession session = se.getSession();
+        log.info("销毁session id={}",session.getId());
+    }
+}
+```
+
+`ServletRequestListener:`
+
+> 监听 http 请求
+
+```
+package com.imooc.listener;
+
+import lombok.extern.slf4j.Slf4j;
+
+import javax.servlet.ServletRequestEvent;
+import javax.servlet.ServletRequestListener;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+
+
+@Slf4j
+public class RequestListener implements ServletRequestListener {
+
+    public RequestListener() {
+        log.info("RequestListener()");
+    }
+
+
+    @Override
+    public void requestInitialized(ServletRequestEvent sre) {
+        HttpServletRequest request = (HttpServletRequest) sre.getServletRequest();
+        Cookie[] cookies = request.getCookies();
+        boolean JSESSIONID_exist = false;
+        String JSESSIONID = null;
+        if (cookies != null && cookies.length > 0) {
+            for (Cookie cookie : cookies) {
+                if (!"JSESSIONID".equals(cookie.getName())) {
+                    continue;
+                }
+                JSESSIONID_exist = true;
+                JSESSIONID = cookie.getValue();
+            }
+        }
+        if (JSESSIONID_exist) {
+            log.info("产生一个request url={},JSESSIONID={}", request.getServletPath(), JSESSIONID);
+        } else {
+
+            log.info("产生一个request url={}", request.getServletPath());
+        }
+    }
+
+    @Override
+    public void requestDestroyed(ServletRequestEvent sre) {
+        HttpServletRequest request = (HttpServletRequest) sre.getServletRequest();
+        Cookie[] cookies = request.getCookies();
+        boolean JSESSIONID_exist = false;
+        String JSESSIONID = null;
+        if (cookies != null && cookies.length > 0) {
+            for (Cookie cookie : cookies) {
+                if (!"JSESSIONID".equals(cookie.getName())) {
+                    continue;
+                }
+                JSESSIONID_exist = true;
+                JSESSIONID = cookie.getValue();
+            }
+        }
+        if (JSESSIONID_exist) {
+            log.info("完成和销毁一个request url={},JSESSIONID={}", request.getServletPath(), JSESSIONID);
+        } else {
+
+            log.info("完成和销毁一个request url={}", request.getServletPath());
+        }
+
+    }
+}
+```
