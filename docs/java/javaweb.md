@@ -479,3 +479,18 @@ public class RequestListener implements ServletRequestListener {
 - `classes` 存放 java 编译后生成的`.class`文件
 
 - `lib` 存在 maven 依赖的 jar
+
+#### 获取 web 应用的上下文路径
+
+> web 应用可以发布到 tomcat 的根目录或者加上项目名；加上项目名的 web 应用需要使用`/web工程名/xxxx`才能访问真实的映射路径。
+
+下面的代码能获取 web 应用发布的根路径：
+
+```
+<%
+    String path = request.getContextPath();
+    String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+    request.setAttribute("path",path);
+    request.setAttribute("basePath", basePath);
+%>
+```
