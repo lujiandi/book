@@ -467,3 +467,15 @@ public class RequestListener implements ServletRequestListener {
     }
 }
 ```
+
+### WEB 资源目录
+
+> WEB 资源目录在 maven-webapp 工程里为`webapp(src/main/webapp)`目录,是 WEB 工程发布的根目录，打包时`webapp`下的所有资源会被打包到`工程名.war`文件。`war` 文件可直接放到`tomcat`服务器的`webapps`下启动，此时访问 web 应用需要带上 web 工程名(如:`http://localhost:8080/web工程名`)。将 war 文件重命名为`ROOT.war`可直接通过(`http://localhost:8080/`)访问。
+
+#### war 文件的 WEB-INF 目录结构
+
+![WEB-INF目录结构](images/javaweb/WEB-INF目录结构.jpg)
+
+- `classes` 存放 java 编译后生成的`.class`文件
+
+- `lib` 存在 maven 依赖的 jar

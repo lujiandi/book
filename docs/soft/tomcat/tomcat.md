@@ -4,7 +4,7 @@
 
 ![tomcat目录结构](images/tomcat目录结构.jpg)
 
-#### WEB-INF 目录结构
+#### WEB 应用的 WEB-INF 目录结构
 
 ![WEB-INF目录结构](images/WEB-INF目录结构.jpg)
 
