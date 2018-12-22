@@ -243,6 +243,25 @@ Cookie[] cookies=request.getCookies();
 
 - 在 `web.xml` 中注册 `Servlet`
 
+#### 在 web.xml 配置 Servlet
+
+```
+<servlet>
+    <servlet-name>helloServlet</servlet-name>
+    <servlet-class>com.imooc.servlet.HelloServlet</servlet-class>
+    <!-- 可以在Servlet的init()方法获取参数 -->
+    <init-param>
+        <param-name>param</param-name>
+        <param-value>helloServlet</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+</servlet>
+<servlet-mapping>
+    <servlet-name>helloServlet</servlet-name>
+    <url-pattern>/helloServlet</url-pattern>
+</servlet-mapping>
+```
+
 #### Servlet 执行流程和生命周期
 
 ![Servlet生命周期.jpg](images/javaweb/Servlet生命周期.jpg)
