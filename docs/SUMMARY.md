@@ -42,7 +42,7 @@
   - [html](frontend/html/html.md)
   - [javascript 入门篇](frontend/javascript/Introduction.md)
   - [javascript 基础知识](frontend/javascript/base.md)
-  - [ajax ](frontend/jQuery/ajax.md)
+  - [ajax ](frontend/ajax/ajax.md)
   - [TypeScript](frontend/typescript/typescript.md)
   - [Reat](frontend/react/react.md)
   - [Vue](frontend/vue/vue.md)

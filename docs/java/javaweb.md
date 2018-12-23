@@ -574,3 +574,19 @@ public class RequestListener implements ServletRequestListener {
     request.setAttribute("basePath", basePath);
 %>
 ```
+
+### Java 实现文件上传下载
+
+#### 上传原理
+
+> 将表单元素`<form>`设置`Method="POST" enctype="multipart/form-data"`属性，让表单数据以二进制编码的方式提交，在 Servlet 中获取二进制流。
+
+#### 文件下载原理
+
+1. 设置响应头的`ContentType`字段为`application/octet-stream`或者`application/msdownload`
+
+> HttpServletResponse.setContentType()
+
+2. HttpServletResponse.setHeader("Content-Disposition","attachment;filename=文件名")
+
+3. HttpServletResponse.getOutputStream()获取 ServletOutputStream 对象，输出文件内容。

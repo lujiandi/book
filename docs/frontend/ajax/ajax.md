@@ -1,13 +1,11 @@
-# jQuery
-
-#### AJAX
+# AJAX
 
 > AJAX：Asynchronous JavaScript and XML （异步的 JavaScript 和 XML）
 > Ajax 不是某种编程语言，是一种在无需重新加载整个网页的情况下能够更新部分网页的技术。
 
-`XMLHttpRequest:`
+#### XMLHttpRequest
 
-通过这个对象可以使后台和服务器之间交换数据，而且数据的交换不用重新加载整个页面。有了 XMLHttpRequest 这个对象才能实现异步请求和局部刷新
+> 通过这个对象可以使后台和服务器之间交换数据，而且数据的交换不用重新加载整个页面。有了 XMLHttpRequest 这个对象才能实现异步请求和局部刷新
 
 创建 XHR 对象:
 
@@ -53,7 +51,7 @@ alert("发生错误：" + request.status);
 }
 ```
 
-Jquery 实现 ajax:
+#### Jquery 实现 ajax:
 
 ![ajax](images/ajax.jpg)
 
