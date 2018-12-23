@@ -62,6 +62,8 @@ page 指令:
 
 `taglib指令:`
 
+> 引入 JSTL 标签库
+
 ```
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -125,9 +127,9 @@ page 指令:
 
 > 语法：`<%！ java代码 %>`
 
-`Jsp 表达式`:
+`JSP表达式`:
 
-> 语法：`<%=表达式|已定义变量%>`
+> 目的是获得(表达式结果|已定义变量的值)，语法：`<%=表达式|已定义变量%>`,
 
 引用`basePath`变量：
 
@@ -230,6 +232,38 @@ response.addCookie(newCookie);
 ```
 Cookie[] cookies=request.getCookies();
 ```
+
+### JSP 常用标签 JSTL
+
+> JSTL 是 java 中的一个定制标记库集. 在 JSP 页面使用`taglib指令`引入。
+
+#### EL 表达式:
+
+> Exoression Language, 功能与 JSP 表达式一样,经常与 JSTL 配合使用，使得 JSP 页面更直观，写法更简单。变量要存放到 JSP 的内置对象里。 语法：`${表达式|变量}`。
+
+```
+${RequestScope.name}
+```
+
+`JSP内置对象在EL表达式中名称`：
+
+| JSP 内置对象 |     EL 名称      |
+| :----------- | :--------------: |
+| Page         |    PageScope     |
+| Request      |   RequestScope   |
+| Session      |   SessionScope   |
+| Application  | ApplicationScope |
+
+EL 表达式不限定范围会默认按 `Page->Request->Session->Application`顺序查找。
+
+`EL运算符`：
+
+|    类别    |      运算符       |
+| :--------: | :---------------: |
+| 算术运算符 |    `+,-,*,/,%`    |
+| 关系运算符 | `==,!=,>,<,>=,<=` |
+| 逻辑运算符 |     `&&,||,!`     |
+| 验证运算符 |      `empty`      |
 
 ### Servlet
 
