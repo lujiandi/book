@@ -581,6 +581,11 @@ public class RequestListener implements ServletRequestListener {
 
 > 将表单元素`<form>`设置`Method="POST" enctype="multipart/form-data"`属性，让表单数据以二进制编码的方式提交，在 Servlet 中获取二进制流。
 
+请求头的 Content-Type:multipart/form-data;boundary=-------一堆数字字符，
+boundary 是文件内容分割线。
+
+![bundary](images/javaweb/bundary.png)
+
 #### 文件下载原理
 
 1. 设置响应头的`ContentType`字段为`application/octet-stream`或者`application/msdownload`
