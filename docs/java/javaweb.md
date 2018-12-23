@@ -237,6 +237,33 @@ Cookie[] cookies=request.getCookies();
 
 > JSTL 是 java 中的一个定制标记库集. 在 JSP 页面使用`taglib指令`引入。
 
+```
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+
+```
+
+示例：
+
+```
+<fmt:formatDate value="<%=new Date()%>" pattern="yyyy-MM-dd HH:mm:ss"></fmt:formatDate>
+
+<!-- 遍历list -->
+<c:forEach items="${list}" var="user">
+    username:${user.name }&nbsp;&nbsp;&nbsp;&nbsp;age:${user.age}<br>
+</c:forEach>
+
+<!-- 遍历Map -->
+<c:forEach items="${map}" var="item">
+    ${item.key} ${item.value}
+</c:forEach>
+```
+
+#### JSP2.0 自定义标签
+
+![.tag文件](images/javaweb/jstl2.0自定义标签.png)
+
 #### EL 表达式:
 
 > Exoression Language, 功能与 JSP 表达式一样,经常与 JSTL 配合使用，使得 JSP 页面更直观，写法更简单。变量要存放到 JSP 的内置对象里。 语法：`${表达式|变量}`。
