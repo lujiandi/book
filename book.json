@@ -1,6 +1,13 @@
 {
   "root": "./docs",
-  "plugins": ["splitter", "-lunr", "-search", "toggle-chapters", "search-plus"],
+  "plugins": [
+    "splitter",
+    "-lunr",
+    "-search",
+    "toggle-chapters",
+    "search-plus",
+    "favicon"
+  ],
   "author": "lujiandi",
   "description": "Gitbook 教程",
   "title": "book",
@@ -23,6 +30,10 @@
       "google": false,
       "instapaper": false,
       "vk": false
+    },
+    "favicon": {
+      "shortcut": "favicon.ico",
+      "bookmark": "favicon.ico"
     }
   },
   "pdf": {
