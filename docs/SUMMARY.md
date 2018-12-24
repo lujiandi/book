@@ -2,15 +2,15 @@
 
 - [简介](README.md)
 
-- [GitBook](gbook/README.md)
+- [GitBook 教程](gitbooktutorial/README.md)
 
-  - [安装](gbook/installation.md)
-  - [命令](gbook/commands.md)
-  - [结构](gbook/structure.md)
-  - [配置](gbook/settings.md)
-  - [发布](gbook/deploy.md)
-  - [生成电子书](gbook/generating-ebooks-and-pdfs.md)
-  - [资源](gbook/resources.md)
+  - [安装](gitbooktutorial/installation.md)
+  - [命令](gitbooktutorial/commands.md)
+  - [结构](gitbooktutorial/structure.md)
+  - [配置](gitbooktutorial/settings.md)
+  - [发布](gitbooktutorial/deploy.md)
+  - [生成电子书](gitbooktutorial/generating-ebooks-and-pdfs.md)
+  - [资源](gitbooktutorial/resources.md)
 
 - [Java 软件安装配置](soft/README.md)
 
