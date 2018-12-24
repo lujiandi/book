@@ -262,7 +262,35 @@ Cookie[] cookies=request.getCookies();
 
 #### JSP2.0 自定义标签
 
+`.tag文件`：
+
 ![.tag文件](images/javaweb/jstl2.0自定义标签.png)
+
+示例：
+
+> `(WEB-INF/tags/hasAnyPermission.tag)`
+
+```
+<%@ tag language="java" pageEncoding="UTF-8" %>
+<%@ tag language="java" import="com.imooc.shiro.tag.HasAnyPermission" %>
+<%@ attribute name="permissions" required="true" type="java.lang.String" %>
+<%if (HasAnyPermission.check(permissions)) {%>
+<jsp:doBody/>
+<%}%>
+
+```
+
+> 引入自定义标签
+
+```
+<%@ taglib prefix="t" tagdir="/WEB-INF/tags" %>
+```
+
+> 使用`hasAnyPermission.tag` 语法：`<prefix:标签名></prefix:标签名>`
+
+```
+<t:hasAnyPermission permissions="*,user:update">You have one of permissions{*,user:update}</t:hasAnyPermission>
+```
 
 #### EL 表达式:
 
