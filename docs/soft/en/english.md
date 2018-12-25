@@ -25,6 +25,7 @@ background
  content
  contentType
  context
+ ContextConfiguration
  count
  commit
  components

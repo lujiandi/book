@@ -1,6 +1,6 @@
 # Spring IOC
 
-#### Annotation
+#### Spring 注解
 
 > 使用注解需要在 xml 中配置包扫描
 
@@ -27,6 +27,43 @@ Spring 提供如下几个 Annotation 来标注 Spring Bean:
 
 - `@Autowired`
 
+- `@Value`
+  > 获得配置文件中 key 对应的值， `@Value("${key:默认值}")`
+
+#### 为 bean 的属性注入静态常量
+
+> `org.springframework.beans.factory.config.FieldRetrievingFactoryBean`
+
+```
+<bean id="类名.静态常量名" class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean"></bean>
+
+```
+
+> 用非静态的 Setter 方法可以给 bean 的静态变量注入值
+
+#### Spring 读取 properties 配置文件
+
+> `${key}` 获取 key 对应的值
+
+```
+<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath:db.properties</value>
+                <value>classpath:redis.properties</value>
+            </list>
+        </property>
+    </bean>
+```
+
+#### `org.springframework.core.io.Resource`
+
+> bean 某些属性是 Resource 类型，Spring 能自动将 url 转成 Resource。
+
+#### `org.springframework.core.io.ResourceLoader`
+
+> 能够将`classpath,file,http`路径的文件加载成 Resource 对象
+
 #### 获取 ApplicationContext 对象
 
 > 实现 ApplicationContextAware 接口
@@ -47,4 +84,11 @@ public class ApplicationContextHolder implements ApplicationContextAware {
         ctx = applicationContext;
     }
 }
+```
+
+> 通过 classpath 下的 xml 获取 ApplicationContext
+
+```
+ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("/spring.xml");
+
 ```
