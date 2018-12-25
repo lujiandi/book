@@ -274,7 +274,7 @@ Cookie[] cookies=request.getCookies();
 <%@ tag language="java" pageEncoding="UTF-8" %>
 <%@ tag language="java" import="com.imooc.shiro.tag.HasAnyPermission" %>
 <%@ attribute name="permissions" required="true" type="java.lang.String" %>
-<%if (HasAnyPermission.check(permissions)) {%>
+<% if (HasAnyPermission.check(permissions)) { %>
 <jsp:doBody/>
 <%}%>
 
