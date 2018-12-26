@@ -366,7 +366,7 @@ $.ajax({
 
 JSON 是轻量级的文本数据交换格式,常用于存储和交换文本信息。
 
-SpringMVC 接受 http 中 body 的 json 格式内容为参数，在方法的形参前加上注解 `@RequestBody`，用以调用解析器进行转换。
+SpringMVC 接受 http 中 body 的 json 格式内容为参数，在方法的形参前加上注解 `@RequestBody`，用以调用解析器进行转换。`@ResponseBody`返回 JSON 数据。
 
 controller 中方法定义如下：
 
