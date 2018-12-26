@@ -13,7 +13,7 @@ Spring 提供如下几个 Annotation 来标注 Spring Bean:
 - `@Configuration`: 标注配置类
   > 相当于 xml 文件
 - `@Bean`标注配置类里方法
-  > 方法返回的的对象将由 spring 容器管理
+  > 方法返回的的对象将由 spring 容器管理，参数对象根据类型从 Spring 容器中获得。
 - `@Component`: 标注一个普通的 Spring Bean 类
 - `@Controller`: 标注一个控制器组件类
 - `@Service`: 标注一个业务逻辑组件类
@@ -26,6 +26,8 @@ Spring 提供如下几个 Annotation 来标注 Spring Bean:
   > @Resource 不仅可以修饰 setter 方法，也可以直接修饰实例变量
 
 - `@Autowired`
+
+  > 可以修饰实例变量和方法 ，`require=false` 表明参数对象不是必需的(即 Spring 容器没有参数类型的对象则不会调用被注解的方法)，
 
 - `@Value`
   > 获得配置文件中 key 对应的值， `@Value("${key:默认值}")`
