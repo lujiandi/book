@@ -10,6 +10,9 @@ SpringMVC 动态概念:
 
 SpringMVC 上下文:
 
+- `Root WebApplicationContext`
+- `WebApplicationContext for namespace 'servletName'`
+
 ![SpringMVC 上下文](images/springmvc/SpringMvc上下文层级.jpg)
 
 #### SpringMVC 拦截器
