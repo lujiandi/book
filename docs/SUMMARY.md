@@ -40,6 +40,7 @@
   - [spring ioc](spring/springIoc.md)
   - [spring aop](spring/springAop.md)
   - [spring session](spring/springsession.md)
+  - [整合 hibernate](spring/springhibernate.md)
 
 - [前端](frontend/README.md)
 
