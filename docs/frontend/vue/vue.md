@@ -36,9 +36,7 @@ var app = new Vue({
 
 > 显示文本
 
-```
-<span>Message:{{msg}}</span>
-```
+<code><span>Message:\{\{msg\}\}</span></code>
 
 `v-text` `v-html`
 

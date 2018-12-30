@@ -12,7 +12,7 @@
   - [生成电子书](gitbooktutorial/generating-ebooks-and-pdfs.md)
   - [资源](gitbooktutorial/resources.md)
 
-- [Java 软件安装配置](soft/README.md)
+- [软件安装配置](soft/README.md)
 
   - [Git](soft/git/git.md)
   - [Idea](soft/idea/idea.md)
@@ -48,6 +48,7 @@
   - [javascript 入门篇](frontend/javascript/Introduction.md)
   - [javascript 基础知识](frontend/javascript/base.md)
   - [ajax ](frontend/ajax/ajax.md)
+  - [websocket ](frontend/websocket/WebSocket.md)
   - [TypeScript](frontend/typescript/typescript.md)
-  - [Reat](frontend/react/react.md)
+  - [React](frontend/react/react.md)
   - [Vue](frontend/vue/vue.md)
