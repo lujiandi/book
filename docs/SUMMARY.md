@@ -14,6 +14,7 @@
 
 - [软件安装配置](soft/README.md)
 
+  - [jdk](soft/jdk/jdk.md)
   - [Git](soft/git/git.md)
   - [Idea](soft/idea/idea.md)
   - [vscode](soft/vscode/vscode.md)
@@ -47,6 +48,7 @@
   - [html](frontend/html/html.md)
   - [javascript 入门篇](frontend/javascript/Introduction.md)
   - [javascript 基础知识](frontend/javascript/base.md)
+  - [http ](frontend/http/http.md)
   - [ajax ](frontend/ajax/ajax.md)
   - [websocket ](frontend/websocket/WebSocket.md)
   - [TypeScript](frontend/typescript/typescript.md)
