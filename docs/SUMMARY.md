@@ -48,6 +48,7 @@
   - [html](frontend/html/html.md)
   - [javascript 入门篇](frontend/javascript/Introduction.md)
   - [javascript 基础知识](frontend/javascript/base.md)
+  - [jquery ](frontend/jquery/jquery.md)
   - [http ](frontend/http/http.md)
   - [ajax ](frontend/ajax/ajax.md)
   - [websocket ](frontend/websocket/WebSocket.md)
