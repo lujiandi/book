@@ -31,6 +31,7 @@
 
   - [java web](java/javaweb.md)
   - [synchronized](java/synchronized.md)
+  - [diary](java/diary.md)
 
 * [Spring](spring/README.md)
 
