@@ -1,10 +1,47 @@
-# Jquery
+# jQuery
+
+#### 引入
+
+```
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+```
+
+> window.\$===window.jQuery
 
 #### 等待 DOM 加载完成
 
 - window.onload=function(){}
 - \$(function(){});
 - \$(document).ready(function(){});
+
+#### jQuery 拓展实例方法
+
+`例子:`
+
+> \$.fn.extend
+
+```
+(function($) {
+  var hello = function(str) {
+    console.log('hello ' + str);
+  };
+  $.fn.extend({
+    hello: function() {
+      // 调用hello函数的是一个jQuery对象(this)，
+      // 类选择器调用则通过 this.each(function(){}) 遍历
+      new hello(this.text());
+      return this;
+    }
+  });
+})(jQuery); //设置匿名函数的私有作用域，防止污染
+
+// 调用
+<script>
+      $(function() {
+        $('#test').hello();
+      });
+</script>
+```
 
 #### functions
 
