@@ -84,7 +84,7 @@ $(".div").children().css('border', '1px solid red')
 $('.div').children(':last').css('border', '3px solid blue')
 ```
 
-`xClass()`
+`class操作`
 
 ```
 $(function () {
@@ -132,6 +132,8 @@ $("#p1").click(function () {
 
 `each()`
 
+> 包含静态方法和实例方法
+
 ```
 <div class="d" title="d1"></div>
   <div class="d" title="d2"></div>
@@ -145,6 +147,11 @@ $("#p1").click(function () {
               //each回调方法中的this指向当前迭代的dom元素
               console.log(elem.getAttribute('title'));
           });
+
+         var list = [1, 2, 3, 4];
+         $.each(list, function(index, item) {
+           console.log('index: ' + index + '  item: ' + item);
+         });
       });
   </script>
 ```
@@ -158,6 +165,8 @@ $("#test").empty()
 ```
 
 `extend()`
+
+> 对象合并
 
 ```
 $(function () {
@@ -239,6 +248,14 @@ $('p:last').text($(".first-div").text())
       });
   </script>
 
+```
+
+`is()`
+
+> 参数是选择器字符串， 返回 boolean,
+
+```
+$('#p1').is('.p1')
 ```
 
 `isEmptyObject()`
