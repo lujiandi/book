@@ -12,7 +12,7 @@
 ```
   var request;
   if(window.XMLHttpRequest){
-  request = new MXLHttpRequest();
+  request = new XMLHttpRequest();
   }else{
   request = new ActiveXObject("Microsoft.XMLHTTP");//IE5、6
   }
@@ -51,7 +51,7 @@ alert("发生错误：" + request.status);
 }
 ```
 
-#### Jquery 实现 ajax:
+#### jQuery 实现 ajax:
 
 ![ajax](images/ajax.jpg)
 
@@ -59,9 +59,23 @@ alert("发生错误：" + request.status);
 
 - `contentType` (default: 'application/x-www-form-urlencoded; charset=UTF-8').
 
-  发送 json 数据改为`application/json;charset=utf-8`. `data`为 json 字符串。
+  发送 json 数据改为`application/json;charset=utf-8`。 `data`为 json 字符串。
 
 - `xhrFields: { withCredentials: true }` 跨域请求带上 被调用方法的`cookie`
+
+#### axios 发送 ajax 请求
+
+> `axios`(基于 `promise` )是用于`浏览器`和 `node.js` 的 `http 客户端`,要使用 axios 需要通过 `npm/Yarn` 或一个 `CDN` 链接安装 `axios`。
+
+axios 特点:
+
+- 支持浏览器和 node.js
+- 支持 promise
+- 能拦截请求和响应
+- 能转换请求和响应数据
+- 能取消请求
+- 自动转换 JSON 数据
+- 浏览器端支持防止 CSRF(跨站请求伪造)
 
 #### AJAX 跨域
 
@@ -136,197 +150,56 @@ AJAX 跨域的原因就是:
 
    带 cookie 的跨域`Response Headers`响应头的`Access-Control-Allow-Origin`字段要和 `Origin`一样。
 
-`filter` 过滤器实现:
+   `filter` 过滤器实现:
 
-_`Spring`框架直接在类或者方法添加注解`@CrossOrigin`支持跨域_
+   > _`Spring`框架直接在类或者方法添加注解`@CrossOrigin`支持跨域_
 
-```
-import org.springframework.stereotype.Component;
-import org.springframework.util.StringUtils;
+   ```
+   import org.springframework.stereotype.Component;
+   import org.springframework.util.StringUtils;
 
-import javax.servlet.*;
-import javax.servlet.annotation.WebFilter;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
+   import javax.servlet.*;
+   import javax.servlet.annotation.WebFilter;
+   import javax.servlet.http.HttpServletRequest;
+   import javax.servlet.http.HttpServletResponse;
+   import java.io.IOException;
 
-    @Component
-    @WebFilter(urlPatterns="/\*",filterName="crosFilter")
-    public class CrosFilter implements Filter{
-    @Override
-    public void init(FilterConfig filterConfig) throws ServletException {
+       @Component
+       @WebFilter(urlPatterns="/\*",filterName="crosFilter")
+       public class CrosFilter implements Filter{
+       @Override
+       public void init(FilterConfig filterConfig) throws ServletException {
 
+              }
+
+       @Override
+       public void doFilter(ServletRequest request, ServletResponse response,        FilterChain chain) throws IOException, ServletException {
+           HttpServletRequest httpServletRequest   = (HttpServletRequest)request;
+           HttpServletResponse httpServletResponse = (HttpServletResponse)       response;
+
+           // 发生跨域时请求头带上 Origin
+           String origin = httpServletRequest.getHeader("Origin");
+           if(!StringUtils.isEmpty(origin)) {
+               httpServletResponse.addHeader("Access-Control-Allow-Origin",        origin);
            }
 
-    @Override
-    public void doFilter(ServletRequest request, ServletResponse response,     FilterChain chain) throws IOException, ServletException {
-        HttpServletRequest httpServletRequest   = (HttpServletRequest)request;
-        HttpServletResponse httpServletResponse = (HttpServletResponse)    response;
+           //  自定请求头
+           String header =  httpServletRequest.getHeader       ("Access-Control-Request-Headers");
+           if(!StringUtils.isEmpty(header)) {
+               httpServletResponse.addHeader("Access-Control-Allow-Headers",        header);
+           }
+           httpServletResponse.addHeader("Access-Control-Allow-Methods", "*");
+           // 带跨域cookie
+           //Access-Control-Allow-Origin 要全部匹配
+           httpServletResponse.addHeader("Access-Control-Allow-Credentials",        "true");
+           chain.doFilter(httpServletRequest, httpServletResponse);
 
-        // 发生跨域时请求头带上 Origin
-        String origin = httpServletRequest.getHeader("Origin");
-        if(!StringUtils.isEmpty(origin)) {
-            httpServletResponse.addHeader("Access-Control-Allow-Origin",     origin);
-        }
+         }
 
-        //  自定请求头
-        String header =  httpServletRequest.getHeader    ("Access-Control-Request-Headers");
-        if(!StringUtils.isEmpty(header)) {
-            httpServletResponse.addHeader("Access-Control-Allow-Headers",     header);
-        }
-        httpServletResponse.addHeader("Access-Control-Allow-Methods", "*");
-        // 带跨域cookie
-        //Access-Control-Allow-Origin 要全部匹配
-        httpServletResponse.addHeader("Access-Control-Allow-Credentials",     "true");
-        chain.doFilter(httpServletRequest, httpServletResponse);
+       @Override
+       public void destroy() {
 
-      }
+         }
+     }
 
-    @Override
-    public void destroy() {
-
-      }
-  }
-
-```
-
-#### jQuery Validation Plugin
-
-jQuery Validation Plugin 是表单验证插件。
-
-该插件自带包含必填、数字、URL 在内容的验证规则，即时显示异常信息，此外，还允许自定义验证规则。
-
-引入：
-
-`<script src="jquery.validate-1.13.1.js"></script>`
-
-核心方法：
-
-validate 定义了基本的校验规则和一些有用的配置项。
-
-调用方法如下：
-
-```
-$(form).validate({options})
-```
-
-其中 form 参数表示表单元素，options 参数表示调用方法时的配置对象，所有的验证规则和异常信息显示的位置都在该对象中进行设置。
-
-options：
-
-- debug(default: false)：如果这个参数为 true,那么表单不会提交，只进行检查
-- rule:验证规则,指元素和验证方法的关联。
-
-```
-
-{
-
-要验证的字段名:{
-验证方法:xxxxx,
-验证方法:xxxxx
-
-}
-...
-}
-
-```
-
-- messages：提示信息
-
-```
-
-{
-
-要验证的字段名:{
-验证方法:提示信息,
-验证方法:提示信息
-}
-...
-}
-
-```
-
-基本验证方法:
-
-![基本验证方法](images/validate.jpg)
-
-示例代码：
-
-```
-
-<script>
-
-        $(document).ready(function () {
-            $("#demoForm").validate({
-                // debug: true 不会提交
-                debug: false,
-                rules: {
-                    // 对应与字段的name属性
-                    username: {
-                        required: true,
-                        minlength: 2,
-                        maxlength: 10,
-                        //远程检验
-                        remote: {
-                            url: 'remote.json',
-                            type: 'POST',
-                            data: {
-                                loginTime: + new Date()
-                            }
-                        }
-                    },
-                    password: {
-                        required: true,
-                        minlength: 2,
-                        maxlength: 16
-                    },
-                    "confirm-password": {
-                        equalTo: "#password"
-                    },
-                    email: {
-                        required: true,
-                        email: true
-                    }
-                },
-                messages: {
-                    username: {
-                        required: '请输入用户名',
-                        minlength: '用户名不能小于2个字符',
-                        maxlength: '用户名不能超过10个字符',
-                        remote: '用户名不存在'
-                    },
-                    password: {
-                        required: '请输入密码',
-                        minlength: '密码不能小于2个字符',
-                        maxlength: '密码不能超过16个字符'
-                    },
-                    "confirm-password": {
-                        equalTo: "两次输入密码不一致"
-                    },
-                    email: {
-                        required: "请输入邮箱",
-                        email: '请输入邮箱'
-                    }
-
-                },
-
-                highlight: function (element, errorClass, validClass) {
-                    $(element).addClass(errorClass).removeClass(validClass);
-                    $(element).fadeOut().fadeIn();
-                },
-                unhighlight: function (element, errorClass, validClass) {
-                    $(element).removeClass(errorClass).addClass(validClass);
-                },
-                submitHandler: function (form) {
-                    console.log($(form).serialize())
-                }
-            });
-
-            $("#check").click(function () {
-                // 校验是否通过
-                alert($("#demoForm").valid() ? "填写正确" : "填写不正确");
-            });
-        });
-    </script>
-
-```
+   ```
