@@ -222,6 +222,79 @@ style: {
 
 ```
 
+#### axios
+
+>
+
+```
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h1>Bitcoin Price Index</h1>
+
+      <section v-if="errored">
+        <p>
+          We're sorry, we're not able to retrieve this information at the
+          moment, please try back later
+        </p>
+      </section>
+
+      <section v-else>
+        <div v-if="loading">Loading...</div>
+
+        <div v-else v-for="currency in info" class="currency">
+          {{ currency.description }}:
+          <span class="lighten">
+            <span v-html="currency.symbol"></span
+            >{{ currency.rate_float | currencydecimal }}
+          </span>
+        </div>
+      </section>
+    </div>
+    <script>
+      new Vue({
+        el: '#app',
+        data() {
+          return {
+            info: null,
+            loading: true,
+            errored: false
+          };
+        },
+        filters: {
+          currencydecimal(value) {
+            return value.toFixed(2);
+          }
+        },
+        mounted() {
+          axios
+            .get('https://api.coindesk.com/v1/bpi/currentprice.json')
+            .then(response => {
+              this.info = response.data.bpi;
+            })
+            .catch(error => {
+              console.log(error);
+              this.errored = true;
+            })
+            .finally(() => (this.loading = false));
+        }
+      });
+    </script>
+  </body>
+</html>
+
+```
+
 #### Vue-CLI
 
 安装：npm install -g @vue/cli
