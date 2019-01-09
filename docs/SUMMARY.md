@@ -14,7 +14,7 @@
 
 - [软件安装配置](soft/README.md)
 
-  - [jdk](soft/jdk/jdk.md)
+  - [Jdk](soft/jdk/jdk.md)
   - [Git](soft/git/git.md)
   - [Idea](soft/idea/idea.md)
   - [vscode](soft/vscode/vscode.md)
