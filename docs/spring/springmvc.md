@@ -160,7 +160,7 @@
 
 `返回JSP页面:`
 
-> Controller 方法处理完成后返回 String 字符串默认指向视图页面;重定向和转发是`"forward:"或者"redirect:"加上映射路径`。
+> Controller 方法处理完成后返回 `String` 字符串默认指向`视图页面`;`数据`可以保存在`org.springframework.ui.Model`对象中,在页面中通过 EL 表达式(`${key}`)获取;`重定向`和`转发`是返回`"forward:"或者"redirect:"加上映射路径`。
 
 ```
 <!-- jsp显示ViewResolver -->
@@ -228,6 +228,60 @@
 
 > 注解类或者方法,可以指定映射路径和请求的类型
 
+`@org.springframework.web.bind.annotation.RequestParam`
+
+> 注解参数，通过`?key=value`方式传值。
+
+`@org.springframework.web.bind.annotation.PathVariable`
+
+> 注解参数,获取 url 对应占位符上的值。
+
+```
+   @RequestMapping(value = "/detail/comment/{pageNum}/{id}", method = RequestMethod.GET)
+    public CommentListDto commentList(@PathVariable("pageNum") Integer pageNum,
+                                      @PathVariable("id") Integer id) {
+        return businessService.getCommentList(id, pageNum + 1, 10);
+
+    }
+
+```
+
 `org.springframework.web.bind.annotation.ResponseBody`
 
 > 将 Controller 的方法返回的对象通过适当的转换器转换为指定的格式之后，写入到 response 对象的 body 区，通常用来返回 JSON 数据或者是 XML.在使用此注解之后不会再走试图处理器，而是直接将数据写入到输入流中，他的效果等同于通过 response 对象输出指定格式的数据.
+
+`@org.springframework.web.bind.annotation.ControllerAdvice`
+
+> 配合`org.springframework.web.bind.annotation.ExceptionHandler`进行全局异常处理。
+
+```
+@ControllerAdvice
+@Slf4j
+public class ExceptionResolver {
+    public static final String ERROR_VIEW_NAME = "system/error";
+    // 可以返回 ModelAndView
+    @ExceptionHandler(value = Exception.class)
+    public ModelAndView handle(HttpServletRequest request, HttpServletResponse response, Exception e) {
+
+        log.error("哪里出错了...", e);
+        if (isAjax(request)) {
+            ModelAndView jsonView = new ModelAndView(new MappingJackson2JsonView());
+            jsonView.addObject("url", request.getRequestURI());
+            jsonView.addObject("errMsg", e.getMessage());
+            return jsonView;
+        } else {
+            ModelAndView modelAndView = new ModelAndView();
+            modelAndView.addObject("url", request.getRequestURI());
+            modelAndView.addObject("errMsg", e.getMessage());
+            modelAndView.setViewName(ERROR_VIEW_NAME);
+            return modelAndView;
+        }
+    }
+
+    public boolean isAjax(HttpServletRequest request) {
+        return (request.getHeader("X-Requested-With") != null
+                && "XMLHttpRequest"
+                .equals(request.getHeader("X-Requested-With").toString()));
+    }
+}
+```

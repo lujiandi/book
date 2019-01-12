@@ -74,6 +74,25 @@ max();
 
 ```
 
+#### 子查询()
+
+```
+update business b,
+   (SELECT
+    business_id,
+    COUNT(1) cou
+    FROM `order`
+    WHERE `order`.create_time <![CDATA[<=]]>  #{endTime}
+    <if test="startTime !=null ">
+      and `order`.create_time <![CDATA[>]]> #{startTime}
+    </if>
+    GROUP BY business_id
+    ) c
+    set b.number =  IFNULL(b.number,0)  +c.cou
+    where b.id = c.business_id ;
+
+```
+
 #### 添加用户示例 添加 mysql 用户 travis
 
 create user travis@localhost;

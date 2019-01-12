@@ -94,3 +94,11 @@ public class ApplicationContextHolder implements ApplicationContextAware {
 ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("/spring.xml");
 
 ```
+
+#### 定时任务
+
+> 开启注解驱动，`@org.springframework.scheduling.annotation.Scheduled`注解任务方法。
+
+```
+<task:annotation-driven></task:annotation-driven>
+```

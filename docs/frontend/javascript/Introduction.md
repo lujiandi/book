@@ -188,3 +188,12 @@ location 对象方法:
 > Navigator 对象包含有关浏览器的信息，通常用于检测浏览器与操作系统的版本。
 
 ![Navigator 对象](images/window.navigator.jpg)
+
+#### 跳出 iFrame
+
+```
+var topWindow = window;
+   while(topWindow.parent != topWindow) {
+       topWindow = topWindow.parent;
+   }
+```
