@@ -21,14 +21,20 @@
 
 > npm 是 nodejs 包管理工具
 
-npm init :生成 package.json
+- npm init
 
-npm run 自定义命令 :运行 package.json(scripts)
+  > 生成 package.json
 
-npm install cnpm -g --registry=http://registry.npm.taobao.org
+- npm run 自定义命令
 
-npm install xxx@xxx -g :全局安装
+  > 运行 package.json(scripts)
 
-npm install xxx@xxx -save
+- npm install cnpm -g --registry=http://registry.- npm.taobao.org
 
-npm install xxx@xxx --save-dev
+- npm install xxx@xxx -g
+
+  > 全局安装
+
+- npm install xxx@xxx -save
+
+- npm install xxx@xxx --save-dev
