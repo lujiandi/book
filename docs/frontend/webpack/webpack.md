@@ -80,3 +80,11 @@ module.exports = config;
 > babel-loader
 
 `处理css|less|sass|stylus`
+
+`处理模板文件`
+
+> html-loader
+
+`处理图片`
+
+> file-loader url-loader
