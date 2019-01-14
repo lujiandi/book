@@ -15,6 +15,6 @@
   }
 ```
 
-### 插件和设置同步
+#### 插件和设置同步
 
-安装 Setting Sync 插件
+安装 Setting Sync 插件,同步到 GitHub Gist
