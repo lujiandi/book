@@ -4,6 +4,10 @@
 
 > npm install webpack --save-dev
 
+`webpack 4+ 版本:`
+
+> npm install --save-dev webpack-cli
+
 `webpack配置文件:`
 
 > `webpack.config.js`是默认的 webpack 配置文件。
@@ -88,3 +92,17 @@ module.exports = config;
 `处理图片`
 
 > file-loader url-loader
+
+`数据文件`
+
+#### webpack-dev-server
+
+> webpack-dev-server 能够用于快速开发应用程序
+
+`publicPath:`
+
+> 服务器运行在 http://localhost:8080 并且 output.filename 被设置为 bundle.js。默认 publicPath 是 "/"，所以你的包(bundle)可以通过 http://localhost:8080/bundle.js 访问。
+
+> 可以修改 publicPath，将 bundle 放在一个目录：`publicPath: "/assets/"`,你的包现在可以通过 http://localhost:8080/assets/bundle.js 访问。
+
+> 确保 publicPath 总是以斜杠(/)开头和结尾。
