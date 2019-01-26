@@ -102,3 +102,33 @@ ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationC
 ```
 <task:annotation-driven></task:annotation-driven>
 ```
+
+#### Junit 单元测试
+
+> 引入`spring-test`依赖
+
+实例代码：
+
+```
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration("classpath:spring/applicationContext.xml")
+public class EmployeeRepositoryTest {
+
+    // 测试自定义的方法
+    private Logger logger = LoggerFactory.getLogger(EmployeeRepositoryTest.class);
+
+    @Autowired
+    private EmployeeRepository employeeRepository;
+
+    @Test
+    public void findByName() throws Exception {
+        List<Employee> employees = employeeRepository.findByName("Curry");
+        for (Employee employee : employees) {
+            logger.info("employee={}", employee);
+        }
+
+    }
+
+}
+
+```

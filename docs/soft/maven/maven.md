@@ -1,16 +1,61 @@
 # maven
 
+> maven 基于项目管理的对象模型(POM),可用一小段描述信息来管理项目的构建、报告和文档的 Java 项目管理工具
+
 #### 安装
 
 1. 设置系统环境变量 `M2_HOME`(maven 安装目录)
-2. `Path` 添加 `%M2_HOME%/bin`
+2. 添加 `%M2_HOME%/bin`到系统变量`Path`
 
 #### 常用命令
 
+- mvn -v
 - mvn test
 - mvn clean
 - mvn compile
 - mvn package -Dmaven.test.skip=true -P 环境变量
+- mvn install
+
+#### 通过命令行创建项目
+
+- `mvn archetype:generate`
+
+#### maven 中的坐标和仓库
+
+`坐标:`
+
+> 用来标识 maven 构件,包含`groupId`、`articleId`、`version`标识.
+
+> `groupId:`组织名(网址反写+项目名)
+
+> `articleId:`项目名-模块名
+
+`仓库:`
+
+> 用来管理项目依赖，包含本地仓库和远程仓库。
+
+#### 修改本地仓库存放地址
+
+> 修改\${maven 安装目录}\conf\settings.xml
+
+```
+<localRepository>D:/developer/apache-maven-3.3.1/rep</localRepository>
+```
+
+#### maven 镜像仓库
+
+> 修改\${maven 安装目录}\conf\settings.xml
+
+`阿里云:`
+
+```
+    <mirror>
+      <id>alimaven</id>
+      <mirrorOf>central</mirrorOf>
+      <name>aliyun maven</name>
+      <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+    </mirror>
+```
 
 #### maven 中如何指定 jdk 的版本
 
@@ -51,17 +96,6 @@
    </plugins>
    <build>
    ```
-
-#### 阿里云 maven 镜像
-
-```
-    <mirror>
-      <id>alimaven</id>
-      <mirrorOf>central</mirrorOf>
-      <name>aliyun maven</name>
-      <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
-    </mirror>
-```
 
 #### maven webapp 项目结构
 
