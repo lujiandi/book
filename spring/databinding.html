@@ -1,0 +1,1237 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>springmvc 数据绑定 · book</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="lujiandi">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-toggle-chapters/toggle.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="validator.html" />
+    
+    
+    <link rel="prev" href="springmvc.html" />
+    
+
+    
+        <link rel="shortcut icon" href='../favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../favicon.ico' type="image/x-icon">
+    
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://gitee.com/lujiandi/book" target="_blank" class="custom-link">GitHub</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../gitbooktutorial/">
+            
+                <a href="../gitbooktutorial/">
+            
+                    
+                    GitBook 教程
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../gitbooktutorial/installation.html">
+            
+                <a href="../gitbooktutorial/installation.html">
+            
+                    
+                    安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../gitbooktutorial/commands.html">
+            
+                <a href="../gitbooktutorial/commands.html">
+            
+                    
+                    命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../gitbooktutorial/structure.html">
+            
+                <a href="../gitbooktutorial/structure.html">
+            
+                    
+                    结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../gitbooktutorial/settings.html">
+            
+                <a href="../gitbooktutorial/settings.html">
+            
+                    
+                    配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../gitbooktutorial/deploy.html">
+            
+                <a href="../gitbooktutorial/deploy.html">
+            
+                    
+                    发布
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../gitbooktutorial/generating-ebooks-and-pdfs.html">
+            
+                <a href="../gitbooktutorial/generating-ebooks-and-pdfs.html">
+            
+                    
+                    生成电子书
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../gitbooktutorial/resources.html">
+            
+                <a href="../gitbooktutorial/resources.html">
+            
+                    
+                    资源
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../soft/">
+            
+                <a href="../soft/">
+            
+                    
+                    软件安装配置
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../soft/jdk/jdk.html">
+            
+                <a href="../soft/jdk/jdk.html">
+            
+                    
+                    Jdk
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../soft/git/git.html">
+            
+                <a href="../soft/git/git.html">
+            
+                    
+                    Git
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../soft/idea/idea.html">
+            
+                <a href="../soft/idea/idea.html">
+            
+                    
+                    Idea
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../soft/vscode/vscode.html">
+            
+                <a href="../soft/vscode/vscode.html">
+            
+                    
+                    vscode
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../soft/tomcat/tomcat.html">
+            
+                <a href="../soft/tomcat/tomcat.html">
+            
+                    
+                    tomcat
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../soft/redis/redis.html">
+            
+                <a href="../soft/redis/redis.html">
+            
+                    
+                    redis
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../soft/nodejs/nodejs.html">
+            
+                <a href="../soft/nodejs/nodejs.html">
+            
+                    
+                    nodejs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../soft/maven/maven.html">
+            
+                <a href="../soft/maven/maven.html">
+            
+                    
+                    maven
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="../soft/mysql/mysql.html">
+            
+                <a href="../soft/mysql/mysql.html">
+            
+                    
+                    mysql
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="../soft/nginx/nginx.html">
+            
+                <a href="../soft/nginx/nginx.html">
+            
+                    
+                    nginx
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.11" data-path="../soft/lombok/lombok.html">
+            
+                <a href="../soft/lombok/lombok.html">
+            
+                    
+                    lombok
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.12" data-path="../soft/en/english.html">
+            
+                <a href="../soft/en/english.html">
+            
+                    
+                    常用单词
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../java/">
+            
+                <a href="../java/">
+            
+                    
+                    Java docs
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../java/javaweb.html">
+            
+                <a href="../java/javaweb.html">
+            
+                    
+                    java web
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../java/synchronized.html">
+            
+                <a href="../java/synchronized.html">
+            
+                    
+                    synchronized
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../java/diary.html">
+            
+                <a href="../java/diary.html">
+            
+                    
+                    diary
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Spring
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="springmvc.html">
+            
+                <a href="springmvc.html">
+            
+                    
+                    springmvc
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5.2" data-path="databinding.html">
+            
+                <a href="databinding.html">
+            
+                    
+                    springmvc 数据绑定
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="validator.html">
+            
+                <a href="validator.html">
+            
+                    
+                    spring validator
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="springTransaction.html">
+            
+                <a href="springTransaction.html">
+            
+                    
+                    spring transaction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="springIoc.html">
+            
+                <a href="springIoc.html">
+            
+                    
+                    spring ioc
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="springAop.html">
+            
+                <a href="springAop.html">
+            
+                    
+                    spring aop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="springsession.html">
+            
+                <a href="springsession.html">
+            
+                    
+                    spring session
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="springdata.html">
+            
+                <a href="springdata.html">
+            
+                    
+                    spring data
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9" data-path="springhibernate.html">
+            
+                <a href="springhibernate.html">
+            
+                    
+                    整合 hibernate
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../frontend/">
+            
+                <a href="../frontend/">
+            
+                    
+                    前端
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../frontend/html/html.html">
+            
+                <a href="../frontend/html/html.html">
+            
+                    
+                    html
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../frontend/javascript/Introduction.html">
+            
+                <a href="../frontend/javascript/Introduction.html">
+            
+                    
+                    javascript 入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../frontend/javascript/base.html">
+            
+                <a href="../frontend/javascript/base.html">
+            
+                    
+                    javascript 基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../frontend/jquery/jquery.html">
+            
+                <a href="../frontend/jquery/jquery.html">
+            
+                    
+                    jquery 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../frontend/http/http.html">
+            
+                <a href="../frontend/http/http.html">
+            
+                    
+                    http 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../frontend/ajax/ajax.html">
+            
+                <a href="../frontend/ajax/ajax.html">
+            
+                    
+                    ajax 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="../frontend/websocket/WebSocket.html">
+            
+                <a href="../frontend/websocket/WebSocket.html">
+            
+                    
+                    websocket 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.8" data-path="../frontend/typescript/typescript.html">
+            
+                <a href="../frontend/typescript/typescript.html">
+            
+                    
+                    TypeScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.9" data-path="../frontend/react/react.html">
+            
+                <a href="../frontend/react/react.html">
+            
+                    
+                    React
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.10" data-path="../frontend/vue/vue.html">
+            
+                <a href="../frontend/vue/vue.html">
+            
+                    
+                    Vue
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.11" data-path="../frontend/webpack/webpack.html">
+            
+                <a href="../frontend/webpack/webpack.html">
+            
+                    
+                    webpack
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../gitproject/">
+            
+                <a href="../gitproject/">
+            
+                    
+                    Git 项目目录
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >springmvc 数据绑定</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="springmvc-&#x5B9E;&#x73B0;&#x591A;&#x79CD;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x7ED1;&#x5B9A;">SpringMVC &#x5B9E;&#x73B0;&#x591A;&#x79CD;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x7ED1;&#x5B9A;</h1>
+<p><img src="images/databind.png" alt="SpringMVC &#x6570;&#x636E;&#x7ED1;&#x5B9A;"></p>
+<h4 id="&#x7ED1;&#x5B9A;&#x57FA;&#x672C;&#x6570;&#x636E;&#x7C7B;&#x578B;">&#x7ED1;&#x5B9A;&#x57FA;&#x672C;&#x6570;&#x636E;&#x7C7B;&#x578B;</h4>
+<p>Java &#x57FA;&#x672C;&#x6570;&#x636E;&#x7C7B;&#x578B; int &#x7684;&#x9ED8;&#x8BA4;&#x503C;&#x662F; 0&#xFF0C;&#x5728;&#x4F7F;&#x7528; int &#x8FDB;&#x884C; url &#x4F20;&#x9012;&#x53C2;&#x6570;&#x65F6;&#xFF0C;&#x53C2;&#x6570; key &#x662F;&#x5FC5;&#x987B;&#x5199;&#x7684;&#xFF0C;&#x5176;&#x503C;&#x4E5F;&#x53EA;&#x80FD;&#x662F; int &#x7C7B;&#x578B;&#x7684;&#xFF0C;&#x5426;&#x5219;&#x5C06;&#x4F1A;&#x62A5;&#x9519;&#x3002;</p>
+<p>&#x6BD4;&#x5982;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre><code>@RequestMapping(value = &quot;baseType.do&quot;)
+ @ResponseBody //&#x8FD4;&#x56DE;&#x7684;&#x6570;&#x636E;&#x653E;&#x5230; ResponseBody &#x7684;&#x6570;&#x636E;&#x533A;&#x4E2D;
+ public String baseType(int age){
+ return &quot;age:&quot;+age;
+ }
+</code></pre><p>&#x8BF7;&#x6C42;&#x7684; url &#x5730;&#x5740;&#xFF1A;<a href="http://localhost:8080/baseType.do?age=10&#xFF0C;&#x5176;&#x4E2D;&#x53C2;&#x6570;age&#x662F;&#x5FC5;&#x4F20;&#x7684;&#xFF0C;&#x5176;&#x503C;&#x53EA;&#x80FD;&#x662F;int&#x7C7B;&#x578B;&#x7684;&#xFF1B;" target="_blank">http://localhost:8080/baseType.do?age=10&#xFF0C;&#x5176;&#x4E2D;&#x53C2;&#x6570;age&#x662F;&#x5FC5;&#x4F20;&#x7684;&#xFF0C;&#x5176;&#x503C;&#x53EA;&#x80FD;&#x662F;int&#x7C7B;&#x578B;&#x7684;&#xFF1B;</a>
+&#x5982;&#x679C;&#x4E0D;&#x4F20;&#xFF0C;&#x5C06;&#x4F1A;&#x62A5; 500 &#x9519;&#x8BEF;&#x3002;
+&#x6BD4;&#x5982;&#xFF1A;</p>
+<p><a href="http://localhost:8080/baseType.do" target="_blank">http://localhost:8080/baseType.do</a></p>
+<p>&#x5982;&#x679C;&#x4F20;&#x9012;&#x4E86;&#xFF0C;&#x4F46;&#x662F;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x662F;&#x5176;&#x4ED6;&#x7C7B;&#x578B;&#xFF0C;&#x5C06;&#x4F1A;&#x62A5; 400 &#x9519;&#x8BEF;&#xFF0C;&#x6BD4;&#x5982;&#xFF1A;</p>
+<p><a href="http://localhost:8080/baseType.do?age=abc" target="_blank">http://localhost:8080/baseType.do?age=abc</a></p>
+<p>&#x53C8;&#x6BD4;&#x5982;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre><code>@RequestMapping(value=&quot;baseType1.do&quot;)
+ @ResponseBody
+ public String baseType1(@RequestParam(value=&quot;xage&quot;)int age){
+ return &quot;age: &quot; + age;
+ }
+</code></pre><p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>@RequestParam</code> &#x6CE8;&#x89E3;&#x6765;&#x4E3A;&#x4F20;&#x5165;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x522B;&#x540D;&#x53C2;&#x6570;&#xFF0C;
+@RequestParam&#xFF08;value=&quot;&quot;,required = true&#xFF09;value &#x53C2;&#x6570;&#x522B;&#x540D; required &#x8BE5;&#x53C2;&#x6570;&#x662F;&#x5426;&#x5FC5;&#x4F20;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A; true&#xFF1B;
+&#x8BBF;&#x95EE;&#x7684; url &#x5730;&#x5740;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p><a href="http://localhost:8080/baseType1.do?xage=10" target="_blank">http://localhost:8080/baseType1.do?xage=10</a></p>
+<p>&#x540C;&#x6837; xage &#x8FD9;&#x4E2A;&#x53C2;&#x6570;&#x4E5F;&#x662F;&#x5FC5;&#x4F20;&#x7684;&#xFF0C;&#x5176;&#x7C7B;&#x578B;&#x4E3A; int&#x3002;</p>
+<p>&#x5982;&#x679C;&#x662F;&#x5176;&#x4ED6;&#x57FA;&#x672C;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x4E5F;&#x662F;&#x5982;&#x6B64;&#xFF0C;&#x5176;&#x4E2D;
+byte,short,int &#x7684;&#x9ED8;&#x8BA4;&#x503C;&#x90FD;&#x4E3A; 0&#xFF0C;long &#x7684;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A; 0L,float &#x7684;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A; 0.0f&#xFF0C;double &#x7684;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A; 0.0d
+&#x5728;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x7ED1;&#x5B9A;&#x65F6;&#xFF0C;&#x5176;&#x53C2;&#x6570;&#x503C;&#x5FC5;&#x4F20;&#xFF0C;&#x5176;&#x503C;&#x7684;&#x7C7B;&#x578B;&#x4E3A;&#x5176;&#x5BF9;&#x5E94;&#x7684;&#x57FA;&#x672C;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x3002;</p>
+<h4 id="&#x7ED1;&#x5B9A;&#x5305;&#x88C5;&#x6570;&#x636E;&#x7C7B;&#x578B;">&#x7ED1;&#x5B9A;&#x5305;&#x88C5;&#x6570;&#x636E;&#x7C7B;&#x578B;</h4>
+<p>Java &#x5C01;&#x88C5;&#x7C7B;&#x578B; Integer &#x7684;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A; null&#xFF0C;&#x5728;&#x4F7F;&#x7528; Integer &#x8FDB;&#x884C; url &#x6570;&#x636E;&#x4F20;&#x9012;&#x65F6;&#xFF0C;&#x53C2;&#x6570; key &#x53EF;&#x4EE5;&#x4E0D;&#x4F20;&#xFF0C;&#x5BF9;&#x5E94;&#x53C2;&#x6570;&#x7684;&#x503C;&#x5C31;&#x4F1A;&#x9ED8;&#x8BA4;&#x4E3A; null&#x3002;
+&#x6BD4;&#x5982;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre><code>@RequestMapping(value = &quot;baseType2.do&quot;)
+ @ResponseBody
+ public String baseType2(Integer age){
+ return &quot;age:&quot;+age;
+ }
+</code></pre><p>&#x5176; url &#x5730;&#x5740;&#x53C2;&#x6570; age &#x53EF;&#x4EE5;&#x4E0D;&#x4F20;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x4F20;&#xFF0C;&#x5BF9;&#x5E94;&#x7684; url &#x5730;&#x5740;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p><a href="http://localhost:8080/baseType2.do?age=10" target="_blank">http://localhost:8080/baseType2.do?age=10</a></p>
+<p><a href="http://localhost:8080/baseType2.do" target="_blank">http://localhost:8080/baseType2.do</a></p>
+<p>&#x4F46;&#x662F;&#x5982;&#x679C;&#x4F20;&#x9012;&#x4E86; age &#x53C2;&#x6570;&#xFF0C;&#x5176;&#x503C;&#x4E3A;&#x5176;&#x4ED6;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;&#x5C06;&#x4F1A;&#x62A5; 400 &#x9519;&#x8BEF;&#xFF0C;&#x6BD4;&#x5982;&#xFF1A;</p>
+<p><a href="http://localhost:8080/baseType2.do?age=abc" target="_blank">http://localhost:8080/baseType2.do?age=abc</a></p>
+<p>&#x6570;&#x636E;&#x7ED1;&#x5B9A;&#x7684;&#x6570;&#x503C;&#x578B;&#x63A5;&#x53D7;&#x53C2;&#x6570;&#x53EF;&#x4EE5;&#x662F;&#x57FA;&#x672C;&#x7C7B;&#x578B;&#x548C;&#x5305;&#x88C5;&#x7C7B;&#x578B;&#xFF0C;&#x4F46;&#x4E8C;&#x8005;&#x6709;&#x533A;&#x522B;&#xFF1A;</p>
+<ol>
+<li>&#x57FA;&#x672C;&#x7C7B;&#x578B;&#x4E0D;&#x53EF;&#x63A5;&#x53D7;&#x7A7A;&#x503C;&#xFF0C;&#x4F1A;&#x62A5;&#x9519;&#x3002;&#x4E14;&#x8F93;&#x5165;&#x6570;&#x503C;&#x5FC5;&#x987B;&#x5728;&#x6307;&#x5B9A;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;&#x8303;&#x56F4;&#x5185;</li>
+<li>&#x5305;&#x88C5;&#x7C7B;&#x578B;&#x5219;&#x53EF;&#x4EE5;&#x63A5;&#x53D7;&#x7A7A;&#x503C;&#xFF0C;&#x5177;&#x6709;&#x4F18;&#x52BF;&#xFF0C;&#x63A8;&#x8350;&#x4F7F;&#x7528;&#xFF0C;&#x6BD4;&#x5982;&#x4F20;&#x9012;&#x7684;&#x53C2;&#x6570;&#x662F;&#x5E74;&#x9F84;&#x3001;&#x8EAB;&#x9AD8;&#x3001;&#x957F;&#x5EA6;&#x3001;&#x5BBD;&#x5EA6;&#x7B49;&#xFF0C;&#x5177;&#x4F53;&#x60C5;&#x51B5;&#x53EF;&#x6839;&#x636E;&#x4E1A;&#x52A1;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x53D8;&#x66F4;</li>
+</ol>
+<h4 id="&#x7ED1;&#x5B9A;&#x6570;&#x7EC4;&#x7C7B;&#x578B;">&#x7ED1;&#x5B9A;&#x6570;&#x7EC4;&#x7C7B;&#x578B;</h4>
+<p>Java &#x6570;&#x7EC4;&#xFF1A;&#x5B83;&#x662F;&#x4E00;&#x4E2A;&#x5177;&#x6709;&#x76F8;&#x540C;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;&#x56FA;&#x5B9A;&#x5927;&#x5C0F;&#x7684;&#x5BF9;&#x8C61;&#x3002;
+&#x7ED1;&#x5B9A;&#x6570;&#x7EC4;&#x7C7B;&#x578B;&#x7684;&#x65B9;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>@RequestMapping(value = &quot;array.do&quot;)
+ @ResponseBody
+ public String array(String[] name){
+ StringBuilder sbf = new StringBuilder();
+ StringBuffer sb = new StringBuffer();
+ for(String item : name){
+ sbf.append(item).append(&quot; &quot;);
+ }
+ return sbf.toString();
+ }
+</code></pre><p>&#x5728;&#x4F7F;&#x7528; url &#x5730;&#x5740;&#x4F20;&#x9012;&#x53C2;&#x6570;&#x65F6;&#xFF0C;&#x4E00;&#x6B21;&#x53EF;&#x4EE5;&#x4F20;&#x9012;&#x591A;&#x4E2A;&#x53C2;&#x6570;&#x503C;&#xFF0C;&#x503C;&#x4E0E;&#x503C;&#x4E4B;&#x95F4;&#x4F7F;&#x7528;&amp;&#x5206;&#x5F00;&#xFF0C;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p><a href="http://localhost:8080/array.do?name=Tom&amp;name=Lucy&amp;name=Jim" target="_blank">http://localhost:8080/array.do?name=Tom&amp;name=Lucy&amp;name=Jim</a></p>
+<h4 id="&#x7ED1;&#x5B9A;&#x5BF9;&#x8C61;&#x7C7B;&#x578B;">&#x7ED1;&#x5B9A;&#x5BF9;&#x8C61;&#x7C7B;&#x578B;</h4>
+<p>&#x8FD9;&#x91CC;&#x4EE5;&#x7ED1;&#x5B9A; User &#x5BF9;&#x8C61;&#x4E3A;&#x4F8B;&#xFF0C;&#x7ED1;&#x5B9A;&#x7684;&#x65B9;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>@RequestMapping(value=&quot;/user&quot;)
+@ResponseBody
+public String GetUser(User user){
+ return user.toString();
+}
+</code></pre><p>&#x4F7F;&#x7528; url &#x4F20;&#x9012;&#x53C2;&#x6570;&#x7684;&#x65B9;&#x5F0F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p><a href="http://localhost:8080/user?name=Tom&amp;age=10" target="_blank">http://localhost:8080/user?name=Tom&amp;age=10</a></p>
+<p>&#x5176;&#x4E2D; name&#x3001;age &#x90FD;&#x662F; User &#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;&#x3002;</p>
+<p>&#x5BF9;&#x8C61;&#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;&#x7ED1;&#x5B9A;&#xFF0C;&#x76F4;&#x63A5;&#x8BF7;&#x6C42;&#x65F6;&#x5BF9;&#x5E94;&#x5176;&#x5C5E;&#x6027;&#x5373;&#x53EF;&#xFF0C;&#x4E0D;&#x5FC5;&#x6DFB;&#x52A0;&#x524D;&#x7F00;&#xFF0C;&#x5982; User &#x7C7B;&#x7684;&#x5C5E;&#x6027; name&#xFF0C;&#x5219;&#x76F4;&#x63A5;&#x5728;&#x8BF7;&#x6C42;&#x4E2D;&#x4F7F;&#x7528; name=xxx&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x4F7F;&#x7528; user.name=xxx &#x7684;&#x5F62;&#x5F0F;&#x3002;url &#x5982;&#x4E0B;&#xFF1A;</p>
+<p><a href="http://localhost:8080/user?name=Tom&amp;age=10" target="_blank">http://localhost:8080/user?name=Tom&amp;age=10</a></p>
+<p>&#x4F46;&#x5982;&#x679C;&#x662F;&#x60F3;&#x5BF9;&#x5BF9;&#x8C61;&#x4E2D;&#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;&#x518D;&#x8D4B;&#x503C;&#x7684;&#x8BDD;&#xFF0C;&#x5219;&#x9700;&#x8981;&#x4F7F;&#x7528; xxx.xxx &#x7684;&#x5F62;&#x5F0F;&#xFF0C;&#x5982;&#x4E0B;&#x7684; contactInfo.phone &#x8868;&#x793A;&#x5C06; User &#x7C7B;&#x4E2D;&#x7684; ContactInfo &#x7C7B;&#x7684; phone &#x5C5E;&#x6027;&#x8D4B;&#x503C;&#x3002; &#x5982;&#x4E0B;&#xFF1A;</p>
+<p><a href="http://localhost:8080/object.do?name=Tom&amp;age=10&amp;contactInfo.phone=10086" target="_blank">http://localhost:8080/object.do?name=Tom&amp;age=10&amp;contactInfo.phone=10086</a></p>
+<h4 id="&#x4E24;&#x4E2A;&#x5BF9;&#x8C61;&#x540C;&#x5C5E;&#x6027;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x7ED1;&#x5B9A;">&#x4E24;&#x4E2A;&#x5BF9;&#x8C61;&#x540C;&#x5C5E;&#x6027;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x7ED1;&#x5B9A;</h4>
+<p>&#x8FD9;&#x91CC;&#x4EE5; User &#x5BF9;&#x8C61;&#x548C; Admin &#x5BF9;&#x8C61;&#x4E3A;&#x4F8B;&#xFF0C;&#x8FD9;&#x4E24;&#x4E2A;&#x5BF9;&#x8C61;&#x5177;&#x6709;&#x76F8;&#x540C;&#x7684;&#x5C5E;&#x6027; name&#xFF0C;age&#xFF0C;&#x8FD9;&#x4E24;&#x4E2A;&#x5BF9;&#x8C61;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x7ED1;&#x5B9A;&#x7684;&#x65B9;&#x6CD5;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>@RequestMapping(value = &quot;object.do&quot;)
+@ResponseBody
+public String object(User user,Admin admin){
+ return user.toString()+&quot; &quot;+admin.toString();
+}
+</code></pre><p>&#x5728;&#x8FD9;&#x91CC;&#x662F;&#x6709; Spring &#x6CE8;&#x89E3;<code>@InitBinder</code> &#x6765;&#x521D;&#x59CB;&#x5316;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x3002;</p>
+<p>&#x5BF9;&#x4E8E;&#x4E24;&#x4E2A;&#x4E0D;&#x540C;&#x7684;&#x7C7B;&#xFF0C;&#x9047;&#x5230;&#x540C;&#x540D;&#x5C5E;&#x6027;&#x7684;&#x60C5;&#x51B5;&#xFF0C;SpringMVC &#x4F1A;&#x9ED8;&#x8BA4;&#x9488;&#x5BF9;&#x6240;&#x6709;&#x7C7B;&#x7684;&#x540C;&#x540D;&#x5C5E;&#x6027;&#x8D4B;&#x503C;&#xFF0C;&#x5982;&#x4E0B;&#x9762; url &#x4F20;&#x9012;&#x7684; name&#xFF0C;age &#x53C2;&#x6570;&#x5C06;&#x662F;&#x4E24;&#x4E2A;&#x5BF9;&#x8C61;&#x5171;&#x6709;&#x7684;&#xFF1A;</p>
+<p><a href="http://localhost:8080/object.do?name=Tom&amp;age=10" target="_blank">http://localhost:8080/object.do?name=Tom&amp;age=10</a></p>
+<p>&#x5982;&#x679C;&#x60F3;&#x8981;&#x533A;&#x522B;&#x5BF9;&#x5F85;&#xFF0C;&#x76F4;&#x63A5;&#x4F7F;&#x7528; xxx.xxx &#x7684;&#x5F62;&#x5F0F;&#x662F;&#x4E0D;&#x884C;&#x7684;&#xFF0C;&#x8FD8;&#x9700;&#x8981;&#x5728;&#x5BF9;&#x5E94;&#x7684; Controller &#x4E2D;&#x5B9A;&#x4E49;&#x65B9;&#x6CD5;&#xFF0C;&#x4EE5; <code>@InitBinder</code> &#x6CE8;&#x89E3;&#x6807;&#x8BB0;&#x5C5E;&#x6027;&#x540D;&#xFF0C;&#x5F62;&#x53C2;&#x4F7F;&#x7528; <code>WebDataBinder</code> &#x6765;&#x5B9A;&#x4E49;&#x8BF7;&#x6C42;&#x53C2;&#x6570;&#x524D;&#x7F00;&#xFF0C;&#x82E5;&#x6CA1;&#x52A0;&#x524D;&#x7F00;&#x5219;&#x662F;&#x5171;&#x6709;&#x7684;&#x3002;&#x65B9;&#x6CD5;&#x5B9A;&#x4E49;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>@InitBinder(&quot;user&quot;) //@InitBinder &#x521D;&#x59CB;&#x5316;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;
+public void initUser(WebDataBinder binder){
+ binder.setFieldDefaultPrefix(&quot;user.&quot;);
+}
+@InitBinder(&quot;admin&quot;)
+public void initAdmin(WebDataBinder binder){
+ binder.setFieldDefaultPrefix(&quot;admin.&quot;);
+}
+</code></pre><p>&#x4F7F;&#x7528; url &#x4F20;&#x9012;&#x53C2;&#x6570;&#xFF0C;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p><a href="http://localhost:8080/object.do?user.name=Tom&amp;admin.name=Lucy&amp;age=10" target="_blank">http://localhost:8080/object.do?user.name=Tom&amp;admin.name=Lucy&amp;age=10</a></p>
+<p>&#x5176;&#x4E2D; age &#x53C2;&#x6570;&#x662F;&#x4E24;&#x4E2A;&#x5BF9;&#x8C61;&#x5171;&#x7528;&#x7684;&#x3002;</p>
+<h4 id="&#x7ED1;&#x5B9A;-list-&#x5BF9;&#x8C61;">&#x7ED1;&#x5B9A; List &#x5BF9;&#x8C61;</h4>
+<p>Java &#x4E2D; List &#x96C6;&#x5408;&#x7C7B;&#x578B;&#xFF1A;List &#x662F;&#x4E00;&#x4E2A;&#x6709;&#x5E8F;&#xFF0C;&#x53EF;&#x91CD;&#x590D;&#x7684;&#x7684;&#x7EBF;&#x6027;&#x8868;&#x3002;</p>
+<p>&#x5728;&#x7ED1;&#x5B9A; List &#x5BF9;&#x8C61;&#x6570;&#x636E;&#x65F6;&#xFF0C;&#x9996;&#x5148;&#x8981;&#x5C06;&#x5BF9;&#x8C61;&#x5C01;&#x88C5;&#x4E3A; List &#x5BF9;&#x8C61;&#xFF0C;&#x5E76;&#x8BBE;&#x7F6E;&#x5B83;&#x7684; get/set &#x65B9;&#x6CD5;&#xFF0C;&#x4EE5; User &#x5BF9;&#x8C61;&#x4E3A;&#x4F8B;&#xFF0C;&#x5C01;&#x88C5;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>private List users;
+</code></pre><p>&#x7136;&#x540E; controller &#x4E0B;&#x5BF9;&#x5E94;&#x7684;&#x65B9;&#x6CD5;&#x5B9A;&#x4E49;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>@RequestMapping(value = &quot;list.do&quot;)
+@ResponseBody
+public String list(UserListForm userListForm){
+     return &quot;listSize:&quot;+userListForm.getUsers().size() + &quot;  &quot; + userListForm.toString();
+}
+</code></pre><p>&#x5176;&#x4E2D; UserListForm &#x662F;&#x5C01;&#x88C5;&#x7684; List &#x5BF9;&#x8C61;&#x7C7B;&#xFF0C;&#x4F7F;&#x7528; url &#x4F20;&#x9012;&#x53C2;&#x6570;&#x7684;&#x65B9;&#x5F0F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p><a href="http://localhost:8080/list.do?users[0].name=Tom&amp;users[1].name=Lucy" target="_blank">http://localhost:8080/list.do?users[0].name=Tom&amp;users[1].name=Lucy</a></p>
+<p>Controller &#x4E2D; List &#x53C2;&#x6570;&#x4E0D;&#x80FD;&#x76F4;&#x63A5;&#x4F20;&#x503C;&#xFF0C;&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x5305;&#x88F9;&#x7C7B;&#xFF0C;&#x7C7B;&#x4E2D;&#x6709;&#x9700;&#x8981;&#x4F20;&#x7684; List &#x4F5C;&#x4E3A;&#x5C5E;&#x6027;&#x548C;&#x5BF9;&#x5E94;&#x7684; get,set &#x65B9;&#x6CD5;&#x3002; &#x4F20;&#x503C;&#x65F6;&#x7528; users[0].name = Tom users[1].name = Luce &#x4E00;&#x5B9A;&#x4E0D;&#x8981;&#x8DF3;&#x8DC3;&#x4F20;&#x503C;&#xFF0C;&#x5982; users[0].name = Tom&amp;users[20].name = Lucy &#x8FD9;&#x6837;&#x4E2D;&#x95F4;&#x7684; 1~19 &#x4E5F;&#x4F1A;&#x5360;&#x7528;&#x8D44;&#x6E90;&#x5C5E;&#x6027;&#x503C;&#x4E3A;&#x7A7A;&#x3002;</p>
+<p><a href="http://localhost:8080/list.do?users[0].name=Tom&amp;users[1].name=Lucy&amp;users[20].name=Jim" target="_blank">http://localhost:8080/list.do?users[0].name=Tom&amp;users[1].name=Lucy&amp;users[20].name=Jim</a></p>
+<h4 id="&#x7ED1;&#x5B9A;-map-&#x5BF9;&#x8C61;">&#x7ED1;&#x5B9A; Map &#x5BF9;&#x8C61;</h4>
+<p>Java &#x4E2D; Map &#x96C6;&#x5408;&#x5BF9;&#x8C61;&#xFF1A;Map &#x662F;&#x4E00;&#x4E2A;&#x57FA;&#x4E8E; kay-value &#x952E;&#x503C;&#x5BF9;&#x7684;&#x96C6;&#x5408;&#x7C7B;&#x578B;&#xFF0C;&#x5B83;&#x662F;&#x65E0;&#x5E8F;&#x7684;&#xFF0C;&#x5176;&#x4E2D;&#x952E; key &#x4E0D;&#x53EF;&#x91CD;&#x590D;&#xFF0C;&#x503C; value &#x53EF;&#x4EE5;&#x91CD;&#x590D;&#x3002;</p>
+<p>&#x5728;&#x7ED1;&#x5B9A; Map &#x5BF9;&#x8C61;&#x6570;&#x636E;&#x65F6;&#xFF0C;&#x9996;&#x5148;&#x8981;&#x5C06;&#x5BF9;&#x8C61;&#x5C01;&#x88C5;&#x4E3A; Map &#x5BF9;&#x8C61;&#xFF0C;&#x5E76;&#x8BBE;&#x7F6E;&#x5B83;&#x7684; get/set &#x65B9;&#x6CD5;&#xFF0C;&#x4EE5; User &#x5BF9;&#x8C61;&#x4E3A;&#x4F8B;&#xFF0C;&#x5C01;&#x88C5;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>private Map&lt;String,User&gt; users;
+</code></pre><p>&#x7136;&#x540E; controller &#x4E0B;&#x5BF9;&#x5E94;&#x7684;&#x65B9;&#x6CD5;&#x5B9A;&#x4E49;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>@RequestMapping(value = &quot;map.do&quot;)
+ @ResponseBody
+ public String map(UserMapForm userMapForm){
+ return userMapForm.toString();
+ }
+</code></pre><p>&#x5176;&#x4E2D; UserMapForm &#x662F;&#x5C01;&#x88C5;&#x7684; Map &#x5BF9;&#x8C61;&#xFF0C;&#x4F7F;&#x7528; url &#x4F20;&#x9012;&#x53C2;&#x6570;&#x7684;&#x65B9;&#x5F0F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p><a href="http://localhost:8080/map.do?users[&#x2018;X&#x2019;].name=Tom&amp;users[&#x2018;X&#x2019;].age=10&amp;users[&#x2018;Y&#x2019;].name=Lucy" target="_blank">http://localhost:8080/map.do?users[&#x2018;X&#x2019;].name=Tom&amp;users[&#x2018;X&#x2019;].age=10&amp;users[&#x2018;Y&#x2019;].name=Lucy</a></p>
+<p>&#x5176;&#x4E2D; X,Y &#x662F; key&#xFF0C;&#x7C7B;&#x578B;&#x662F; String &#x7C7B;&#x578B;&#x3002;</p>
+<h4 id="&#x7ED1;&#x5B9A;-set-&#x5BF9;&#x8C61;">&#x7ED1;&#x5B9A; Set &#x5BF9;&#x8C61;</h4>
+<p>Java &#x4E2D; Set &#x96C6;&#x5408;&#x5BF9;&#x8C61;&#xFF1A;Set &#x96C6;&#x5408;&#x65E0;&#x5E8F;&#xFF0C;&#x4E14;&#x4E0D;&#x53EF;&#x91CD;&#x590D;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x91CD;&#x5199;&#x4E86; hashCode()&#x65B9;&#x6CD5;&#x548C; equals()&#x65B9;&#x6CD5;&#xFF1B;
+Set &#x96C6;&#x5408;&#x5728;&#x5B9E;&#x9645;&#x7684;&#x5E94;&#x7528;&#x4E2D;&#xFF0C;&#x5E38;&#x7528;&#x4E8E;&#x5BF9;&#x8C61;&#x7684;&#x91CD;&#x590D;&#x5224;&#x65AD;&#x6216;&#x8005;&#x6392;&#x9664;&#x91CD;&#x590D;&#x3002;</p>
+<p>&#x5728; SpringMVC &#x4E2D;&#x7ED1;&#x5B9A; Set &#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;&#x63A5;&#x53E3;&#x7684;&#x53C2;&#x6570;&#x5F62;&#x5F0F;&#x548C;&#x7ED1;&#x5B9A; list &#x662F;&#x7C7B;&#x4F3C;&#x7684;&#xFF0C;&#x90FD;&#x662F;&#x901A;&#x8FC7;&#x7D22;&#x5F15;&#x3002;&#x4F46;&#x662F;&#x4E0D;&#x540C;&#x7684;&#x5728;&#x4E8E;&#xFF0C;Set &#x5FC5;&#x987B;&#x521D;&#x59CB;&#x5316;&#xFF0C;&#x5B83;&#x5FC5;&#x987B;&#x5148;&#x5305;&#x542B;&#x4E86;&#x521D;&#x59CB;&#x5316;&#x5BF9;&#x8C61;&#xFF0C;&#x4E5F;&#x5373;&#x662F;&#x8BF4;&#x5FC5;&#x987B;&#x63D0;&#x524D;&#x624B;&#x52A8;&#x5206;&#x914D;&#x597D;&#x7A7A;&#x95F4;&#xFF0C;&#x624D;&#x80FD;&#x8FDB;&#x884C;&#x8D4B;&#x503C;&#xFF0C;&#x800C;&#x4F7F;&#x7528; List &#x5219;&#x6CA1;&#x6709;&#x8FD9;&#x4E2A;&#x8981;&#x6C42;&#x3002;</p>
+<p>&#x53E6;&#x5916;&#x7684;&#x4E00;&#x4E2A;&#x5751;&#x5728;&#x4E8E;&#xFF0C;&#x521D;&#x59CB;&#x5316; Set &#x65F6;&#x9700;&#x8981;&#x7559;&#x610F;&#x5BF9;&#x8C61;&#x7684; equals &#x65B9;&#x6CD5;&#xFF0C;&#x5047;&#x5982;&#x6211;&#x4EEC;&#x5728;&#x63D0;&#x524D;&#x5206;&#x914D;&#x4E24;&#x4E2A;&#x5BF9;&#x8C61;&#x7A7A;&#x95F4;&#x65F6;&#xFF0C;&#x4E24;&#x4E2A;&#x5BF9;&#x8C61;&#x901A;&#x8FC7; equals &#x65B9;&#x6CD5;&#x5224;&#x65AD;&#x4E3A;&#x76F8;&#x540C;&#xFF0C;&#x5219;&#x6211;&#x4EEC;&#x671F;&#x671B;&#x7684; Set &#x7684; size &#x4E3A; 2&#xFF0C;&#x6700;&#x540E;&#x5B9E;&#x9645;&#x56E0;&#x4E3A;&#x53BB;&#x91CD;&#x53D8;&#x6210;&#x4E86; 1&#xFF0C;&#x5BFC;&#x81F4;&#x5728;&#x6570;&#x636E;&#x7ED1;&#x5B9A;&#x65F6;&#x5F88;&#x5BB9;&#x6613;&#x51FA;&#x73B0;&#x6570;&#x7EC4;&#x8D8A;&#x754C;&#x7684;&#x5F02;&#x5E38;&#x3002;</p>
+<p>Set &#x96C6;&#x5408;&#x7C7B;&#x578B;&#xFF1A;&#x6211;&#x4EEC;&#x4E00;&#x822C;&#x7528;&#x6765;&#x6392;&#x91CD; &#x4F7F;&#x7528; Set &#x7684;&#x65F6;&#x5019;&#x9700;&#x8981;&#x5148;&#x8FDB;&#x884C;&#x521D;&#x59CB;&#x5316; &#x8981;&#x4F7F;&#x7528; Set &#x7684;&#x6392;&#x91CD;&#x529F;&#x80FD;&#x5FC5;&#x987B;&#x5728;&#x5BF9;&#x8C61;&#x4E2D;&#x8986;&#x5199; hashcode &#x548C; equals &#x65B9;&#x6CD5;&#x3002; SpringMVC &#x5BF9; Set &#x652F;&#x6301;&#x5E76;&#x4E0D;&#x592A;&#x597D;&#xFF0C;&#x521D;&#x59CB;&#x5316;&#x8FDB;&#x884C;&#x6392;&#x91CD;&#x65F6;&#x4F1A;&#x5BFC;&#x81F4; size &#x53D8;&#x5C0F;&#xFF0C;&#x81F4;&#x4F7F;&#x65E0;&#x6CD5;&#x63A5;&#x53D7;&#x66F4;&#x591A;&#x7684;&#x6570;&#x636E;&#x800C;&#x629B;&#x51FA;&#x5F02;&#x5E38;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x5F00;&#x53D1;&#x4E00;&#x822C;&#x4F18;&#x5148;&#x4F7F;&#x7528; List&#x3002;</p>
+<p>&#x5728;&#x7ED1;&#x5B9A; Set &#x5BF9;&#x8C61;&#x6570;&#x636E;&#x65F6;&#xFF0C;&#x9996;&#x5148;&#x8981;&#x5C06;&#x5BF9;&#x8C61;&#x5C01;&#x88C5;&#x4E3A; Set &#x5BF9;&#x8C61;&#xFF0C;&#x5E76;&#x8BBE;&#x7F6E;&#x5B83;&#x7684; get/set &#x65B9;&#x6CD5;&#xFF0C;&#x5E76;&#x63D0;&#x4F9B;&#x6784;&#x9020;&#x65B9;&#x6CD5;&#xFF0C;&#x5C01;&#x88C5;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>private Set&lt;User&gt; users;
+
+private UserSetForm(){
+    users = new LinkedHashSet&lt;User&gt;();
+    users.add(new User());    //&#x5B9A;&#x4E49;&#x4E24;&#x4E2A;&#x5BF9;&#x8C61;
+    users.add(new User());
+}
+</code></pre><p>&#x5176;&#x6B21;&#x8FD8;&#x8981;&#x91CD;&#x5199; User &#x5BF9;&#x8C61;&#x7684; hashCode()&#x65B9;&#x6CD5;&#x548C; equals()&#x65B9;&#x6CD5;</p>
+<p>&#x7136;&#x540E; controller &#x4E0B;&#x5BF9;&#x5E94;&#x7684;&#x65B9;&#x6CD5;&#x5B9A;&#x4E49;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>@RequestMapping(value = &quot;set.do&quot;)
+@ResponseBody
+public String set(UserSetForm userSetForm){
+    return userSetForm.toString();
+}
+</code></pre><p>&#x5176;&#x4E2D; UserSetForm &#x662F;&#x5C01;&#x88C5;&#x7684; Set &#x5BF9;&#x8C61;&#xFF0C;&#x4F7F;&#x7528; url &#x4F20;&#x9012;&#x53C2;&#x6570;&#x7684;&#x65B9;&#x5F0F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p><a href="http://localhost:8080/set.do?users[0].name=Tom&amp;users[1].name=Lucy" target="_blank">http://localhost:8080/set.do?users[0].name=Tom&amp;users[1].name=Lucy</a></p>
+<p>&#x4E14;&#x4E0D;&#x53EF;&#x8DF3;&#x8303;&#x56F4;&#x4F20;&#x503C;&#xFF0C;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p><a href="http://localhost:8080/set.do?users[0].name=Tom&amp;users[20].name=Lucy" target="_blank">http://localhost:8080/set.do?users[0].name=Tom&amp;users[20].name=Lucy</a> &#x5C06;&#x4F1A;&#x62A5;&#x9519;&#x3002;</p>
+<h4 id="&#x7ED1;&#x5B9A;-xml-&#x5BF9;&#x8C61;">&#x7ED1;&#x5B9A; XML &#x5BF9;&#x8C61;</h4>
+<p>Java &#x7ED1;&#x5B9A; XML &#x5BF9;&#x8C61;&#xFF1A;XML &#x662F;&#x4E00;&#x79CD;&#x6269;&#x5C55;&#x6807;&#x8BB0;&#x8BED;&#x8A00;&#xFF0C;&#x5E38;&#x7528;&#x6765;&#x5B58;&#x50A8;&#x6216;&#x4F20;&#x8F93;&#x6570;&#x636E;&#x3002;</p>
+<p>&#x5BF9;&#x4E8E; xml &#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;&#x7ED1;&#x5B9A;&#xFF0C;&#x9700;&#x8981;&#x5728;&#x65B9;&#x6CD5;&#x5F62;&#x53C2;&#x4E0A;&#x589E;&#x52A0;&#x6CE8;&#x89E3; <code>@RequestBody</code>&#xFF0C;&#x5E76;&#x4E14;&#x5728; Post &#x8BF7;&#x6C42;&#x65F6;&#x8BF7;&#x6C42;&#x5934;&#x4E3A; <code>Content-Type: application/xml</code>&#x3002;</p>
+<p>&#x8FD9;&#x6837; SpringMVC &#x5C31;&#x4F1A;&#x8C03;&#x7528;&#x5BF9;&#x5E94;&#x7684;&#x89E3;&#x6790;&#x5668;&#x53BB;&#x89E3;&#x6790;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x540C;&#x65F6;&#x8FD8;&#x9700;&#x8981;&#x5728; pom &#x4E2D;&#x6DFB;&#x52A0; xml &#x89E3;&#x6790;&#x7684;&#x76F8;&#x5173;&#x4F9D;&#x8D56; spring-oxm &#xFF0C;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>&lt;dependency&gt;
+&lt;groupId&gt;org.springframework&lt;/groupId&gt;
+&lt;artifactId&gt;spring-oxm&lt;/artifactId&gt;
+&lt;/dependency&gt;
+</code></pre><p>&#x5C06; xml &#x5BF9;&#x5E94;&#x7684;&#x5B9E;&#x4F53;&#x7C7B;&#x8FDB;&#x884C;&#x6CE8;&#x89E3;&#x6807;&#x6CE8;&#xFF0C;&#x6839;&#x8282;&#x70B9;&#x653E;&#x5728;&#x7C7B;&#x540D;&#xFF0C;&#x5E76;&#x4F7F;&#x7528; name &#x5C5E;&#x6027;&#x8BBE;&#x5B9A;&#x5BF9;&#x5E94;&#x7684; xml &#x4E2D;&#x7684;&#x6839;&#x8282;&#x70B9;&#x540D;&#x79F0;&#xFF0C;&#x5176;&#x4ED6;&#x8282;&#x70B9;&#x540C;&#x7406;&#x3002;</p>
+<p>&#x5BF9;&#x4E8E; Admin &#x5BF9;&#x8C61;&#x7684; name&#xFF0C;age &#x5C5E;&#x6027;&#x5B9A;&#x4E49;&#x4E3A; xml&#xFF0C;&#x683C;&#x5F0F;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
+&lt;admin&gt;
+  &lt;name&gt;Jime&lt;/name&gt;
+  &lt;age&gt;age&lt;/&gt;
+&lt;/admin&gt;
+</code></pre><p>xml &#x6570;&#x636E;&#x7ED1;&#x5B9A;&#xFF1A;</p>
+<p>&#x5FC5;&#x987B;&#x5728;&#x5B9E;&#x4F53;&#x7C7B;&#x91CC;&#x9762;&#x52A0;&#x6CE8;&#x89E3;<code>@XmlRootElement</code>,&#x5728;&#x5C5E;&#x6027;&#x4E0A;&#x6DFB;&#x52A0; <code>XmlElement</code>&#x3002;&#x5B9A;&#x4E49;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>@XmlRootElement(name=&quot;admin&quot;)
+public class Admin {
+private String name;
+private Integer age;
+
+@XmlElement(name=&quot;name&quot;)
+public String getName() {
+return name;
+}
+
+public void setName(String name) {
+this.name = name;
+}
+
+@XmlElement(name=&quot;age&quot;)
+public Integer getAge() {
+return age;
+}
+
+public void setAge(Integer age) {
+this.age = age;
+}
+
+@Override
+public String toString() {
+return &quot;Admin{&quot; +
+&quot;name=&apos;&quot; + name + &apos;\&apos;&apos; +
+&quot;, age=&quot; + age +
+&apos;}&apos;;
+}
+}
+</code></pre><p>ex:@XmlElement(name=&#x201C;age&#x201D;):&#x6B64;&#x65F6;&#x5C31;&#x4F1A;&#x5C06; xml &#x91CC;&#x9762;&#x5BF9;&#x5E94;&#x7684; age &#x6570;&#x636E;&#x6DFB;&#x52A0;&#x5230;&#x5B9E;&#x4F53;&#x7C7B;&#x4E2D;&#x7684; age &#x5C5E;&#x6027;&#x4E2D;&#x53BB;&#x3002;</p>
+<p>&#x7136;&#x540E; controller &#x4E0B;&#x5BF9;&#x5E94;&#x7684;&#x65B9;&#x6CD5;&#x5B9A;&#x4E49;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>@RequestMapping(value = &quot;xml.do&quot;)
+@ResponseBody
+public String xml(@RequestBody Admin admin){
+return admin.toString();
+}
+</code></pre><p>url &#x8BF7;&#x6C42;&#x5730;&#x5740;&#x4E3A;&#xFF1A;</p>
+<p><a href="http://localhost:8080/xml.do" target="_blank">http://localhost:8080/xml.do</a>,</p>
+<p>&#x8BF7;&#x6C42;&#x5934;&#x4E3A; <code>Content-Type: application/xml</code>.</p>
+<p>$.ajax &#x53D1;&#x9001; xml:</p>
+<pre><code>var xmlStr = &apos;&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;&apos; +&apos;&lt;admin&gt;&lt;name&gt;cc&lt;/name&gt;&lt;age&gt;20&lt;/age&gt;&lt;/admin&gt;&apos;;
+
+$.ajax({
+    type: &quot;POST&quot;,
+    url: &quot;http://localhost:8080/xml.do&quot;,
+    dataType: &quot;json&quot;,
+    contentType: &quot;application/xml;charset=utf-8&quot;,
+    data: xmlStr,
+    success: function (response) {
+        console.log(response);
+    },
+    error: function (error) {
+        alert(error.statusText)
+    }
+});
+</code></pre><h4 id="&#x7ED1;&#x5B9A;-json-&#x5BF9;&#x8C61;">&#x7ED1;&#x5B9A; Json &#x5BF9;&#x8C61;</h4>
+<p>JSON &#x662F;&#x8F7B;&#x91CF;&#x7EA7;&#x7684;&#x6587;&#x672C;&#x6570;&#x636E;&#x4EA4;&#x6362;&#x683C;&#x5F0F;,&#x5E38;&#x7528;&#x4E8E;&#x5B58;&#x50A8;&#x548C;&#x4EA4;&#x6362;&#x6587;&#x672C;&#x4FE1;&#x606F;&#x3002;</p>
+<p>SpringMVC &#x63A5;&#x53D7; http &#x4E2D; body &#x7684; json &#x683C;&#x5F0F;&#x5185;&#x5BB9;&#x4E3A;&#x53C2;&#x6570;&#xFF0C;&#x5728;&#x65B9;&#x6CD5;&#x7684;&#x5F62;&#x53C2;&#x524D;&#x52A0;&#x4E0A;&#x6CE8;&#x89E3; <code>@RequestBody</code>&#xFF0C;&#x7528;&#x4EE5;&#x8C03;&#x7528;&#x89E3;&#x6790;&#x5668;&#x8FDB;&#x884C;&#x8F6C;&#x6362;&#x3002;<code>@ResponseBody</code>&#x8FD4;&#x56DE; JSON &#x6570;&#x636E;&#x3002;</p>
+<p>controller &#x4E2D;&#x65B9;&#x6CD5;&#x5B9A;&#x4E49;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>@RequestMapping(value = &quot;json.do&quot;)
+@ResponseBody
+public String json(@RequestBody User user){
+return user.toString();
+}
+</code></pre><p>url &#x8BF7;&#x6C42;&#x5730;&#x5740;&#x4E3A;&#xFF1A;
+<a href="http://localhost:8080/json.do" target="_blank">http://localhost:8080/json.do</a></p>
+<p>http &#x8BF7;&#x6C42;&#x5934;&#xFF1A;<code>Content-Type: application/json</code>&#x3002;</p>
+<p>$.ajax &#x53D1;&#x9001; json:</p>
+<pre><code>$.ajax({
+        type: &quot;POST&quot;,
+        url: &quot;http://localhost:8080/json.do&quot;,
+        dataType: &quot;json&quot;,
+        contentType: &quot;application/json;charset=utf-8&quot;,
+        data: JSON.stringify({
+            username: &quot;Curry&quot;,
+            password: &quot;123456&quot;
+        }),
+        success: function (response) {
+            console.log(response);
+        },
+        error: function (error) {
+            alert(error.statusText)
+        }
+    });
+</code></pre><h4 id="&#x6570;&#x636E;&#x7C7B;&#x578B;&#x8F6C;&#x6362;">&#x6570;&#x636E;&#x7C7B;&#x578B;&#x8F6C;&#x6362;</h4>
+<ol>
+<li>Spring3 &#x4E4B;&#x524D; <code>org.springframework.web.bind.WebDataBinder</code> &#x4F7F;&#x7528; <code>java.beans.PropertyEditor</code> &#x5C06;&#x8BF7;&#x6C42;(&#x5B57;&#x7B26;&#x4E32;)&#x8F6C;&#x5316;&#x4E3A; Bean</li>
+<li>Spring3 &#x4E4B;&#x540E;,&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x7531; <code>org.springframework.core.convert.converter.Converter</code> &#x5B8C;&#x6210;,&#x683C;&#x5F0F;&#x5316;&#x7531; <code>org.springframework.format.Formatter</code> &#x5B8C;&#x6210;&#x3002;</li>
+</ol>
+<p><code>String &#x5B57;&#x7B26;&#x4E32;&#x8F6C; Date &#x65E5;&#x671F;&#x683C;&#x5F0F;&#x793A;&#x4F8B;</code>&#xFF1A;</p>
+<blockquote>
+<p>&#x4E0B;&#x9762;&#x7684;&#x65B9;&#x6CD5;&#x53EA;&#x5728;&#x5F53;&#x524D; Controller &#x6709;&#x6548;</p>
+</blockquote>
+<pre><code>@RequestMapping(value = &quot;/date&quot;)
+    @ResponseBody
+    public String date(Date birthday) {
+        return birthday.toString();
+    }
+
+@InitBinder(&quot;birthday&quot;)
+public void initBinder(ServletRequestDataBinder binder){
+    SimpleDateFormat sdf = new SimpleDateFormat(&quot;yyyy-MM-dd&quot;);
+    binder.registerCustomEditor(Date.class, new CustomDateEditor(sdf, true);
+}
+</code></pre><p><code>String &#x5B57;&#x7B26;&#x4E32;&#x8F6C; Date &#x65E5;&#x671F;&#x683C;&#x5F0F;&#x5168;&#x5C40;&#x914D;&#x7F6E;&#x7684;&#x65B9;&#x6CD5;</code>&#xFF1A;</p>
+<p><code>&#x65B9;&#x6CD5;&#x4E00;:</code></p>
+<p>&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x5B9E;&#x73B0;<code>org.springframework.core.convert.converter.Converter</code>&#x63A5;&#x53E3;&#x7684;&#x65E5;&#x671F;&#x7684;&#x8F6C;&#x6362;&#x7C7B;</p>
+<pre><code>package com.imooc.common;
+import org.springframework.core.convert.converter.Converter;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+public class MyDateConverter implements Converter&lt;String, Date&gt; {
+    @Override
+    public Date convert(String source) {
+        SimpleDateFormat sdf = new SimpleDateFormat(&quot;yyyy-MM-dd&quot;);
+        try {
+            return sdf.parse(source);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+}
+</code></pre><p>&#x5728; Spring xml &#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#x6CE8;&#x5165;<code>org.springframework.format.support.FormattingConversionServiceFactoryBean</code>&#x5BF9;&#x8C61;</p>
+<pre><code>&lt;mvc:annotation-driven conversion-service=&quot;myDateConverter&quot;/&gt;
+
+&lt;bean id=&quot;myDateConverter&quot; class=&quot;org.springframework.format.support.FormattingConversionServiceFactoryBean&quot;&gt;
+        &lt;property name=&quot;converters&quot;&gt;
+            &lt;set&gt;
+                &lt;bean class=&quot;com.imooc.common.MyDateConverter&quot;&gt;&lt;/bean&gt;
+            &lt;/set&gt;
+        &lt;/property&gt;
+&lt;/bean&gt;
+</code></pre><p><code>&#x65B9;&#x6CD5;&#x4E8C;&#xFF1A;</code></p>
+<p>&#x5B9A;&#x4E49;&#x5B9E;&#x73B0;<code>org.springframework.format.Formatter</code>&#x63A5;&#x53E3;&#x7684;&#x65E5;&#x671F;&#x683C;&#x5F0F;&#x5316;&#x7C7B;</p>
+<pre><code>package com.imooc.common;
+import org.springframework.format.Formatter;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+public class MyDateFormatter implements Formatter&lt;Date&gt; {
+
+    @Override
+    public Date parse(String text, Locale locale) throws ParseException {
+        SimpleDateFormat sdf = new SimpleDateFormat(&quot;yyyy-MM-dd&quot;);
+        return sdf.parse(text);
+    }
+
+    @Override
+    public String print(Date object, Locale locale) {
+        return null;
+    }
+}
+</code></pre><p>&#x5728; Spring xml &#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#x6CE8;&#x5165;<code>org.springframework.format.support.FormattingConversionServiceFactoryBean</code>&#x5BF9;&#x8C61;</p>
+<pre><code>&lt;mvc:annotation-driven conversion-service=&quot;myDateFormatter&quot;/&gt;
+
+&lt;bean id=&quot;myDateFormatter&quot; class=&quot;org.springframework.format.support.FormattingConversionServiceFactoryBean&quot;&gt;
+        &lt;property name=&quot;formatters&quot;&gt;
+            &lt;set&gt;
+                &lt;bean class=&quot;com.imooc.common.MyDateFormatter&quot;&gt;&lt;/bean&gt;
+            &lt;/set&gt;
+        &lt;/property&gt;
+    &lt;/bean&gt;
+</code></pre>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="springmvc.html" class="navigation navigation-prev " aria-label="Previous page: springmvc">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="validator.html" class="navigation navigation-next " aria-label="Next page: spring validator">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"springmvc 数据绑定","level":"1.5.2","depth":2,"next":{"title":"spring validator","level":"1.5.3","depth":2,"path":"spring/validator.md","ref":"spring/validator.md","articles":[]},"previous":{"title":"springmvc","level":"1.5.1","depth":2,"path":"spring/springmvc.md","ref":"spring/springmvc.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","-lunr","-search","toggle-chapters","search-plus","favicon"],"root":"./docs","styles":{"website":"styles/website.css"},"pluginsConfig":{"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"splitter":{},"toggle-chapters":{},"search-plus":{},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"lujiandi","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"book","language":"zh-hans","links":{"sidebar":{"GitHub":"https://gitee.com/lujiandi/book"}},"gitbook":"3.2.3","description":"Gitbook 教程","direction":"ltr"},"file":{"path":"spring/databinding.md","mtime":"2018-12-26T03:44:51.764Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-30T08:23:59.556Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-toggle-chapters/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

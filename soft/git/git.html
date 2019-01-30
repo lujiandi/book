@@ -1,0 +1,1012 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Git · book</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="lujiandi">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-toggle-chapters/toggle.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-plus/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../styles/website.css">
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../idea/idea.html" />
+    
+    
+    <link rel="prev" href="../jdk/jdk.html" />
+    
+
+    
+        <link rel="shortcut icon" href='../../favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../../favicon.ico' type="image/x-icon">
+    
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://gitee.com/lujiandi/book" target="_blank" class="custom-link">GitHub</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../gitbooktutorial/">
+            
+                <a href="../../gitbooktutorial/">
+            
+                    
+                    GitBook 教程
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../gitbooktutorial/installation.html">
+            
+                <a href="../../gitbooktutorial/installation.html">
+            
+                    
+                    安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../gitbooktutorial/commands.html">
+            
+                <a href="../../gitbooktutorial/commands.html">
+            
+                    
+                    命令
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../../gitbooktutorial/structure.html">
+            
+                <a href="../../gitbooktutorial/structure.html">
+            
+                    
+                    结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../../gitbooktutorial/settings.html">
+            
+                <a href="../../gitbooktutorial/settings.html">
+            
+                    
+                    配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../../gitbooktutorial/deploy.html">
+            
+                <a href="../../gitbooktutorial/deploy.html">
+            
+                    
+                    发布
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../../gitbooktutorial/generating-ebooks-and-pdfs.html">
+            
+                <a href="../../gitbooktutorial/generating-ebooks-and-pdfs.html">
+            
+                    
+                    生成电子书
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../../gitbooktutorial/resources.html">
+            
+                <a href="../../gitbooktutorial/resources.html">
+            
+                    
+                    资源
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    软件安装配置
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../jdk/jdk.html">
+            
+                <a href="../jdk/jdk.html">
+            
+                    
+                    Jdk
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.2" data-path="git.html">
+            
+                <a href="git.html">
+            
+                    
+                    Git
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../idea/idea.html">
+            
+                <a href="../idea/idea.html">
+            
+                    
+                    Idea
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../vscode/vscode.html">
+            
+                <a href="../vscode/vscode.html">
+            
+                    
+                    vscode
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../tomcat/tomcat.html">
+            
+                <a href="../tomcat/tomcat.html">
+            
+                    
+                    tomcat
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../redis/redis.html">
+            
+                <a href="../redis/redis.html">
+            
+                    
+                    redis
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../nodejs/nodejs.html">
+            
+                <a href="../nodejs/nodejs.html">
+            
+                    
+                    nodejs
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../maven/maven.html">
+            
+                <a href="../maven/maven.html">
+            
+                    
+                    maven
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="../mysql/mysql.html">
+            
+                <a href="../mysql/mysql.html">
+            
+                    
+                    mysql
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="../nginx/nginx.html">
+            
+                <a href="../nginx/nginx.html">
+            
+                    
+                    nginx
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.11" data-path="../lombok/lombok.html">
+            
+                <a href="../lombok/lombok.html">
+            
+                    
+                    lombok
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.12" data-path="../en/english.html">
+            
+                <a href="../en/english.html">
+            
+                    
+                    常用单词
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../java/">
+            
+                <a href="../../java/">
+            
+                    
+                    Java docs
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../java/javaweb.html">
+            
+                <a href="../../java/javaweb.html">
+            
+                    
+                    java web
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../java/synchronized.html">
+            
+                <a href="../../java/synchronized.html">
+            
+                    
+                    synchronized
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../../java/diary.html">
+            
+                <a href="../../java/diary.html">
+            
+                    
+                    diary
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../spring/">
+            
+                <a href="../../spring/">
+            
+                    
+                    Spring
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../spring/springmvc.html">
+            
+                <a href="../../spring/springmvc.html">
+            
+                    
+                    springmvc
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../spring/databinding.html">
+            
+                <a href="../../spring/databinding.html">
+            
+                    
+                    springmvc 数据绑定
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../../spring/validator.html">
+            
+                <a href="../../spring/validator.html">
+            
+                    
+                    spring validator
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../../spring/springTransaction.html">
+            
+                <a href="../../spring/springTransaction.html">
+            
+                    
+                    spring transaction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../../spring/springIoc.html">
+            
+                <a href="../../spring/springIoc.html">
+            
+                    
+                    spring ioc
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../../spring/springAop.html">
+            
+                <a href="../../spring/springAop.html">
+            
+                    
+                    spring aop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="../../spring/springsession.html">
+            
+                <a href="../../spring/springsession.html">
+            
+                    
+                    spring session
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="../../spring/springdata.html">
+            
+                <a href="../../spring/springdata.html">
+            
+                    
+                    spring data
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9" data-path="../../spring/springhibernate.html">
+            
+                <a href="../../spring/springhibernate.html">
+            
+                    
+                    整合 hibernate
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../frontend/">
+            
+                <a href="../../frontend/">
+            
+                    
+                    前端
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../frontend/html/html.html">
+            
+                <a href="../../frontend/html/html.html">
+            
+                    
+                    html
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../../frontend/javascript/Introduction.html">
+            
+                <a href="../../frontend/javascript/Introduction.html">
+            
+                    
+                    javascript 入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../../frontend/javascript/base.html">
+            
+                <a href="../../frontend/javascript/base.html">
+            
+                    
+                    javascript 基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../../frontend/jquery/jquery.html">
+            
+                <a href="../../frontend/jquery/jquery.html">
+            
+                    
+                    jquery 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../../frontend/http/http.html">
+            
+                <a href="../../frontend/http/http.html">
+            
+                    
+                    http 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../../frontend/ajax/ajax.html">
+            
+                <a href="../../frontend/ajax/ajax.html">
+            
+                    
+                    ajax 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="../../frontend/websocket/WebSocket.html">
+            
+                <a href="../../frontend/websocket/WebSocket.html">
+            
+                    
+                    websocket 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.8" data-path="../../frontend/typescript/typescript.html">
+            
+                <a href="../../frontend/typescript/typescript.html">
+            
+                    
+                    TypeScript
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.9" data-path="../../frontend/react/react.html">
+            
+                <a href="../../frontend/react/react.html">
+            
+                    
+                    React
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.10" data-path="../../frontend/vue/vue.html">
+            
+                <a href="../../frontend/vue/vue.html">
+            
+                    
+                    Vue
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.11" data-path="../../frontend/webpack/webpack.html">
+            
+                <a href="../../frontend/webpack/webpack.html">
+            
+                    
+                    webpack
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../../gitproject/">
+            
+                <a href="../../gitproject/">
+            
+                    
+                    Git 项目目录
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Git</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div class="search-plus" id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="&#xFEFF;-git">&#xFEFF; Git</h2>
+<h4 id="github-&#x8D26;&#x53F7;">github &#x8D26;&#x53F7;</h4>
+<p>&#x5FAE;&#x8F6F; outlook &#x90AE;&#x7BB1;</p>
+<h4 id="git-&#x914D;&#x7F6E;">git &#x914D;&#x7F6E;</h4>
+<p>&#xA0;&#xA0;&#x5728;&#x4F7F;&#x7528; git &#x4E4B;&#x524D;&#x4F60;&#x9700;&#x8981;&#x914D;&#x7F6E;&#x4E00;&#x4E0B; git&#x3002;git &#x5728;&#x4F60;&#x521B;&#x5EFA;&#x63D0;&#x4EA4;&#x7684;&#x65F6;&#x5019;&#x4F1A;&#x8BB0;&#x5F55;&#x4F60;&#x7684;&#x540D;&#x5B57;&#x548C; email &#x5730;&#x5740;&#xFF0C;&#x6240;&#x4EE5;&#x4F60;&#x5E94;&#x8BE5;&#x544A;&#x8BC9; git &#x8FD9;&#x4E9B;&#x5185;&#x5BB9;&#x3002;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&apos;git config&apos;&#x547D;&#x4EE4;&#x6765;&#x8BBE;&#x7F6E;&#x3002;</p>
+<pre><code>git config --list
+git config --global user.name &quot;&#x4F60;&#x7684;&#x7528;&#x6237;&#x540D;&quot;
+git config --global user.email &quot;&#x4F60;&#x7684;&#x90AE;&#x7BB1;&quot;
+git config --global core.autocrlf false
+</code></pre><h4 id="&#x521B;&#x5EFA;-ssh-key">&#x521B;&#x5EFA; SSH Key</h4>
+<ul>
+<li>&#x521B;&#x5EFA; SSH Key&#xFF1A; ssh-keygen -t rsa -C &#x4F60;&#x7684;&#x90AE;&#x7BB1;</li>
+<li>&#x5C06;&#x751F;&#x6210;&#x7684; id_rsa.pub &#x91CC;&#x9762;&#x7684;&#x5185;&#x5BB9;&#x590D;&#x5236;&#x5230; github &#x7684; add ssh &#x4E2D;</li>
+<li>&#x9A8C;&#x8BC1; github: ssh -T git@github.com</li>
+<li>&#x9A8C;&#x8BC1; gitee: ssh -T git@gitee.com</li>
+</ul>
+<h4 id="gistgithubcom-&#x88AB;&#x5899;&#x65E0;&#x6CD5;&#x8BBF;&#x95EE;&#x89E3;&#x51B3;&#x529E;&#x6CD5;">gist.github.com &#x88AB;&#x5899;&#x65E0;&#x6CD5;&#x8BBF;&#x95EE;&#x89E3;&#x51B3;&#x529E;&#x6CD5;</h4>
+<p>&#xA0;&#xA0;windows &#x4E0B; &#x6253;&#x5F00; C:\Windows\System32\drivers\etc\hosts &#x6587;&#x4EF6; &#x7F16;&#x8F91;&#x5668;&#x6253;&#x5F00;&#xFF0C;&#x5728;&#x6700;&#x540E;&#x884C;&#x6DFB;&#x52A0; 192.30.253.118 gist.github.com</p>
+<h4 id="&#x521B;&#x5EFA;&#x672C;&#x5730;&#x4ED3;&#x5E93;&#x5E76;&#x63A8;&#x9001;&#x5230;&#x8FDC;&#x7A0B;&#x7684;&#x8FC7;&#x7A0B;">&#x521B;&#x5EFA;&#x672C;&#x5730;&#x4ED3;&#x5E93;&#x5E76;&#x63A8;&#x9001;&#x5230;&#x8FDC;&#x7A0B;&#x7684;&#x8FC7;&#x7A0B;</h4>
+<ol>
+<li>&#x5728;&#x8FDC;&#x7A0B;&#x521B;&#x5EFA; repository,&#x83B7;&#x5F97;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x5730;&#x5740;(https/ssh)&#x5982;&#xFF1A;<a href="https://github.com/lujiandi/mmall.git" target="_blank">https://github.com/lujiandi/mmall.git</a></li>
+<li>&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;&#x76EE;&#x5F55; [project-name]</li>
+<li>&#x521B;&#x5EFA;&#x914D;&#x7F6E; .gitignore &#x6587;&#x4EF6;&#xFF0C;&#x5FFD;&#x7565;&#x6307;&#x5B9A;&#x7C7B;&#x578B;&#x7684;&#x6587;&#x4EF6;&#x548C;&#x76EE;&#x5F55;&#x3002;</li>
+<li>&#x521B;&#x5EFA;&#x6587;&#x4EF6; README.md</li>
+<li>&#x9879;&#x76EE;&#x521D;&#x59CB;&#x5316;(git init)</li>
+<li><p>&#x6DFB;&#x52A0;&#x6587;&#x4EF6;(&#x5355;&#x4E2A;&#x6587;&#x4EF6;&#x6307;&#x5B9A;&#x6587;&#x4EF6;&#x540D;)</p>
+<pre><code>git add .
+</code></pre></li>
+<li><p>&#x63D0;&#x4EA4;&#x672C;&#x5730;</p>
+<pre><code>git commit -am &quot;commit message&quot;
+</code></pre></li>
+<li><p>&#x8FDE;&#x63A5;&#x5230;&#x8FDC;&#x7A0B;</p>
+<pre><code>git remote add origin https://github.com/lujiandi/mmall.git
+</code></pre></li>
+<li><p>&#x63A8;&#x9001;&#x5230;&#x8FDC;&#x7A0B; xxx &#x5206;&#x652F;(&#x5F3A;&#x5236;&#x63A8; &#x52A0;&#x4E0A; -f )</p>
+<pre><code>git push -u origin xxx
+</code></pre></li>
+</ol>
+<h4 id="&#x5176;&#x5B83;&#x547D;&#x4EE4;">&#x5176;&#x5B83;&#x547D;&#x4EE4;</h4>
+<ol>
+<li><p>&#x72B6;&#x6001;(&#x67E5;&#x770B;&#x6709;&#x54EA;&#x4E9B;&#x6587;&#x4EF6;&#x53D1;&#x751F;&#x53D8;&#x5316;)</p>
+<p>git status</p>
+</li>
+<li><p>&#x67E5;&#x770B; tag</p>
+<p>git tag</p>
+</li>
+<li><p>&#x6DFB;&#x52A0; tag</p>
+<p>git tag -a vx.x.x -m &quot;vx.x.x &#x7248;&#x672C;&quot;</p>
+</li>
+<li><p>&#x63A8;&#x9001; tag</p>
+<p>git push -u origin xxxx</p>
+</li>
+<li><p>&#x5220;&#x9664; tag</p>
+<p>git tag -d xxx</p>
+</li>
+<li><p>&#x5220;&#x9664;&#x8FDC;&#x7A0B; tag</p>
+<p>git push origin :refs/tags/xxxx</p>
+</li>
+<li><p>&#x67E5;&#x770B;&#x5206;&#x652F;</p>
+<p>git branch</p>
+<p>git branch -a #&#x67E5;&#x770B;&#x8FDC;&#x7A0B;&#x5206;&#x652F;</p>
+<p>git branch -r</p>
+</li>
+<li><p>&#x6839;&#x636E;&#x539F;&#x6709;&#x5206;&#x652F;&#x521B;&#x5EFA;&#x8FDB;&#x5207;&#x6362;&#x5230;&#x65B0;&#x5206;&#x652F;</p>
+<p>git checkout -b v1.0 origin/master</p>
+</li>
+<li><p>&#x5207;&#x6362;&#x5206;&#x652F;</p>
+<p>git checkout xxx</p>
+</li>
+<li><p>&#x5220;&#x9664;&#x5206;&#x652F;</p>
+<p>git branch -d xxxx</p>
+</li>
+<li><p>&#x5220;&#x9664;&#x8FDC;&#x7A0B;&#x5206;&#x652F;</p>
+<p>git push origin --delete xxxx</p>
+</li>
+<li><p>(&#x62C9;)&#x66F4;&#x65B0;&#x8FDC;&#x7A0B;&#x5230;&#x672C;&#x5730;&#xFF0C;</p>
+<p>git pull</p>
+</li>
+<li><p>log &#x672C;&#x5730;&#x63D0;&#x4EA4;&#x8BB0;&#x5F55; &#x53EF;&#x4EE5;&#x56DE;&#x5230;&#x8FC7;&#x53BB;</p>
+<p>git log</p>
+</li>
+<li><p>reflog &#x5F53;&#x524D;&#x7248;&#x672C;&#x7684;&#x8BB0;&#x5F55;</p>
+<p>git reflog</p>
+</li>
+<li><p>&#x53D6;&#x6D88;&#x6682;&#x5B58;</p>
+<p>git reset HEAD fileName</p>
+</li>
+<li><p>&#x6062;&#x590D;&#x6587;&#x4EF6;</p>
+<p>git checkout fileName</p>
+</li>
+<li><p>&#x672C;&#x5730;&#x56DE;&#x5230;&#x67D0;&#x6B21;&#x63D0;&#x4EA4;&#x7684;&#x7248;&#x672C;(&#x5F71;&#x54CD;&#x6240;&#x6709;&#x6587;&#x4EF6;)</p>
+<p>git reset --hard 04f76726c53d58992dfb2d55417b0eb9452c75b2</p>
+</li>
+<li><p>diff(&#x6CA1;&#x6709; commit)</p>
+<p>git diff <file> #&#x6BD4;&#x8F83;&#x5DE5;&#x4F5C;&#x533A;&#x4E0E;&#x6682;&#x5B58;&#x533A;&#x6587;&#x4EF6;&#x7684;&#x5DEE;&#x5F02;</file></p>
+</li>
+<li><p>merge &#x5408;&#x5E76; xxx &#x5230;&#x524D;&#x5206;&#x652F;</p>
+<p>git merge xxx</p>
+</li>
+<li><p>&#x4E0B;&#x8F7D;&#x4E00;&#x4E2A;&#x9879;&#x76EE;&#x548C;&#x5B83;&#x7684;&#x6574;&#x4E2A;&#x4EE3;&#x7801;&#x5386;&#x53F2;</p>
+<p>git clone [url]</p>
+</li>
+<li><p>&#x8FDC;&#x7A0B;&#x5173;&#x8054;</p>
+<p>git remote -v &#xFF1A;&#x67E5;&#x770B;&#x8FDC;&#x7A0B;&#x5173;&#x8054;</p>
+<p>git remote add xxx &#x8FDC;&#x7A0B;&#x5730;&#x5740; &#xFF1A;&#x5173;&#x8054;&#x8FDC;&#x7A0B;,xxx &#x4E3A;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x540D;&#xFF0C;git push -u xxxx &#x672C;&#x5730;&#x5206;&#x652F;</p>
+<p>git remote remove xxx :&#x53D6;&#x6D88;&#x5173;&#x8054;</p>
+</li>
+</ol>
+<h4 id="gitflow">gitflow</h4>
+<p><img src="images/gitflow.jpg" alt="gitflow"></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../jdk/jdk.html" class="navigation navigation-prev " aria-label="Previous page: Jdk">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../idea/idea.html" class="navigation navigation-next " aria-label="Next page: Idea">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Git","level":"1.3.2","depth":2,"next":{"title":"Idea","level":"1.3.3","depth":2,"path":"soft/idea/idea.md","ref":"soft/idea/idea.md","articles":[]},"previous":{"title":"Jdk","level":"1.3.1","depth":2,"path":"soft/jdk/jdk.md","ref":"soft/jdk/jdk.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","-lunr","-search","toggle-chapters","search-plus","favicon"],"root":"./docs","styles":{"website":"styles/website.css"},"pluginsConfig":{"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"splitter":{},"toggle-chapters":{},"search-plus":{},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"lujiandi","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"book","language":"zh-hans","links":{"sidebar":{"GitHub":"https://gitee.com/lujiandi/book"}},"gitbook":"3.2.3","description":"Gitbook 教程","direction":"ltr"},"file":{"path":"soft/git/git.md","mtime":"2018-12-06T16:11:49.165Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-30T08:23:59.556Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-toggle-chapters/toggle.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-plus/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
