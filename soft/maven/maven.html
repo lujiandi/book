@@ -829,6 +829,90 @@
 <li>&#x8BBE;&#x7F6E;&#x7CFB;&#x7EDF;&#x73AF;&#x5883;&#x53D8;&#x91CF; <code>M2_HOME</code>(maven &#x5B89;&#x88C5;&#x76EE;&#x5F55;)</li>
 <li>&#x6DFB;&#x52A0; <code>%M2_HOME%/bin</code>&#x5230;&#x7CFB;&#x7EDF;&#x53D8;&#x91CF;<code>Path</code></li>
 </ol>
+<h4 id="pomxml">pom.xml</h4>
+<pre><code>&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+  xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;
+  &lt;!-- pom&#x7248;&#x672C; --&gt;
+  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+
+  &lt;!-- &#x53CD;&#x5199;&#x7684;&#x7F51;&#x5740;+&#x9879;&#x76EE;&#x540D; --&gt;
+  &lt;groupId&gt;com.imooc.hi&lt;/groupId&gt;
+  &lt;!-- &#x9879;&#x76EE;+&#x6A21;&#x5757;&#x540D; --&gt;
+  &lt;artifactId&gt;hi&lt;/artifactId&gt;
+  &lt;!-- &#x5927;&#x7248;&#x672C;&#x53F7;.&#x5206;&#x652F;&#x7248;&#x672C;&#x53F7;.&#x5C0F;&#x7248;&#x672C;&#x53F7; --&gt;
+  &lt;!-- snapshort &#x5FEB;&#x7167;
+       alpha &#x5185;&#x6D4B;
+       beta  &#x516C;&#x6D4B;
+       release &#x7A33;&#x5B9A;
+       GA &#x6B63;&#x5F0F;&#x53D1;&#x5E03;
+   --&gt;
+  &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;
+  &lt;!-- &#x6253;&#x5305;&#x65B9;&#x5F0F;
+     &#x9ED8;&#x8BA4;&#x662F;jar
+     war zip pom
+   --&gt;
+  &lt;packaging&gt;jar&lt;/packaging&gt;
+
+
+  &lt;!-- &#x7236;&#x6A21;&#x5757; --&gt;
+  &lt;parent&gt;&lt;/parent&gt;
+
+  &lt;!-- &#x5B50;&#x6A21;&#x5757;&#x5217;&#x8868; --&gt;
+   &lt;modules&gt;&lt;/modules&gt;
+
+  &lt;!-- &#x9879;&#x76EE;&#x540D; --&gt;
+  &lt;name&gt;hi&lt;/name&gt;
+
+  &lt;!-- url --&gt;
+  &lt;url&gt;http://maven.apache.org&lt;/url&gt;
+
+  &lt;!-- &#x9879;&#x76EE;&#x63CF;&#x8FF0; --&gt;
+  &lt;description&gt;&lt;/description&gt;
+  &lt;developers&gt;&lt;/developers&gt;
+  &lt;licenses&gt;&lt;/licenses&gt;
+  &lt;organization&gt;&lt;/organization&gt;
+
+  &lt;properties&gt;
+    &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
+  &lt;/properties&gt;
+
+  &lt;!-- &#x4F9D;&#x8D56;&#x5217;&#x8868; --&gt;
+  &lt;dependencies&gt;
+
+
+    &lt;dependency&gt;
+      &lt;groupId&gt;&lt;/groupId&gt;
+      &lt;artifactId&gt;&lt;/artifactId&gt;
+      &lt;version&gt;&lt;/version&gt;
+      &lt;!-- scop&#x8868;&#x793A;&#x4F9D;&#x8D56;&#x8303;&#x56F4;&#xFF0C;test&#x8868;&#x793A;&#x53EA;&#x5728;&#x6D4B;&#x8BD5;&#x8303;&#x56F4;&#x5185;&#x6709;&#x7528; --&gt;
+      &lt;scope&gt;test&lt;/scope&gt;
+      &lt;optional&gt;&lt;/optional&gt;
+      &lt;!-- &#x6392;&#x9664;&#x4F9D;&#x8D56; --&gt;
+      &lt;exclusions&gt;&lt;/exclusions&gt;
+    &lt;/dependency&gt;
+
+
+  &lt;/dependencies&gt;
+
+  &lt;!-- &#x4F9D;&#x8D56;&#x7BA1;&#x7406;&#xFF0C;&#x4E0D;&#x5F15;&#x5165;&#x4F9D;&#x8D56;,&#x800C;&#x4E00;&#x822C;&#x7528;&#x4E8E;&#x7236;&#x6A21;&#x5757;, --&gt;
+  &lt;dependencyManagementy&gt;
+  &lt;/dependencyManagementy&gt;
+
+   &lt;!-- &#x6784;&#x5EFA; --&gt;
+   &lt;build&gt;
+     &lt;!-- &#x63D2;&#x4EF6; --&gt;
+     &lt;plugins&gt;
+
+
+
+     &lt;/plugins&gt;
+   &lt;/build&gt;
+
+&lt;/project&gt;
+</code></pre><h4 id="&#x805A;&#x5408;">&#x805A;&#x5408;</h4>
+<blockquote>
+<p>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7236;&#x7C7B; maven &#x9879;&#x76EE;&#xFF0C;&#x628A; pom.xml &#x6587;&#x4EF6;&#x91CC;&#x7684; <code>&lt;package&gt;&lt;/package&gt;</code> &#x7684;&#x503C;&#x6539;&#x6210; pom;&#x901A;&#x8FC7;<code>&lt;modules&gt;&lt;/modules&gt;</code>&#x5F15;&#x5165;&#x5B50;&#x9879;&#x76EE;&#xFF0C;&#x53EF;&#x4EE5;&#x5BF9;&#x591A;&#x4E2A;&#x9879;&#x76EE;&#x540C;&#x65F6;&#x8FDB;&#x884C;&#x505A;&#x5904;&#x7406;&#x3002;</p>
+</blockquote>
 <h4 id="&#x5E38;&#x7528;&#x547D;&#x4EE4;">&#x5E38;&#x7528;&#x547D;&#x4EE4;</h4>
 <ul>
 <li>mvn -v</li>
@@ -960,7 +1044,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"maven","level":"1.3.8","depth":2,"next":{"title":"mysql","level":"1.3.9","depth":2,"path":"soft/mysql/mysql.md","ref":"soft/mysql/mysql.md","articles":[]},"previous":{"title":"nodejs","level":"1.3.7","depth":2,"path":"soft/nodejs/nodejs.md","ref":"soft/nodejs/nodejs.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","-lunr","-search","toggle-chapters","search-plus","favicon"],"root":"./docs","styles":{"website":"styles/website.css"},"pluginsConfig":{"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"splitter":{},"toggle-chapters":{},"search-plus":{},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"lujiandi","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"book","language":"zh-hans","links":{"sidebar":{"GitHub":"https://github.com/lujiandi/book"}},"gitbook":"3.2.3","description":"Gitbook 教程","direction":"ltr"},"file":{"path":"soft/maven/maven.md","mtime":"2019-01-21T12:16:17.176Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-01-30T08:29:27.283Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"maven","level":"1.3.8","depth":2,"next":{"title":"mysql","level":"1.3.9","depth":2,"path":"soft/mysql/mysql.md","ref":"soft/mysql/mysql.md","articles":[]},"previous":{"title":"nodejs","level":"1.3.7","depth":2,"path":"soft/nodejs/nodejs.md","ref":"soft/nodejs/nodejs.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","-lunr","-search","toggle-chapters","search-plus","favicon"],"root":"./docs","styles":{"website":"styles/website.css"},"pluginsConfig":{"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"splitter":{},"toggle-chapters":{},"search-plus":{},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"lujiandi","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"book","language":"zh-hans","links":{"sidebar":{"GitHub":"https://github.com/lujiandi/book"}},"gitbook":"3.2.3","description":"Gitbook 教程","direction":"ltr"},"file":{"path":"soft/maven/maven.md","mtime":"2019-02-01T07:25:46.035Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-01T07:26:35.563Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

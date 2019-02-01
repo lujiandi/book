@@ -7,6 +7,95 @@
 1. 设置系统环境变量 `M2_HOME`(maven 安装目录)
 2. 添加 `%M2_HOME%/bin`到系统变量`Path`
 
+#### pom.xml
+
+```
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <!-- pom版本 -->
+  <modelVersion>4.0.0</modelVersion>
+
+  <!-- 反写的网址+项目名 -->
+  <groupId>com.imooc.hi</groupId>
+  <!-- 项目+模块名 -->
+  <artifactId>hi</artifactId>
+  <!-- 大版本号.分支版本号.小版本号 -->
+  <!-- snapshort 快照
+       alpha 内测
+       beta  公测
+       release 稳定
+       GA 正式发布
+   -->
+  <version>1.0-SNAPSHOT</version>
+  <!-- 打包方式
+     默认是jar
+     war zip pom
+   -->
+  <packaging>jar</packaging>
+
+
+  <!-- 父模块 -->
+  <parent></parent>
+
+  <!-- 子模块列表 -->
+   <modules></modules>
+
+  <!-- 项目名 -->
+  <name>hi</name>
+
+  <!-- url -->
+  <url>http://maven.apache.org</url>
+
+  <!-- 项目描述 -->
+  <description></description>
+  <developers></developers>
+  <licenses></licenses>
+  <organization></organization>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <!-- 依赖列表 -->
+  <dependencies>
+
+
+    <dependency>
+      <groupId></groupId>
+      <artifactId></artifactId>
+      <version></version>
+      <!-- scop表示依赖范围，test表示只在测试范围内有用 -->
+      <scope>test</scope>
+      <optional></optional>
+      <!-- 排除依赖 -->
+      <exclusions></exclusions>
+    </dependency>
+
+
+  </dependencies>
+
+  <!-- 依赖管理，不引入依赖,而一般用于父模块, -->
+  <dependencyManagementy>
+  </dependencyManagementy>
+
+   <!-- 构建 -->
+   <build>
+     <!-- 插件 -->
+     <plugins>
+
+
+
+     </plugins>
+   </build>
+
+</project>
+
+```
+
+#### 聚合
+
+> 创建一个父类 maven 项目，把 pom.xml 文件里的 `<package></package>` 的值改成 pom;通过`<modules></modules>`引入子项目，可以对多个项目同时进行做处理。
+
 #### 常用命令
 
 - mvn -v
