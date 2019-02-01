@@ -92,6 +92,10 @@
 
 ```
 
+#### 聚合
+
+> 创建一个父类 maven 项目，把 pom.xml 文件里的 `<package></package>` 的值改成 pom;通过`<modules></modules>`引入子项目，可以对多个项目同时进行做处理。
+
 #### 常用命令
 
 - mvn -v
