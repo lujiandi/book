@@ -9,6 +9,8 @@
 
 #### pom.xml
 
+> POM 是项目对象模型(Project Object Model)的简称,它是 Maven 项目中的文件，使用 XML 表示，名称叫做 pom.xml。该文件用于管理：源代码、配置文件、开发者的信息和角色、问题追踪系统、组织信息、项目授权、项目的 url、项目的依赖关系等等。
+
 ```
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -52,6 +54,8 @@
   <licenses></licenses>
   <organization></organization>
 
+  <!-- 定义属性 -->
+  <!-- 使用${propertyName}的形式引用属性 -->
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
