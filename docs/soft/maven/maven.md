@@ -194,6 +194,77 @@
 
 ![maven webapp 项目结构](images/maven-web.png)
 
+#### 配置多环境
+
+`打包命令: mvn package -Dmaven.test.skip=true -P环境变量`
+
+`打包时根据环境的变量引入不同的资源文件`
+
+`资源文件目录结构示例:`
+
+1. src/main/resources
+   > 共通的资源文件
+2. src/main/resources.dev
+3. src/main/resources.beta
+4. src/main/resources.prod
+
+`pom.xml 示例:`
+
+```
+<profiles>
+        <profile>
+            <id>dev</id>
+            <properties>
+                <deploy.type>dev</deploy.type>
+            </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+        <profile>
+            <id>beta</id>
+            <properties>
+                <deploy.type>beta</deploy.type>
+            </properties>
+        </profile>
+        <profile>
+            <id>prod</id>
+            <properties>
+                <deploy.type>prod</deploy.type>
+            </properties>
+        </profile>
+</profiles>
+<build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <encoding>UTF-8</encoding>
+                    <compilerArguments>
+                        <!--打包时引入本地jar-->
+                        <extdirs>${project.basedir}/src/main/webapp/WEB-INF/lib</extdirs>
+                    </compilerArguments>
+                </configuration>
+            </plugin>
+        </plugins>
+        <resources>
+            <resource>
+                <directory>src/main/resources.${deploy.type}</directory>
+                <excludes>
+                    <exclude>*.jsp</exclude>
+                </excludes>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+        </resources>
+</build>
+```
+
 #### maven plugins
 
 ```
