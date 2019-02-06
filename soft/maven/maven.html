@@ -994,7 +994,73 @@
 </ol>
 <h4 id="maven-webapp-&#x9879;&#x76EE;&#x7ED3;&#x6784;">maven webapp &#x9879;&#x76EE;&#x7ED3;&#x6784;</h4>
 <p><img src="images/maven-web.png" alt="maven webapp &#x9879;&#x76EE;&#x7ED3;&#x6784;"></p>
-<h4 id="maven-plugins">maven plugins</h4>
+<h4 id="&#x914D;&#x7F6E;&#x591A;&#x73AF;&#x5883;">&#x914D;&#x7F6E;&#x591A;&#x73AF;&#x5883;</h4>
+<p><code>&#x6253;&#x5305;&#x547D;&#x4EE4;: mvn package -Dmaven.test.skip=true -P&#x73AF;&#x5883;&#x53D8;&#x91CF;</code></p>
+<p><code>&#x6253;&#x5305;&#x65F6;&#x6839;&#x636E;&#x73AF;&#x5883;&#x7684;&#x53D8;&#x91CF;&#x5F15;&#x5165;&#x4E0D;&#x540C;&#x7684;&#x8D44;&#x6E90;&#x6587;&#x4EF6;</code></p>
+<p><code>&#x8D44;&#x6E90;&#x6587;&#x4EF6;&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#x793A;&#x4F8B;:</code></p>
+<ol>
+<li>src/main/resources<blockquote>
+<p>&#x5171;&#x901A;&#x7684;&#x8D44;&#x6E90;&#x6587;&#x4EF6;</p>
+</blockquote>
+</li>
+<li>src/main/resources.dev</li>
+<li>src/main/resources.beta</li>
+<li>src/main/resources.prod</li>
+</ol>
+<p><code>pom.xml &#x793A;&#x4F8B;:</code></p>
+<pre><code>&lt;profiles&gt;
+        &lt;profile&gt;
+            &lt;id&gt;dev&lt;/id&gt;
+            &lt;properties&gt;
+                &lt;deploy.type&gt;dev&lt;/deploy.type&gt;
+            &lt;/properties&gt;
+            &lt;activation&gt;
+                &lt;activeByDefault&gt;true&lt;/activeByDefault&gt;
+            &lt;/activation&gt;
+        &lt;/profile&gt;
+        &lt;profile&gt;
+            &lt;id&gt;beta&lt;/id&gt;
+            &lt;properties&gt;
+                &lt;deploy.type&gt;beta&lt;/deploy.type&gt;
+            &lt;/properties&gt;
+        &lt;/profile&gt;
+        &lt;profile&gt;
+            &lt;id&gt;prod&lt;/id&gt;
+            &lt;properties&gt;
+                &lt;deploy.type&gt;prod&lt;/deploy.type&gt;
+            &lt;/properties&gt;
+        &lt;/profile&gt;
+&lt;/profiles&gt;
+&lt;build&gt;
+        &lt;plugins&gt;
+            &lt;plugin&gt;
+                &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+                &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
+                &lt;version&gt;3.1&lt;/version&gt;
+                &lt;configuration&gt;
+                    &lt;source&gt;1.8&lt;/source&gt;
+                    &lt;target&gt;1.8&lt;/target&gt;
+                    &lt;encoding&gt;UTF-8&lt;/encoding&gt;
+                    &lt;compilerArguments&gt;
+                        &lt;!--&#x6253;&#x5305;&#x65F6;&#x5F15;&#x5165;&#x672C;&#x5730;jar--&gt;
+                        &lt;extdirs&gt;${project.basedir}/src/main/webapp/WEB-INF/lib&lt;/extdirs&gt;
+                    &lt;/compilerArguments&gt;
+                &lt;/configuration&gt;
+            &lt;/plugin&gt;
+        &lt;/plugins&gt;
+        &lt;resources&gt;
+            &lt;resource&gt;
+                &lt;directory&gt;src/main/resources.${deploy.type}&lt;/directory&gt;
+                &lt;excludes&gt;
+                    &lt;exclude&gt;*.jsp&lt;/exclude&gt;
+                &lt;/excludes&gt;
+            &lt;/resource&gt;
+            &lt;resource&gt;
+                &lt;directory&gt;src/main/resources&lt;/directory&gt;
+            &lt;/resource&gt;
+        &lt;/resources&gt;
+&lt;/build&gt;
+</code></pre><h4 id="maven-plugins">maven plugins</h4>
 <pre><code>// tomcat
 &lt;plugin&gt;
    &lt;groupId&gt;org.apache.tomcat.maven&lt;/groupId&gt;
@@ -1049,7 +1115,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"maven","level":"1.3.8","depth":2,"next":{"title":"mysql","level":"1.3.9","depth":2,"path":"soft/mysql/mysql.md","ref":"soft/mysql/mysql.md","articles":[]},"previous":{"title":"nodejs","level":"1.3.7","depth":2,"path":"soft/nodejs/nodejs.md","ref":"soft/nodejs/nodejs.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","-lunr","-search","toggle-chapters","search-plus","favicon"],"root":"./docs","styles":{"website":"styles/website.css"},"pluginsConfig":{"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"splitter":{},"toggle-chapters":{},"search-plus":{},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"lujiandi","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"book","language":"zh-hans","links":{"sidebar":{"GitHub":"https://github.com/lujiandi/book"}},"gitbook":"3.2.3","description":"Gitbook 教程","direction":"ltr"},"file":{"path":"soft/maven/maven.md","mtime":"2019-02-06T03:43:22.048Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-06T03:44:48.718Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"maven","level":"1.3.8","depth":2,"next":{"title":"mysql","level":"1.3.9","depth":2,"path":"soft/mysql/mysql.md","ref":"soft/mysql/mysql.md","articles":[]},"previous":{"title":"nodejs","level":"1.3.7","depth":2,"path":"soft/nodejs/nodejs.md","ref":"soft/nodejs/nodejs.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","-lunr","-search","toggle-chapters","search-plus","favicon"],"root":"./docs","styles":{"website":"styles/website.css"},"pluginsConfig":{"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"splitter":{},"toggle-chapters":{},"search-plus":{},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"lujiandi","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"book","language":"zh-hans","links":{"sidebar":{"GitHub":"https://github.com/lujiandi/book"}},"gitbook":"3.2.3","description":"Gitbook 教程","direction":"ltr"},"file":{"path":"soft/maven/maven.md","mtime":"2019-02-06T04:12:53.051Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-06T04:14:21.494Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
