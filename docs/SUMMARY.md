@@ -14,9 +14,9 @@
 
 - [软件安装配置](soft/README.md)
 
-  - [Jdk](soft/jdk/jdk.md)
-  - [Git](soft/git/git.md)
-  - [Idea](soft/idea/idea.md)
+  - [jdk](soft/jdk/jdk.md)
+  - [git](soft/git/git.md)
+  - [idea](soft/idea/idea.md)
   - [vscode](soft/vscode/vscode.md)
   - [tomcat](soft/tomcat/tomcat.md)
   - [redis](soft/redis/redis.md)
@@ -26,6 +26,7 @@
   - [nginx](soft/nginx/nginx.md)
   - [lombok](soft/lombok/lombok.md)
   - [常用单词](soft/en/english.md)
+  - [win 常见命令](soft/win/cmd.md)
 
 * [Java docs](java/README.md)
 
@@ -58,5 +59,3 @@
   - [React](frontend/react/react.md)
   - [Vue](frontend/vue/vue.md)
   - [webpack](frontend/webpack/webpack.md)
-
-- [Git 项目目录](gitproject/README.md)
