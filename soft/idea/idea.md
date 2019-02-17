@@ -1,6 +1,6 @@
-## Idea
+# Idea
 
-### win 下修改 idea 缓存和配置的默认路径
+#### win 下修改 idea 缓存和配置的默认路径
 
 1. 在安装目录创建.IntelliJIdea 目录
 2. 进入安装目录的 bin 文件夹修改 idea.properties
@@ -11,12 +11,14 @@
 
 > 启动选项 `-Dfile.encoding=UTF-8` tomcat 启动打印不会乱码
 
-### IntelliJ IDEA SpringBoot 热部署
+> maven 项目直接引入 jar 需要在 Project>Structure>Modules>Dependencies 添加 jar 的目录
+
+#### IntelliJ IDEA SpringBoot 热部署
 
 1. 设置 Complier>build project automatically
 2. 设置 Registry>compiler.automake.allow.when.app.running
 
-### 窗口切换
+#### 窗口切换
 
 - Alt+数字：可跳转并打开指定的窗口，例: Alt+1 打开 Project 窗口
 - alt+f12 terminal
@@ -29,11 +31,11 @@
 - ctrl+f4 关闭编辑窗口
 - ctrl+G 快速定位到行
 
-### emacsIDEAs 插件快速定位
+#### emacsIDEAs 插件快速定位
 
 - 先按下 ctrl+j,再按下字母，三 按下对应标记完成跳转
 
-### 搜索
+#### 搜索
 
 - ctrl+shift+f 字符
 - ctrl+n 搜索类
@@ -44,7 +46,7 @@
 - double shift search everywhere
 - Ctrl+Shift+A：可搜索 idea 任意的功能选项
 
-### 查看类/函数信息
+#### 查看类/函数信息
 
 - ctrl+b 查看类或者函数使用的地方(定义)
 - ctrl+alt+b 查看类或者函数的实现
@@ -56,13 +58,13 @@
 - ctrl+alt+h (查看函数调用结构)
 - ctrl+shift+alt+u （查看 maven 依赖结构图、java 关系图）
 
-### 书签
+#### 书签
 
 - ctrl+f11 标记/取消书签
 - ctrl+标记 切换书签
 - shift+f11 显示所有书签
 
-### 编辑
+#### 编辑
 
 - ctrl+w 选中一个单词
 - ctrl+shift+u 大小写
@@ -82,7 +84,7 @@
 - Ctrl + Shift + Space 代码提示
 - Ctrl + Shift + Enter 修复语法错误
 
-### 重构
+#### 重构
 
 - f5 复制文件
 - F6 移动文件
@@ -94,7 +96,7 @@
 - 抽取函数：ctrl + alt + m
 - ctrl+alt+t surround with
 
-### debug
+#### debug
 
 - ctrl+f8 添加断点
 - ctrl+shift+f8 查看所有断点/条件断点
@@ -104,7 +106,7 @@
 - f7 step into
 - alt+f8 evaluate Expression 查看表达式
 
-### git(vcs)
+#### git(vcs)
 
 - rclick 所在行 勾选 annotate(版本信息)
 - ctrl+shift+alt+(up/down) (寻找改动的地方,没有 commit 才有效)
