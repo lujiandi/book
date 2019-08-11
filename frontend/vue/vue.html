@@ -770,6 +770,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.6.12" data-path="../electron/electron.html">
+            
+                <a href="../electron/electron.html">
+            
+                    
+                    electron
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -828,7 +841,7 @@
 <p>&#x65B9;&#x6CD5;&#x5B9A;&#x4E49;&#x5728;<code>methods</code>&#x5C5E;&#x6027;&#x91CC;&#x3002;</p>
 </blockquote>
 <pre><code>&lt;div id=&quot;app&quot;&gt;
-  {{ message }}
+  {% raw %}{{% endraw %}{ message }}
 &lt;/div&gt;
 var app = new Vue({
   el: &apos;#app&apos;,
@@ -872,7 +885,7 @@ var app = new Vue({
 <p>&#x4E8B;&#x4EF6;&#x7ED1;&#x5B9A;&#xFF0C;&#x7B80;&#x5199;<code>@</code></p>
 </blockquote>
 <pre><code>&lt;p&gt;
-  count: &lt;button v-on:click=&quot;plus()&quot;&gt;+&lt;/button
+  count:{{ count }} &lt;button v-on:click=&quot;plus()&quot;&gt;+&lt;/button
   &gt;&lt;button @click=&quot;reduce()&quot;&gt;-&lt;/button&gt;
 &lt;/p&gt;
 </code></pre><h4 id="v-if"><code>v-if</code></h4>
@@ -886,7 +899,7 @@ var app = new Vue({
 </code></pre><h4 id="v-show"><code>v-show</code></h4>
 <pre><code>&lt;p&gt;
   &lt;i v-show=&quot;show&quot;
-    &gt;&lt;button @click=&quot;showAndHidden&quot;&gt;&#x9690;&#x85CF;&lt;/button&gt;&lt;/i
+    &gt;{{ hello }}&lt;button @click=&quot;showAndHidden&quot;&gt;&#x9690;&#x85CF;&lt;/button&gt;&lt;/i
   &gt;
   &lt;i v-show=&quot;!show&quot;&gt;&lt;button @click=&quot;showAndHidden&quot;&gt;&#x663E;&#x793A;&lt;/button&gt;&lt;/i&gt;
 &lt;/p&gt;
@@ -895,7 +908,7 @@ var app = new Vue({
 <p>&#x5FAA;&#x73AF;</p>
 </blockquote>
 <pre><code>&lt;ul&gt;
-  &lt;li v-for=&quot;item in list&quot;&gt;&lt;/li&gt;
+  &lt;li v-for=&quot;item in list&quot;&gt;{{ item }}&lt;/li&gt;
 &lt;/ul&gt;
 </code></pre><h4 id="watch">watch</h4>
 <blockquote>
@@ -932,7 +945,7 @@ computed: {
 <p>&#x7ED1;&#x5B9A;<code>class</code>,&#x503C;&#x53EF;&#x4EE5;&#x4E3A;&#x6570;&#x7EC4;&#x3002;&#x6761;&#x4EF6;&#x8868;&#x8FBE;&#x5F0F;&#x8981;&#x5199;&#x6210;&#x5BF9;&#x8C61;&#x5F62;&#x5F0F;&#xFF0C;&#x8BED;&#x6CD5;:<code>{&apos;className&apos;:&#x6761;&#x4EF6;&#x8868;&#x8FBE;&#x5F0F;}</code></p>
 </blockquote>
 <pre><code>&lt;div :style=&quot;style&quot; :class=&quot;[&apos;actived&apos;,{&apos;sddf&apos;:count&gt;0} ]&quot;&gt;
-
+  {{ hello }}
 &lt;/div&gt;
 </code></pre><h4 id="vue-router">Vue Router</h4>
 <blockquote>
@@ -1022,10 +1035,10 @@ computed: {
       &lt;section v-else&gt;
         &lt;div v-if=&quot;loading&quot;&gt;Loading...&lt;/div&gt;
         &lt;div v-else v-for=&quot;currency in info&quot; class=&quot;currency&quot;&gt;
-          :
+          {{ currency.description }}:
           &lt;span class=&quot;lighten&quot;&gt;
             &lt;span v-html=&quot;currency.symbol&quot;&gt;&lt;/span
-            &gt;
+            &gt;{{ currency.rate_float }}
           &lt;/span&gt;
         &lt;/div&gt;
       &lt;/section&gt;
@@ -1102,7 +1115,7 @@ computed: {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Vue","level":"1.6.10","depth":2,"next":{"title":"webpack","level":"1.6.11","depth":2,"path":"frontend/webpack/webpack.md","ref":"frontend/webpack/webpack.md","articles":[]},"previous":{"title":"React","level":"1.6.9","depth":2,"path":"frontend/react/react.md","ref":"frontend/react/react.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","-lunr","-search","toggle-chapters","search-plus","favicon"],"root":"./docs","styles":{"website":"styles/website.css"},"pluginsConfig":{"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"splitter":{},"toggle-chapters":{},"search-plus":{},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"lujiandi","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"book","language":"zh-hans","links":{"sidebar":{"GitHub":"https://github.com/lujiandi/book"}},"gitbook":"3.2.3","description":"Gitbook 教程","direction":"ltr"},"file":{"path":"frontend/vue/vue.md","mtime":"2019-01-09T10:59:24.832Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-02-17T12:36:52.385Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Vue","level":"1.6.10","depth":2,"next":{"title":"webpack","level":"1.6.11","depth":2,"path":"frontend/webpack/webpack.md","ref":"frontend/webpack/webpack.md","articles":[]},"previous":{"title":"React","level":"1.6.9","depth":2,"path":"frontend/react/react.md","ref":"frontend/react/react.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","-lunr","-search","toggle-chapters","search-plus","favicon"],"root":"./docs","styles":{"website":"styles/website.css"},"pluginsConfig":{"sharing":{"facebook":false,"twitter":false,"google":false,"weibo":true,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"splitter":{},"toggle-chapters":{},"search-plus":{},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"lujiandi","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"book","language":"zh-hans","links":{"sidebar":{"GitHub":"https://github.com/lujiandi/book"}},"gitbook":"3.2.3","description":"Gitbook 教程","direction":"ltr"},"file":{"path":"frontend/vue/vue.md","mtime":"2019-08-10T12:42:43.850Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-08-11T04:08:17.434Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
